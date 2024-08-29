@@ -1,0 +1,142 @@
+[cols="1,2,6a", options="header"]
+|===
+| Week 
+| Date 
+| Agenda
+
+//-----------------------------
+| 1
+| September 3, 5 anchor:week01[]
+| *Introductions, Hello Unity* 
+
+* Topics: Event-based Programming, Game Loop, Introduction to Game Concepts, Coordinate systems
+* link:assts/asst01.html[Assignment 01]: Due Sept 6
+* Lab: Unity and Github setup
+// TODO * link:https://github.com/BrynMawr-CS223-F22/git-workshop[Github workshop] and link:https://github.com/BrynMawr-CS223-S22/git-workshop/blob/main/SSHSetup.md[Setting up SSH keys for Github]
+
+//-----------------------------
+| 2 
+| Sept 10, 12 anchor:week02[]
+| *C#, Math for Games* 
+
+* Topics: From Java to C#, Component-based architecture, Math Fundamentals, Unity Coroutines
+* Read: 
+//* Lab Sept 12: Quiz 01 practice, link:studyguide1.html[Study Guide: Quiz 01]
+* link:assts/asst02.html[Assignment 02]: Sept 12
+
+//-----------------------------
+|3
+|Sept 17, 19 anchor:week03[]
+|*Transformations, Cameras, Input* 
+
+* Topics: Transformations, Scene hierarchy, Cameras, Mouse and keyboard input
+* Read: 
+//* Lab Sept 19: **Quiz 01** 
+//* link:assts/asst03.html[Assignment 03]: Due September 19
+
+//-----------------------------
+|4
+|Sept 24, 26 anchor:week04[]
+|*Characters, Animation* 
+
+* Topics: 
+* Read: 
+//* Sept 26 Lab: Quiz 02 Practice, link:studyguide2.html[Study Guide: Quiz 02]
+//* link:assts/asst04.html[Assignment 04]: Due September 26
+
+//-----------------------------
+|5
+|Oct 1,3 anchor:week05[]
+|*User interfaces, Flair* 
+
+* Topics: Layouts, UI widgets, transition animations, particle systems, sound 
+* Read: 
+//* link:assts/asst05.html[Assignment 05]: Due Oct 3
+//* Lab Oct 3:  **Quiz 02**
+
+//-----------------------------
+|6
+|Oct 8, 10 anchor:week06[]
+|*Steering and path finding* 
+
+//* link:assts/asst06.html[Assignment 06]: Due Oct 10
+//* Lab Oct 10: Practice Quiz 03, link:studyguide3.html[Study Guide 3]
+
+//-----------------------------
+|7
+|Oct 16,19 anchor:week08[]
+|*Fall Break*
+
+* *NO LECTURES, LABS, HOMEWORKS*
+
+//-----------------------------
+|8
+|Oct 22, 24 anchor:week07[]
+|*Behaviors* 
+
+//* link:assts/asst07.html[Assignment 07]: Due Oct 24
+//* Lab Oct 24: **Quiz 03**
+
+//-----------------------------
+|9
+|Oct 29,31 anchor:week09[]
+|*Game mechanics*
+
+* Topics: battle systems, quest systems, inventory systems
+//* link:assts/asst08.html[Assignment 08]: Due Oct 31 **Hardcopy due at Park 200B**
+//* Lab: Practice Quiz 04 link:studyguide4.html[Study Guide: Quiz 04]
+
+//-----------------------------
+|10
+|Nov 5, 7 anchor:week10[]
+|*Game Physics* 
+
+* Topics: battle systems, quest systems, inventory systems
+* Nov 5: NO CLASS. ELECTION Day
+//* link:assts/TODO.html[Assignment 09]: Due Nov 7
+//* Lab:  **Quiz 04**
+
+//-----------------------------
+|11
+|Nov 12, 14 anchor:week11[]
+|*Advanced Topics*
+
+* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Mobile/Web/Desktop development
+// TODO: Copy graphics project stuff
+//* link:assts/project.html[Final Game Project Proposal]: Due Nov 14th
+//* Lab: Quiz Practice, link:studyguide5.html[Study Guide 5]
+
+//-----------------------------
+|12
+|Nov 19,21 anchor:week12[]
+|*Advanced Topics*
+
+* Nov 21, NO CLASS
+//* Lab: **Quiz 05**
+
+//-----------------------------
+|13
+|Nov 26 anchor:week13[]
+|*Advanced Topics* 
+
+* Nov 28: Thanksgiving, NO CLASS
+
+//-----------------------------
+|14
+|Dec 3,5 anchor:week14[]
+|*Advanced Topics* 
+
+//* link:assts/asst12.html[Assignment 12]: Due Dec 5
+//* Lab Dec 5, Final Practice, link:studyguide-final.html[Final Study Guide]
+
+//-----------------------------
+|15
+|Dec 10,12 anchor:week15[]
+|*Demos, 2D Games* 
+
+* Dec 10: Final Game Demos!
+* From 3D to 2D Games
+
+|===
+
+

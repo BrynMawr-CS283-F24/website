@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>Game Programming</title>
+<link rel="stylesheet" href="style/front.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>CMSC 283: Game Programming&#8201;&#8212;&#8201;Fall 2024</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_course_info">Course Info</a>
+<ul class="sectlevel2">
+<li><a href="#_meeting_times">Meeting Times</a></li>
+</ul>
+</li>
+<li><a href="#_schedule"><strong>Schedule</strong></a></li>
+<li><a href="#_text_and_tools">Text and Tools</a>
+<ul class="sectlevel2">
+<li><a href="#_unity">Unity</a></li>
+<li><a href="#_git">Git</a></li>
+<li><a href="#_c_language">C# Language</a></li>
+</ul>
+</li>
+<li><a href="#_grading_policies">Grading Policies</a>
+<ul class="sectlevel2">
+<li><a href="#_labs_and_exams">Labs and exams</a></li>
+<li><a href="#_homeworks_and_exercises">Homeworks and exercises</a></li>
+<li><a href="#_late_policy">Late Policy</a></li>
+</ul>
+</li>
+<li><a href="#_academic_integrity">Academic Integrity</a></li>
+<li><a href="#_academic_accommodations">Academic Accommodations</a></li>
+<li><a href="#_covid_policy">Covid Policy</a></li>
+<li><a href="#_academic_support">Academic support</a></li>
+<li><a href="#_title_ix">Title IX</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Instructor: <a href="https://www.cs.brynmawr.edu/~alinen">Aline Normoyle</a></p>
+</div>
+<div class="ulist anns">
+<ul>
+<li>
+<p>Welcome to Fall 2024! For those of you who are about to rock, I salute you!</p>
+</li>
+<li>
+<p>First lecture will be on Tuesday, September 3rd, 1:10 PM in room Park 159.</p>
+</li>
+<li>
+<p>First assignment is Due Sept 6th. <a href="assts/asst01.html">Assignment 01: Hello Unity!</a></p>
+</li>
+<li>
+<p>First lab will be on Tuesday, September 3rd, 2:40PM in Park 230. We will go over git, Github, and Unity</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_course_info">Course Info</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Welcome to CS283: Game Programming</strong>!</p>
+</div>
+<div class="paragraph">
+<p>This intermediate programming course covers the foundational concepts,
+architectures, and mathematics underlying video games and digital interactive
+experiences. We will deconstruct the designs of classic games, such as Pac-Man,
+Super Mario Brothers, Minecraft, Doom, and Diablo II, to explore the data
+structures, algorithms, and foundational mathematics necessary to implement
+popular game mechanics and features. Potential topics will include rendering and
+modeling, navigation systems, game artificial intelligence, dialog systems,
+character animation, networked multiplayer, user interfaces, physics engines,
+and sound. The course will challenge students to create original and novel game
+concepts through weekly assignments, labs, and a final project. Through these
+projects, students will learn the foundational mathematics behind "making
+objects move", such as transformations, splines, collision detection, and
+raycasting. Furthermore, students will gain object-oriented programming
+experience through designing mid-scale programs. Programming and project
+assignments will be in C#, use the Processing and Unity frameworks, and
+cover how to build games for different platforms, namely web, desktop, virtual
+reality, and augmented reality.</p>
+</div>
+<div class="sect2">
+<h3 id="_meeting_times">Meeting Times</h3>
+<table class="tableblock frame-all grid-all fit-content center">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Activity</th>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lecture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 159</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tuesday and Thursday 1:10 AM - 2:30 PM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lab</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park 230</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thursday 2:40 PM - 4:00 PM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office Hours - Prof. Aline Normoyle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Friday</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office Hours - Neha Thumu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Park</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBA</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_schedule"><strong>Schedule</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The syllabus may change during the semester. Please check here every week for updates
+on lecture content, worksheets, and assignments.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Week</th>
+<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Agenda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">September 3, 5 <a id="week01"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Introductions, Hello Unity</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics: Event-based Programming, Game Loop, Introduction to Game Concepts, Coordinate systems</p>
+</li>
+<li>
+<p><a href="assts/asst01.html">Assignment 01</a>: Due Sept 6</p>
+</li>
+<li>
+<p>Lab: Unity and Github setup</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sept 10, 12 <a id="week02"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>C#, Math for Games</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics: From Java to C#, Component-based architecture, Math Fundamentals, Unity Coroutines</p>
+</li>
+<li>
+<p>Read:</p>
+</li>
+<li>
+<p><a href="assts/asst02.html">Assignment 02</a>: Sept 12</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sept 17, 19 <a id="week03"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Transformations, Cameras, Input</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics: Transformations, Scene hierarchy, Cameras, Mouse and keyboard input</p>
+</li>
+<li>
+<p>Read:</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sept 24, 26 <a id="week04"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Characters, Animation</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics:</p>
+</li>
+<li>
+<p>Read:</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oct 1,3 <a id="week05"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>User interfaces, Flair</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics: Layouts, UI widgets, transition animations, particle systems, sound</p>
+</li>
+<li>
+<p>Read:</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oct 8, 10 <a id="week06"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Steering and path finding</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oct 16,19 <a id="week08"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Fall Break</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>NO LECTURES, LABS, HOMEWORKS</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oct 22, 24 <a id="week07"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Behaviors</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oct 29,31 <a id="week09"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Game mechanics</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics: battle systems, quest systems, inventory systems</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nov 5, 7 <a id="week10"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Game Physics</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics: battle systems, quest systems, inventory systems</p>
+</li>
+<li>
+<p>Nov 5: NO CLASS. ELECTION Day</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nov 12, 14 <a id="week11"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Advanced Topics</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Mobile/Web/Desktop development</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nov 19,21 <a id="week12"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Advanced Topics</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nov 21, NO CLASS</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nov 26 <a id="week13"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Advanced Topics</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nov 28: Thanksgiving, NO CLASS</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dec 3,5 <a id="week14"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Advanced Topics</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dec 10,12 <a id="week15"></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Demos, 2D Games</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dec 10: Final Game Demos!</p>
+</li>
+<li>
+<p>From 3D to 2D Games</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_and_tools">Text and Tools</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Game Math</strong> by Fletcher Dunn and Ian Parbery. You can access it for free <a href="https://gamemath.com/book/">here</a></p>
+</li>
+<li>
+<p><strong>Game Programming Patterns</strong> by Bob Nystrom. You can access it for free <a href="https://gameprogrammingpatterns.com/">here</a></p>
+</li>
+<li>
+<p><strong>Github Account</strong> Please go to <a href="https://github.com/">github.com</a> and register. You will be using github to submit assignments.</p>
+</li>
+<li>
+<p><strong>Slack</strong> Please go to <a href="https://slack.com/signin">slack.com</a>. Our workspace is BrynMawr-CS223-F24. You can ask questions and request one-on-one help over zoom using this course&#8217;s slack channel.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_unity">Unity</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.unity3d.com/Manual/index.html">Unity Manual</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/">Unity Script Reference</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git">Git</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.github.com/en/get-started/start-your-journey/about-github-and-git">Getting started with git and Github</a></p>
+</li>
+<li>
+<p><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet</a></p>
+</li>
+<li>
+<p><a href="https://github.com/pjcozzi/Articles/blob/master/CIS565/GitHubRepo/README.md">How to make a good Github Repo</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_c_language">C# Language</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/">C# Getting Started</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-8.0">C# API Guide</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grading_policies">Grading Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All graded work will receive a grade, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7,
+1.3, 1.0, or 0.0. At the end of the semester, final grades will be calculated
+as a weighted average of all grades according to the following weights:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Final Project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lab work and Quizzes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Participation</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_labs_and_exams">Labs and exams</h3>
+<div class="paragraph">
+<p>In labs, we will have practice quizzes for the final exam, each structured
+like a mini-code jam where you work together in teams. Each quiz will have a
+study guide so you know what types of questions to expect. During lab, you will
+be randomly assigned a partner and given 40 minutes to complete the questions.
+The following week in lab, we will go over answers for the previous week.</p>
+</div>
+<div class="paragraph">
+<p>If you cannot attend a lab, please let the instructor know in advance. There are
+no make-up opportunities for labs — the missing work will be re-weighted to be
+part of your final exam.</p>
+</div>
+<div class="paragraph">
+<p>There will be one final exam for the semester. Details and dates will be
+released during the semester.  Please read the section on
+<a href="#_accommodations">accomodations</a> if you are in need of extra time.  You
+must inform us of accommodations or conflicts at least 2 weeks in advance of
+the exam.</p>
+</div>
+<div class="paragraph">
+<p>Quizzes and exams will be open book. You will be given sample questions
+beforehand to help you study. <strong>Warning!</strong> Do not rely heavily on your notes
+for quizzes. You will need to have concepts memorized in order to finish
+within the time limit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_homeworks_and_exercises">Homeworks and exercises</h3>
+<div class="paragraph">
+<p>This course features weekly lab exercises and assignments which are an important
+component of the class.</p>
+</div>
+<div class="paragraph">
+<p>Lab exercises will be passed out in lab. These exercises are intended to be short and
+will typically ask you to reproduce demos from class or tackle concepts you will need
+for your assignment. Lab exercises should be handed in at the end of lab.</p>
+</div>
+<div class="paragraph">
+<p>Class exercises will be passed out in class. These exercises are intended to be
+short and will typically ask you to practice concepts from lecture.</p>
+</div>
+<div class="paragraph">
+<p>Assignments will be posted Saturdays and due Friday before midnight.  You are
+strongly encouraged to start early so that you can ask questions. See the
+syllabus for links to the assignments.</p>
+</div>
+<div class="paragraph">
+<p>You will submit your assignments electronically using git.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_late_policy">Late Policy</h3>
+<div class="paragraph">
+<p>Because practice is so important for learning how to program, we will do frequent
+exercises, assignments, and quizzes throughout the term.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this work is to give you hands on experience with the topics
+from class. Most of this work will be due in lecture or labs. The
+weekly time commitment for this course is aimed to be approximately 10 hours per week.</p>
+</div>
+<div class="paragraph">
+<p>Assignments will generally be due on Fridays. However, you may request up to <strong>one</strong> late
+day (until Saturday) if necessary. No submissions beyond Saturday will be accepted.
+This allows us time to grade assignments. And it helps prevent you from falling
+behind. Note that with weekly assignments, you can miss a week or two without losing
+much points on a final grade.</p>
+</div>
+<div class="paragraph">
+<p>If you need to miss a quiz, we will not have make-ups. Instead, the missed credit for the quiz
+will be added to the final exam.</p>
+</div>
+<div class="paragraph">
+<p>You may need to provide a doctor&#8217;s note if you need special accommodations due to a
+medical emergency. If you require an accommodation for exams and quizzes, this must be submitted
+to the instructor within the first two weeks or class.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_academic_integrity">Academic Integrity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Copied and unattributed work will receive zero credit. At Bryn Mawr, we assume students are
+trustworthy and work with honesty and integrity.
+<a href="https://www.brynmawr.edu/deans/academic-and-community-integrity">Look here
+for information about Bryn Mawr&#8217;s Honor Code.</a></p>
+</div>
+<div class="paragraph">
+<p>As you progress in this course, you will see that programming is a creative
+process, similar to writing. The same problem can be solved in
+multiple ways. It&#8217;s <em>essential</em> that you develop your own skills for developing
+algorithms and implementing them through programs.</p>
+</div>
+<div class="paragraph">
+<p>Quizzes and exams will be <em>closed book</em>. You will be able to bring a
+single cheat sheet with you. <strong>The goal of assignments and labs is to help you
+prepare for quizzes and exams!</strong> If you can sit down, focus, and answer sample
+questions within a time limit, you will ace the exams for this class.
+Incidentally, you will also be prepared to ace a job interview on this topic!</p>
+</div>
+<div class="paragraph">
+<p>Integrity Guidelines:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DO discuss ideas and approaches with your classmates.</p>
+</li>
+<li>
+<p>DO discuss ideas and approaches with your TAs and instructor.</p>
+</li>
+<li>
+<p>DO search for documentation and sample programs for built-in C functions and C syntax.</p>
+</li>
+<li>
+<p>DO use code from our text books and class (with attribution).</p>
+</li>
+<li>
+<p>DON&#8217;T use Chat-GPT (or other LLMs) to generate solutions.</p>
+</li>
+<li>
+<p>DON&#8217;T copy full solutions, from online tutorials, previous students, etc</p>
+</li>
+<li>
+<p>DON&#8217;T use functions and C syntax that is disallowed by the Makefile. We are deliberately using simple and portable C.</p>
+</li>
+<li>
+<p>DON&#8217;T modify any basecode that comes with your assignment.</p>
+</li>
+<li>
+<p>DON&#8217;T ever share your code with other students.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It&#8217;s ultimately up to you to learn from your assignments! Remember, no one is
+going to hire you to do work that they can easily do themselves using a search
+or AI program generator. The programs in this course are simple enough for an AI
+or search or two to solve. But the next level of programs will not be so simple. You must
+do the work yourself. This is the only way you will develop the skills and
+expertise to reach your full potential.</p>
+</div>
+<div class="paragraph">
+<p>One final point: we will be using open-source repositories for homeworks in this class.
+Thus, it will be possible to see what other students (and previous students) have submitted.
+If you copy from others' repositories, it will be obvious to everyone involved! Only look
+at other solutions after you have finished your own first!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_academic_accommodations">Academic Accommodations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All classes will be recorded and close-captioned. Links to lectures will be
+posted on the class syllabus.</p>
+</div>
+<div class="paragraph">
+<p>Any student who has a disability-related need to record this class first must
+speak with the Director of Access Services, Deb Alder, as part of university
+policy. Class members need to be aware that this class may be recorded.</p>
+</div>
+<div class="paragraph">
+<p>To receive an accommodation for a course activity (such as more time on quizzes
+and exams), you must have an Accommodation Letter from the Office of Student
+Disability Services <strong>and</strong> you need to contact us to work out the details of
+your accommodation at least <strong>two weeks prior</strong> to the activity. Forms can be
+emailed to me, the instructor.</p>
+</div>
+<div class="paragraph">
+<p>You are also welcome to contact us privately to discuss your academic needs.
+However, all disability-related accommodations must be arranged, in advance,
+through Student Disability Services.</p>
+</div>
+<div class="paragraph">
+<p>Students needing academic accommodations for a disability must first register
+with Access Services. Students can call 610-526-7516 to make an appointment
+with the Director of Access Services, Deb Alder, or email her at
+<a href="mailto:dalder@brynmawr.edu">dalder@brynmawr.edu</a> to begin this confidential process.  Once registered,
+students should schedule an appointment with the professor as early in the
+semester as possible to share the verification form and make appropriate
+arrangements. Please note that accommodations are not retroactive and require
+advance notice to implement. More information can be obtained at the Access
+Services website. (<a href="http://www.brynmawr.edu/access-services/" class="bare">http://www.brynmawr.edu/access-services/</a>)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_covid_policy">Covid Policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lectures and labs will have a <em>mask-friendly</em> policy.  All are welcome to wear a
+mask if they so wish, but no one is mandated to wear a mask.</p>
+</div>
+<div class="paragraph">
+<p>If you are symptomatic (coughing, sore throat, or running nose), please either
+stay at home or come into campus with a mask. Lectures will be recorded so they
+can be watched later. Missed lab activities and quizzes will have their grade
+credit transferred to the final.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_academic_support">Academic support</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.brynmawr.edu/academicsupport/academic-and-student-support-services">Academic Support, including help with math and quantitative skills!</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_title_ix">Title IX</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bryn Mawr/Haverford College is committed to fostering a safe and inclusive
+living and learning environment where all can feel secure and free from
+harassment. All forms of sexual misconduct, including sexual assault, sexual
+harassment, stalking, domestic violence, and dating violence are violations of
+Bryn Mawr/Haverford&#8217;s policies, whether they occur on or off campus. Bryn
+Mawr/Haverford faculty are committed to helping to create a safe learning
+environment for all students and for the College community as a whole. If you
+have experienced any form of gender or sex-based discrimination, harassment, or
+violence, know that help and support are available. Staff members are trained
+to support students in navigating campus life, accessing health and counseling
+services, providing academic and housing accommodations, and more.</p>
+</div>
+<div class="paragraph">
+<p>The College strongly encourages all students to report any incidents of sexual
+misconduct. Please be aware that all Bryn Mawr/Haverford employees (other than
+those designated as confidential resources such as counselors, clergy, and
+healthcare providers) are required to report information about such
+discrimination and harassment to the
+<a href="https://www.haverford.edu/users/ktaylor4">Bi-College Title IX Coordinator</a>.</p>
+</div>
+<div class="paragraph">
+<p>Information about the College&#8217;s Sexual Misconduct policy, reporting options,
+and a list of campus and local resources can be found on the College&#8217;s
+website:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.brynmawr.edu/titleix">Bryn Mawr Sexual Misconduct Policy</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.haverford.edu/sexual-misconduct">Haverford Sexual Misconduct Policy</a></p>
+</div>
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p>This site was generated with <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">asciidoctor</a>
+t cheat</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-08-29 09:38:00 -0400
+</div>
+</div>
+</body>
+</html>
