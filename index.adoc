@@ -7,7 +7,9 @@ include::header.adoc[]
 :title: Game Programming
 :term: Fall 2024
 
-= {course}: {title} -- {term}
+= {course}: {title} 
+
+Term: {term}
 
 Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
@@ -21,6 +23,8 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 == Course Info
 
 **Welcome to CS283: Game Programming**! 
+
+image::SnowCabin.png[]
 
 This intermediate programming course covers the foundational concepts,
 architectures, and mathematics underlying video games and digital interactive
@@ -49,7 +53,7 @@ reality, and augmented reality.
 | Lecture | Park 159 | Tuesday and Thursday 1:10 AM - 2:30 PM 
 | Lab | Park 230 | Thursday 2:40 PM - 4:00 PM 
 | Office Hours - Prof. Aline Normoyle | 200B | Friday
-| Office Hours - Neha Thumu | Park | TBA 
+| Office Hours - Neha Thumu | Park | Friday 
 
 |===
 
@@ -115,5 +119,4 @@ include::covidpolicy.adoc[]
 include::legal.adoc[]
 
 [unstyled]
- * This site was generated with link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[asciidoctor]
-t cheat
+* This site was generated with link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[asciidoctor]

@@ -19,13 +19,6 @@
 <li><a href="#_sign_up_for_github">2. Sign-up for Github</a></li>
 <li><a href="#_read_the_class_web_pages">3. Read the class web pages</a></li>
 <li><a href="#_hello_unity">4. Hello Unity</a></li>
-<li><a href="#_optional_set_up_your_own_development_environment">5. (Optional) Set up your own development environment</a>
-<ul class="sectlevel2">
-<li><a href="#_windows">5.1. Windows</a></li>
-<li><a href="#_macos">5.2. MacOS</a></li>
-</ul>
-</li>
-<li><a href="#_grading_rubric">6. Grading Rubric</a></li>
 </ul>
 </div>
 </div>
@@ -51,7 +44,7 @@
 <p>Look at the website</p>
 </li>
 <li>
-<p>Setup Unity</p>
+<p>Start using Unity</p>
 </li>
 </ul>
 </div>
@@ -146,23 +139,49 @@ posted on the course webpage!</p>
 <h2 id="_hello_unity">4. Hello Unity</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Verify that you can use Github, git, and Unity. You can try this using a lab machine, or your own
-machine if you have setup your development environment there.</p>
+<p>Verify that you can use Github, git, and Unity. The instructions for this assignment assumes you are
+using a lab machine in Park 231.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Lab machines use your Bryn Mawr or Haverford logins.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+CS lab machines are dual boot, meaning they can load either Windows or Ubuntu. If the machine
+has a Ubuntu login screen, use the button on the top right to restart the machine with windows.
+</td>
+</tr>
+</table>
 </div>
 <h3 id="_fork_the_repository" class="discrete">Fork the repository</h3>
 <div class="paragraph">
-<p>Fork the repository from here:</p>
+<p>From your browser, fork the repository from here:</p>
 </div>
 <div class="paragraph">
 <p><a href="https://github.com/BrynMawr-CS223-S23//cs283-f24-assignments" class="bare">https://github.com/BrynMawr-CS223-S23//cs283-f24-assignments</a></p>
 </div>
 <div class="paragraph">
-<p>Fork is a button located on the top, right on Github.</p>
+<p>Fork is a button located on the top, right on Github. You now have a copy
+of the class repository <em>in your own Github account</em>.</p>
 </div>
 <h3 id="_clone_the_repository" class="discrete">Clone the repository</h3>
 <div class="paragraph">
-<p>From <em>your own account</em>, clone the repository you just forked. The URL should look
-something like the following</p>
+<p>From <em>your own account</em>, clone the repository you just forked. Use your browser to
+visit an URL that looks something like the following</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -170,7 +189,12 @@ something like the following</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Use the "Code" button on Github to copy the URL. Then run the following command
+<p>We will use Git Bash to clone the repository. You can open Git Bash using the
+shortcut on the desktop. You know have a terminal open to your
+personal, shared storage space at Bryn Mawr College (drive H:).</p>
+</div>
+<div class="paragraph">
+<p>From your browser, use the "Code" button on Github to copy the URL. Then run the following command
 from terminal.</p>
 </div>
 <div class="listingblock">
@@ -179,23 +203,78 @@ from terminal.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>On windows, you can use Git Bash to download your repository. For example,
-in explorer, navigate to the directory where you want to put your homeworks.
-Right click, and open "Git bash". This will open a prompt. At the prompt,
-type the commands above.
-This will download a local account of the repository to your computer.</p>
+<p>You know have a version of the class resources in your local storage.</p>
 </div>
 <h3 id="_open_unity" class="discrete">Open Unity</h3>
+<div class="paragraph">
+<p>From the desktop, open the Unity Hub. Sign-in with your personal Unity account. If you don&#8217;t have
+one already, create one.</p>
+</div>
+<div class="paragraph">
+<p>From Unity Hub, use the Add button to browse to the Unity project "HelloUnity" stored under you assignments.
+This will open the Unity project. Sadly, this may take a very long time.  Once
+Unity opens, you will see an empty project.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/A01-Hello-Start.png" alt="A01 Hello Start"></span></p>
+</div>
+<div class="paragraph">
+<p>Open the scene, "HelloUnity". Press play. You should see
+the message "Hello Unity!" printed to the console.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/A01-Hello-Play.png" alt="A01 Hello Play"></span></p>
+</div>
+<div class="paragraph">
+<p>Try to do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a particle effect to the GameObject in the scene. Select the GameObject and add a new component. Select "Particle Effect".</p>
+</li>
+<li>
+<p>Modify the script <code>HelloUnity.cs</code> to print the time each frame. The current time is stored in the Unity global variable, called <code>Time.realtimeSinceStartup</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Try creating a cool particle system. <a href="https://learn.unity.com/project/getting-started-with-particle-systems">This tutorial can give you ideas</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If your editor does not come up when you open a script, change your editor in Edit/Preferences/External Tools
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/A01-Hello-Done.png" alt="A01 Hello Done"></span></p>
+</div>
 <h3 id="_submit_your_work_to_github" class="discrete">Submit your work to Github</h3>
 <div class="paragraph">
-<p>Add and check in your program using git and then push your changes to Github.
-Run the following command inside your <code>HelloUnity</code> directory.</p>
+<p>Commit your changes and then push them to Github. Using Git Bash,
+run the following command inside your <code>HelloUnity</code> directory.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>$ cd HelloUnity
-$ git add *.c
-$ git commit -m "Descriptive message"
+$ git add .
+$ git commit -m "Finished HelloUnity"
 $ git push</code></pre>
 </div>
 </div>
@@ -203,151 +282,6 @@ $ git push</code></pre>
 <p>Run <code>git status</code> to check the result of the previous git command.
 Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_optional_set_up_your_own_development_environment">5. (Optional) Set up your own development environment</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Having your own development environment will allow you to write code outside of lab.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-All programs must run on the lab&#8217;s Linux environment. Make sure you test your work on the lab machines if you work on your laptop!
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_windows">5.1. Windows</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open PowerShell and install wsl2: <code>wsl --install</code>. See <a href="https://docs.microsoft.com/en-us/windows/wsl/install">documentation</a>. Note that you may need to open powershell as an administrator.</p>
-</li>
-<li>
-<p>From the windows store, <a href="https://ubuntu.com/wsl">install <code>Ubuntu</code></a>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Once installed, you can setup your development environment from a bash shell.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open PowerShell</p>
-</li>
-<li>
-<p>Type <code>wsl</code> to start the windows subsystem for linux. This will give your a bash prompt</p>
-</li>
-<li>
-<p>Then install your development tools</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><code>sudo apt-get install cmake</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install git</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install g++</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install vim</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install libc6-dev-i386</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install gcc-multilib</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install hexedit</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install valgrind</code></p>
-</li>
-<li>
-<p><code>sudo apt-get install gdb</code></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>For example, you get something like the following</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>Windows PowerShell
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-PS C:\Users\alinen&gt; wsl
-WSL alinen@Balthazar:~$ sudo apt-get install make
-
-etc</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-A quick way to open powershell is to type &lt;WindowsKey&gt;-'Q' and type 'powershell'.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_macos">5.2. MacOS</h3>
-<div class="paragraph">
-<p>From terminal, run command <code>xcode-select --install</code></p>
-</div>
-<div class="paragraph">
-<p>You can follow the instructions <a href="https://www.ics.uci.edu/~pattis/common/handouts/macclion/clang.html">here</a></p>
-</div>
-<div class="paragraph">
-<p>Then, to install additional dependencies, execute the following commands form terminal</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ brew install vim
-$ brew install git
-$ brew install cmake</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-A quick way to open terminal is to use spotlight. From the keyboard, type the &lt;cmd&gt; and &lt;spacebar&gt;. Then type terminal at the popup edit field.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Unfortunately, <code>valgrind</code> and <code>gdb</code> cannot be run natively on mac. However, you may try running <code>leaks</code> or <code>lldb</code> which are similar. However, we recommend you still test on goldengate or a lab machine.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_grading_rubric">6. Grading Rubric</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Assignment rubrics</strong></p>
 </div>
@@ -357,32 +291,35 @@ A quick way to open terminal is to use spotlight. From the keyboard, type the &l
 <div class="ulist">
 <ul>
 <li>
-<p>Github setup (0.5 points)</p>
+<p>Github setup (1 points)</p>
 </li>
 <li>
-<p>Slack setup and introduction (0.5 points)</p>
+<p>Slack setup and introduction (1 points)</p>
 </li>
 <li>
-<p>Unity (3 points)</p>
+<p>Unity (2 points)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Code rubrics</strong></p>
+<p><strong>Submission rubrics</strong></p>
 </div>
 <div class="paragraph">
-<p>For full credit, your Unity programs must be</p>
+<p>For full credit, your Unity programs must</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>feature-complete and load</p>
+<p>be feature-complete,</p>
 </li>
 <li>
-<p>follow the C# coding style and</p>
+<p>load out-of-the-box,</p>
 </li>
 <li>
-<p>run on the lab Windows machines without editing.</p>
+<p>follow the C# coding style, and</p>
+</li>
+<li>
+<p>run on the lab Windows machines.</p>
 </li>
 <li>
 <p>Some credit lost for missing features or bugs, depending on severity of error</p>
@@ -403,7 +340,7 @@ A quick way to open terminal is to use spotlight. From the keyboard, type the &l
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-29 10:10:08 -0400
+Last updated 2024-08-29 17:35:30 -0400
 </div>
 </div>
 </body>
