@@ -52,8 +52,8 @@ reality, and augmented reality.
 
 | Lecture | Park 159 | Tuesday and Thursday 1:10 AM - 2:30 PM 
 | Lab | Park 230 | Thursday 2:40 PM - 4:00 PM 
-| Office Hours - Prof. Aline Normoyle | 200B | Friday
-| Office Hours - Neha Thumu | Park | Friday 
+| Office Hours - Prof. Aline Normoyle | 200B | 3-5 PM Fridays
+| Office Hours - Neha Thumu | Park | 4-5 PM Fridays 
 
 |===
 
@@ -66,10 +66,14 @@ include::schedule.adoc[]
 
 == Text and Tools
 
+* **Game Programming Algorithms and Techniques** by Sanjay Madhav. Although you can purchase this from Amazon, we also have a copies that you can access. See our slack from more info.
+* **Github Account** Please go to link:https://github.com/[github.com] and register. You will be using github to submit assignments. 
+* **Slack** Please go to link:https://slack.com/signin[slack.com]. Our workspace is BrynMawr-CS223-F24. You can ask questions and request one-on-one help over zoom using this course's slack channel. 
+
+We will also use the following references for some content.
+
 * **Game Math** by Fletcher Dunn and Ian Parbery. You can access it for free link:https://gamemath.com/book/[here]
 * **Game Programming Patterns** by Bob Nystrom. You can access it for free link:https://gameprogrammingpatterns.com/[here]
-*  **Github Account** Please go to link:https://github.com/[github.com] and register. You will be using github to submit assignments. 
-*  **Slack** Please go to link:https://slack.com/signin[slack.com]. Our workspace is BrynMawr-CS223-F24. You can ask questions and request one-on-one help over zoom using this course's slack channel. 
 
 === Unity
     
