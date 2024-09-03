@@ -43,6 +43,7 @@
 
 * Topics: Projections, Types of cameras in games, Event-based input systems
 * Read: Madhav Chapter 5, Chapter 8
+* **Quiz 1**
 
 //* Sept 26 Lab: Quiz 02 Practice, link:studyguide2.html[Study Guide: Quiz 02]
 //* link:assts/asst04.html[Assignment 04]: Due September 26
@@ -64,6 +65,7 @@
 
 * Read: Chapter 6, Chapter 10
 * Topics: Layouts, UI widgets, transition animations, particle systems, sound 
+* **Quiz 2**
 //* link:assts/asst06.html[Assignment 06]: Due Oct 10
 //* Lab Oct 10: Practice Quiz 03, link:studyguide3.html[Study Guide 3]
 
@@ -90,6 +92,7 @@
 
 * Read: Chapter 9 (State-based behaviors, Strategy and planning)
 * Topics: battle systems, quest systems, inventory systems
+* **Quiz 3**
 //* link:assts/asst08.html[Assignment 08]: Due Oct 31 **Hardcopy due at Park 200B**
 //* Lab: Practice Quiz 04 link:studyguide4.html[Study Guide: Quiz 04]
 
@@ -109,6 +112,7 @@
 |*Physics* 
 
 * Read: Madhav Chapter 7
+* **Quiz 4**
 // TODO: Copy graphics project stuff
 //* link:assts/project.html[Final Game Project Proposal]: Due Nov 14th
 //* Lab: Quiz Practice, link:studyguide5.html[Study Guide 5]
@@ -128,6 +132,7 @@
 |*Advanced Topics* 
 
 * Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Mobile/Web/Desktop development
+* **Quiz 5**
 * Nov 28: Thanksgiving, NO CLASS
 
 //-----------------------------

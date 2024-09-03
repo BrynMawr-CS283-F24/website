@@ -1,4 +1,4 @@
 # website
-Website for Systems Programming at Bryn Mawr College, Spring 2022 
+Website for Game Programming at Bryn Mawr College, Fall 2024
 
-Click [here](https://brynmawr-cs223-s23.github.io/website/) to get to the website.
+Click [here](https://brynmawr-cs283-s23.github.io/website/) to get to the website.
