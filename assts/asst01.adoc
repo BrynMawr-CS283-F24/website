@@ -130,10 +130,11 @@ the message "Hello Unity!" printed to the console.
 
 image:A01-Hello-Play.png[]
 
-Try to do the following:
+Do the following:
 
 * Add a particle effect to the GameObject in the scene. Select the GameObject and add a new component. Select "Particle Effect".
 * Modify the script `HelloUnity.cs` to print the time each frame. The current time is stored in the Unity global variable, called `Time.realtimeSinceStartup` 
+* Modify the README to contain a GIF of you particle system
 
 NOTE: Try creating a cool particle system. link:https://learn.unity.com/project/getting-started-with-particle-systems[This tutorial can give you ideas].
 
