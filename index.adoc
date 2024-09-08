@@ -15,10 +15,7 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Welcome to Fall 2024! For those of you who are about to rock, I salute you!
-* First lecture will be on Tuesday, September 3rd, 1:10 PM in room Park 159.
-* First assignment is Due Sept 6th. link:assts/asst01.html[Assignment 01: Hello Unity!]
-* First lab will be on Tuesday, September 3rd, 2:40PM in Park 230. We will go over git, Github, and Unity
+* Next assignment is Due Sept 13th. link:assts/asst02.html[Assignment 02: C# Game]
 
 == Course Info
 
