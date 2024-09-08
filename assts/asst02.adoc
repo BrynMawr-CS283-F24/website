@@ -94,7 +94,7 @@ You should see an empty window.
 
 NOTE: You can enable developer powershell in Visual Studio from the menu. Select `View -> Terminal`
 
-image::C#Development.png[width=512]
+image::Development.png[width=512]
 
 = Program Architecture
 
