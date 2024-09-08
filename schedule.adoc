@@ -9,21 +9,20 @@
 | September 3, 5 anchor:week01[]
 | *Introductions, Hello Unity* 
 
-* Topics: Event-based Programming, Game Loop, Introduction to Game Concepts, Coordinate systems
+* Topics: Game Loop, Update Pattern, Game Time, C#
 * Read: Madhav Chapter 1
 * link:assts/asst01.html[Assignment 01]: Due Sept 6
 * Lab: Unity and Github setup
-// TODO * link:https://github.com/BrynMawr-CS223-F22/git-workshop[Github workshop] and link:https://github.com/BrynMawr-CS223-S22/git-workshop/blob/main/SSHSetup.md[Setting up SSH keys for Github]
 
 //-----------------------------
 | 2 
 | Sept 10, 12 anchor:week02[]
-| *C#, Math for Games* 
+| *Common game concepts, Component-based architectures, Math for Games* 
 
-* Topics: From Java to C#, Component-based architecture, Math Fundamentals
+* Topics: Common game concepts, Component-based architecture, Math Fundamentals
 * Read: Madhav Chapter 3
-//* Lab Sept 12: Quiz 01 practice, link:studyguide1.html[Study Guide: Quiz 01]
-* link:assts/asst02.html[Assignment 02]: Sept 12
+* Lab: Event-based architecture, coordinate systems and simple drawing
+* link:assts/asst02.html[Assignment 02]: Sept 13
 
 //-----------------------------
 |3
@@ -33,6 +32,7 @@
 * Topics: Transformations, Scene hierarchy
 * Read: Madhav Chapter 4 
 
+//* Lab Sept 12: Quiz 01 practice, link:studyguide1.html[Study Guide: Quiz 01]
 //* Lab Sept 19: **Quiz 01** 
 //* link:assts/asst03.html[Assignment 03]: Due September 19
 

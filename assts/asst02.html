@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Assignment 2: Create your virtual world</title>
+<title>Assignment 2: Game in C#</title>
 <link rel="stylesheet" href="../style/cs21.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,16 +14,30 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_2_create_your_virtual_world">Assignment 2: Create your virtual world</a></li>
+<li><a href="#_assignment_2_game_in_c">Assignment 2: Game in C#</a></li>
+<li><a href="#_requirements">1. Requirements</a></li>
+<li><a href="#_getting_started">2. Getting Started</a>
+<ul class="sectlevel2">
+<li><a href="#_compiling_and_running">2.1. Compiling and Running</a></li>
+</ul>
+</li>
+<li><a href="#_program_architecture">3. Program Architecture</a>
+<ul class="sectlevel2">
+<li><a href="#_example">3.1. Example</a></li>
+</ul>
+</li>
+<li><a href="#_drawing_tips">4. Drawing Tips</a></li>
+<li><a href="#_ideas">5. Ideas</a></li>
+<li><a href="#_what_to_hand_in">6. What to hand in</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_2_create_your_virtual_world">Assignment 2: Create your virtual world</h2>
+<h2 id="_assignment_2_game_in_c">Assignment 2: Game in C#</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Due Thursday, September 12, before midnight</strong></p>
+<p><strong>Due Friday, September 13, before midnight</strong></p>
 </div>
 <div class="paragraph">
 <p>The goals for this assignment are:</p>
@@ -31,7 +45,433 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Work with Unity&#8217;s scene editor to create an environment</p>
+<p>Write a progam in C#</p>
+</li>
+<li>
+<p>Implement a simple game based on the Game Loop and Object Update patterns</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The goal of this assignment is to write a C# Game that utilizes a game loop, game time,
+and the object update pattern. You can design any game you like, but choose something
+that you can implement in a few days. Your game should also support some kind of interaction
+with the player. Below is an example that fullfills these requirements:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="img/A02-Arcade-Images.mp4" width="512" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>The above video uses the WASD or arrow keys to control the player (pink squiggle).
+The black and white squiggles are randomly created obstacles that float from right
+to left. Both the player and obstacles implement the Update pattern. The game loop is
+implemented in the main Window (given as part of your basecode).</p>
+</div>
+<div class="paragraph">
+<p>You are given basecode for implementing a 2D game; however, you can also
+write a text-based game that fullfills the requirements if you prefer.
+The final game should be a 2-5 minute experience that another person can
+eaily understand and try.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You may use an existing game that you have already written,  for example
+a homework from intro or from your own tinkering, and port it to C#. Your game
+should be something that you have written!
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This assignment does not use Unity!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements">1. Requirements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>You must define at least one class that has an <code>Update(dt)</code> method and implements something that must be simulated over time.</p>
+</li>
+<li>
+<p>Your program must take some kind of player input (e.g. is must be interactive)</p>
+</li>
+<li>
+<p>Your program must implement a game loop. If you implement a 2D game, the game loop is implemented for you in your basecode.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started">2. Getting Started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First sync your fork with the class respository. This can be done from Github</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/SyncFork.png" alt="SyncFork" width="512">
+</div>
+</div>
+<div class="paragraph">
+<p>Once synced, you can then pull the changes to your local repository where you will work
+using Git Bash:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>alinen@sutekh MINGW64 ~/cs283-f24-assignments-test (main)
+$ git pull
+Enter passphrase for key '/c/Users/alinen/.ssh/id_ed25519':
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 2), reused 7 (delta 2), pack-reused 2 (from 1)
+Unpacking objects: 100% (9/9), 1.87 KiB | 66.00 KiB/s, done.
+From github.com:alinen/cs283-f24-assignments-test
+   8c3cd6b..fc5dbcc  main       -&gt; origin/main
+Updating 8c3cd6b..fc5dbcc
+Fast-forward
+ .gitignore        |   2 ++
+ C#/HelloWorld.exe | Bin 3584 -&gt; 0 bytes
+ C#Game/Game.cs    |  42 +++++++++++++++++++++++
+ C#Game/Window.cs  |  99 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 143 insertions(+)
+ delete mode 100644 C#/HelloWorld.exe
+ create mode 100644 C#Game/Game.cs
+ create mode 100644 C#Game/Window.cs</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compiling_and_running">2.1. Compiling and Running</h3>
+<div class="paragraph">
+<p>The C# compiler can be run from Visual Studio 2022. Under File &#8594; Open &#8594; Folder, browse to
+the directory that contains your code (cs283-f24-assignments/C#Game).</p>
+</div>
+<div class="paragraph">
+<p>Inside Visual Studio, build and run from the developer console like so</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ csc *.cs
+$ .\Window.exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see an empty window.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can enable developer powershell in Visual Studio from the menu. Select <code>View &#8594; Terminal</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/C#Development.png" alt="C#Development" width="512">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_program_architecture">3. Program Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are given basecode for this assignment.
+Read through the class <code>Window.cs</code>. This class registers callbacks on user input (mouse and keyboard),
+drawing, and update. This class also implements the game loop and computes delta time.</p>
+</div>
+<div class="paragraph">
+<p>Your code should be implemented in the class <code>Game.cs</code>. <code>Game.cs</code> is integrated with the <code>Window</code> class.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Game.Setup()</code> is called once before the game loop starts</p>
+</li>
+<li>
+<p><code>Game.Update(float dt)</code> is called once per frame with the elapsed time in seconds</p>
+</li>
+<li>
+<p><code>Game.Draw(Graphics g)</code> is called when the window is refreshed</p>
+</li>
+<li>
+<p><code>Game.MouseClick(e)</code> is called when the user clicks a mouse button. See the <code>Game.cs</code> for an example of how to use it.</p>
+</li>
+<li>
+<p><code>Game.KeyDown(e)</code> is called when the user clicks presses the keyboard. See the <code>Game.cs</code> code for an example of how to use it.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_example">3.1. Example</h3>
+<div class="paragraph">
+<p>This section describes how the example game was made. The game uses three classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Game.cs</code> which creates the objects, responds to input, and manages whether the game is over or not</p>
+</li>
+<li>
+<p><code>Obstacle.cs</code> which implements moving Obstacles</p>
+</li>
+<li>
+<p><code>Player.cs</code> which implements the Player which moves based on input</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The game creates an array of <code>Obstacle</code> and one <code>Player</code>. In Update, the game updates the obstacles and the player.
+In Draw, the game draws the obstacles and the player. Both <code>Obstacle</code> and <code>Player</code> implement the following methods</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reset()</p>
+</li>
+<li>
+<p>Draw(Graphics g)</p>
+</li>
+<li>
+<p>Update(float dt)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Thus, updating and drawing simply calls these functions on the player and every obstacle.
+For example, the code to update all game objects in <code>Game.cs</code> looks like</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>foreach (Obstacle obstacle in _obstacles)
+{
+    obstacle.Update(dt);
+}
+player.Update(dt);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Drawing is handled similarly. For the player, we implemented methods called
+<code>MoveUp</code>, <code>MoveLeft</code>, etc.  When the user pressed a movement key, we call the
+associated method. These methods change the direction that the player moves in
+Update.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_drawing_tips">4. Drawing Tips</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For convenience, we are using the command in <a href="https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics?view=net-8.0"><code>System.Drawing</code></a> for this assignment.
+This module supports drawing simple primitives (rectangles, circles, lines, etc), text, and images. Here are some examples
+Every draw call requires the a reference to the <code>Graphics</code> object that is passed to Draw.</p>
+</div>
+<div class="paragraph">
+<p>Draw text that is centered in the middle of the screen</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public void Draw(Graphics g)
+{
+   Font font = new Font("Arial", 46);
+   SolidBrush fontBrush = new SolidBrush(Color.White);
+
+   StringFormat format = new StringFormat();
+   format.LineAlignment = StringAlignment.Center;
+   format.Alignment = StringAlignment.Center;
+
+   g.DrawString("GAME OVER!", font, fontBrush,
+      (float) (Window.width * 0.5),
+      (float) (Window.height * 0.5),
+      format);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Draw a circle</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public void Draw(Graphics g)
+{
+    Color c = Color.FromArgb(100, 250, 0, 0); // red
+    Brush brush = new SolidBrush(c);
+    g.FillEllipse(brush, X, Y, Size, Size);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Draw a rectangle that fills the window</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>public void Draw(Graphics g)
+{
+{
+    Color background = ColorTranslator.FromHtml("#142F98");
+    Brush brush = new SolidBrush(background);
+    g.FillRectangle(brush, 1, 1, Window.width, Window.height);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Draw an image</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Image mImg = Image.FromFile("filename.png"); // load once during initialization
+
+...
+public void Draw(Graphics g)
+{
+   g.DrawImage(mImg, x, y, width, height);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ideas">5. Ideas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Any simple game could form a good basis for this assignment, for example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Frogger</p>
+</li>
+<li>
+<p>Neko Atsumi</p>
+</li>
+<li>
+<p>Galaga</p>
+</li>
+<li>
+<p>Asteroids</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">6. What to hand in</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Your code</p>
+</li>
+<li>
+<p>Updated README</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A video or GIF showing your game play</p>
+</li>
+<li>
+<p>Instructions on how to play, e.g. the game controls</p>
+</li>
+<li>
+<p>Instructions on how to build</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t forget to commit your changes and then push them to Github. Using Git Bash,
+run the following command inside your <code>A02</code> directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ cd A02
+$ git add .
+$ git commit -m "Finished A02"
+$ git push</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run <code>git status</code> to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Assignment rubrics</strong></p>
+</div>
+<div class="paragraph">
+<p>Grades are out of 4 points.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Game code (3 points)</p>
+</li>
+<li>
+<p>Readme (1 point)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Submission rubrics</strong></p>
+</div>
+<div class="paragraph">
+<p>For full credit, your program must</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>compile and run</p>
+</li>
+<li>
+<p>contain a game loop</p>
+</li>
+<li>
+<p>contain a list of simulated game objects that implement an Update() function</p>
+</li>
+<li>
+<p>show effort and imagination&#8201;&#8212;&#8201;minimally fullfilling requirements will earn you a B (3.0)</p>
+</li>
+<li>
+<p>Some credit lost for missing features or bugs, depending on severity of error</p>
+</li>
+<li>
+<p>-12.5% for style errors. See the <a href="../codingstandard.html">class coding style</a> here.</p>
+</li>
+<li>
+<p>-100% for failure to checkin work to Github</p>
+</li>
+<li>
+<p>-100% for failure to build and run on the lab Windows machines</p>
 </li>
 </ul>
 </div>
@@ -40,7 +480,7 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-29 10:06:24 -0400
+Last updated 2024-09-08 14:26:25 -0400
 </div>
 </div>
 </body>

@@ -143,9 +143,14 @@ NOTE: If your editor does not come up when you open a script, change your editor
 image:A01-Hello-Done.png[]
 
 [discrete]
-== Submit your work to Github
+== What to hand in
 
-Commit your changes and then push them to Github. Using Git Bash, 
+* Email the instructor with your Github name
+* Join the class slack and introduce yourself
+* Make your Unity edits and check them into Github
+* Update your Github README with a video or GIF 
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
 run the following command inside your `{ASST}` directory.
 
 [source, subs="attributes"]
