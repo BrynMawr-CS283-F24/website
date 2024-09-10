@@ -1,0 +1,118 @@
+include::header.adoc[]
+
+:title: Lab 02: Game Loop and Simple Coordinates
+:Author Initials: ASN
+:Date:    2020-08-15
+:Revision: 0.1
+
+[discrete]
+= {title}
+
+Complete the following worksheet in pairs.
+
+Names:
+{nbsp} +
+{nbsp} +
+
+
+[discrete]
+= Drawing 101
+
+* Using link:https://www.w3schools.com/colors/colors_converter.asp[an online color picker], find the HTML color string that corresponds to red , e.g. (255, 0, 0)
+
+{nbsp} +
+
+* In a RGBA color, what does each component represent? 
+
+{nbsp} +
+
+* Write a formula that converts from unsigned char color values (e.g. [0,255]) to float color values (e.g. [0,1]).
+
+{nbsp} +
+
+* Draw the coordinate system that extends from (0,0) to (500,500) and have axes matching the 
+coordinate system in C#'s System.Drawing API. 
+** Draw a circle with radius 50 at (100,400)
+** Draw a rectangle with width 100 and height 200 at (250,250)
+
+++++
+<div class="pagebreak"> </div>
+++++
+
+[discrete]
+= Game Loop 
+
+Consider the base code for link:../assts/asst02.html[assignment 2]. Code is link:https://github.com/BrynMawr-CS283-F24/cs283-f24-assignments/tree/main/C%23Game[here]. Suppose `Game.cs` looks like
+
+```
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+public class Game
+{
+   class Point {
+      public float x;
+      public float y;
+
+      public Point(float a, float b) 
+      {
+         x = a;
+         y = b;
+      } 
+      public void Update(float dt)
+      {
+         x += 100 * dt;
+      }
+   }
+   Point _point = null; 
+
+   public void Setup()
+   {
+      _point = new Point(25, (float) (Window.height * 0.5));
+   }
+
+   public void Update(float dt)
+   {
+      _point.Update(dt);
+   }
+
+   public void Draw(Graphics g)
+   {
+      Brush brush = new SolidBrush(Color.Red);
+      g.FillEllipse(brush, _point.x, _point.y, 100, 100);
+   }
+
+   public void MouseClick(MouseEventArgs mouse) { }
+   public void KeyDown(KeyEventArgs key) { }
+}
+```
+
+++++
+<div class="pagebreak"> </div>
+++++
+
+* In one sentence, describe what this program does.
+
+{nbsp} +
+
+
+* In the coordinate system below, draw the scene that is displayed.
+
+image:coordinates.png[width=300px]
+
+* Write code to modify the above code so the square moves from the bottom left to the bottom right.
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+* Write psuedocode to display your name, class year, and game title in a box in the bottom corner. **Add this feature to your homework due on Friday!**
+
+image::Lab-Week02-CreditBox.png[width=100px]
+
+* Write psuedocode to toggle the display of your credit box when the player presses the '+' key. **Add this feature to your homework due on Friday!**
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +

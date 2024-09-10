@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>Lab 02: Game Loop and Simple Coordinates</title>
+<link rel="stylesheet" href="../style/cs21.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<h2 id="_lab_02_game_loop_and_simple_coordinates" class="discrete">Lab 02: Game Loop and Simple Coordinates</h2>
+<div class="paragraph">
+<p>Complete the following worksheet in pairs.</p>
+</div>
+<div class="paragraph">
+<p>Names:
+&#160;<br>
+&#160;<br></p>
+</div>
+<h2 id="_drawing_101" class="discrete">Drawing 101</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>Using <a href="https://www.w3schools.com/colors/colors_converter.asp">an online color picker</a>, find the HTML color string that corresponds to red , e.g. (255, 0, 0)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In a RGBA color, what does each component represent?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Write a formula that converts from unsigned char color values (e.g. [0,255]) to float color values (e.g. [0,1]).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Draw the coordinate system that extends from (0,0) to (500,500) and have axes matching the
+coordinate system in C#'s System.Drawing API.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Draw a circle with radius 50 at (100,400)</p>
+</li>
+<li>
+<p>Draw a rectangle with width 100 and height 200 at (250,250)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="pagebreak"> </div>
+<h2 id="_game_loop" class="discrete">Game Loop</h2>
+<div class="paragraph">
+<p>Consider the base code for <a href="../assts/asst02.html">assignment 2</a>. Code is <a href="https://github.com/BrynMawr-CS283-F24/cs283-f24-assignments/tree/main/C%23Game">here</a>. Suppose <code>Game.cs</code> looks like</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+public class Game
+{
+   class Point {
+      public float x;
+      public float y;
+
+      public Point(float a, float b)
+      {
+         x = a;
+         y = b;
+      }
+      public void Update(float dt)
+      {
+         x += 100 * dt;
+      }
+   }
+   Point _point = null;
+
+   public void Setup()
+   {
+      _point = new Point(25, (float) (Window.height * 0.5));
+   }
+
+   public void Update(float dt)
+   {
+      _point.Update(dt);
+   }
+
+   public void Draw(Graphics g)
+   {
+      Brush brush = new SolidBrush(Color.Red);
+      g.FillEllipse(brush, _point.x, _point.y, 100, 100);
+   }
+
+   public void MouseClick(MouseEventArgs mouse) { }
+   public void KeyDown(KeyEventArgs key) { }
+}</code></pre>
+</div>
+</div>
+<div class="pagebreak"> </div>
+<div class="ulist">
+<ul>
+<li>
+<p>In one sentence, describe what this program does.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the coordinate system below, draw the scene that is displayed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/coordinates.png" alt="coordinates" width="300px"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Write code to modify the above code so the square moves from the bottom left to the bottom right.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+&#160;<br>
+&#160;<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Write psuedocode to display your name, class year, and game title in a box in the bottom corner. <strong>Add this feature to your homework due on Friday!</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/Lab-Week02-CreditBox.png" alt="Lab Week02 CreditBox" width="100px">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Write psuedocode to toggle the display of your credit box when the player presses the '+' key. <strong>Add this feature to your homework due on Friday!</strong>
+&#160;<br>
+&#160;<br>
+&#160;<br>
+&#160;<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-09-10 11:01:40 -0400
+</div>
+</div>
+</body>
+</html>

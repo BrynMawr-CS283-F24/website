@@ -21,7 +21,7 @@
 
 * Topics: Common game concepts, Component-based architecture, Math Fundamentals
 * Read: Madhav Chapter 3
-* Lab: Event-based architecture, coordinate systems and simple drawing
+* Lab: link:labs/lab-week02-2D.html[Game loop, coordinate systems and simple drawing]
 * link:assts/asst02.html[Assignment 02]: Sept 13
 
 //-----------------------------
