@@ -5,7 +5,7 @@ include::header.adoc[]
 :Date:    2020-08-15
 :Revision: 0.1
 :ASST: HelloUnity
-:repo: https://github.com/BrynMawr-CS223-S23/
+:repo: https://github.com/BrynMawr-CS283-F24/
 
 = {title}
 

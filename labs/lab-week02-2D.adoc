@@ -101,7 +101,7 @@ public class Game
 
 image:coordinates.png[width=300px]
 
-* Write code to modify the above code so the square moves from the bottom left to the bottom right.
+* Write code to modify the above code so the shape moves from the bottom left to the bottom right.
 
 {nbsp} +
 {nbsp} +
