@@ -8,7 +8,7 @@ include::header.adoc[]
 
 = {title}
 
-**Due Thursday, September 20, before midnight**
+**Due Friday, September 20, before midnight**
 
 The goals for this assignment are:
 
@@ -60,6 +60,7 @@ Some considerations when you are looking for models:
 * Keep your project organized. Put all your models into a `Models` directory
 * Not all models are optimized for games and may contain excessive polygon counts. Try to find models with low polygon counts that add detail using textures.
 * Unity has terrain making features that you can also use
+* File format: Prefer FBX or OBJ. These will load without requiring a 3D modeling tool. FBX format embeds textures, materials, and animations. OBJ only contains geometry (materials can be specified with an associated MTL file).
 
 You can also create, edit, and customize 3D assets using Blender. Below is my favorite tutorial for getting started. 
 For creating game meshes, the mesh editing tutorial is particularly useful.

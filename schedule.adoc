@@ -46,7 +46,7 @@
 * **Quiz 1**
 
 //* Sept 26 Lab: Quiz 02 Practice, link:studyguide2.html[Study Guide: Quiz 02]
-//* link:assts/asst04.html[Assignment 04]: Due September 26
+//* link:assts/asst04.html[Assignment 04]: Due September 27
 
 //-----------------------------
 |5
@@ -55,7 +55,7 @@
 
 * Topics: Animation curves, Motion graphs, Keyframing, Procedural animation
 
-//* link:assts/asst05.html[Assignment 05]: Due Oct 3
+//* link:assts/asst05.html[Assignment 05]: Due Oct 4
 //* Lab Oct 3:  **Quiz 02**
 
 //-----------------------------
@@ -66,7 +66,7 @@
 * Read: Chapter 6, Chapter 10
 * Topics: Layouts, UI widgets, transition animations, particle systems, sound 
 * **Quiz 2**
-//* link:assts/asst06.html[Assignment 06]: Due Oct 10
+//* link:assts/asst06.html[Assignment 06]: Due Oct 11
 //* Lab Oct 10: Practice Quiz 03, link:studyguide3.html[Study Guide 3]
 
 //-----------------------------
@@ -82,7 +82,7 @@
 |*Steering and path finding* 
 
 * Read: Chapter 9 ("Game" AI, Pathfinding)
-//* link:assts/asst07.html[Assignment 07]: Due Oct 24
+//* link:assts/asst07.html[Assignment 07]: Due Oct 25
 //* Lab Oct 24: **Quiz 03**
 
 //-----------------------------
@@ -103,7 +103,7 @@
 
 * Topics: battle systems, quest systems, inventory systems
 * Nov 5: NO CLASS. ELECTION Day
-//* link:assts/TODO.html[Assignment 09]: Due Nov 7
+//* link:assts/TODO.html[Assignment 09]: Due Nov 8
 //* Lab:  **Quiz 04**
 
 //-----------------------------
@@ -114,7 +114,7 @@
 * Read: Madhav Chapter 7
 * **Quiz 4**
 // TODO: Copy graphics project stuff
-//* link:assts/project.html[Final Game Project Proposal]: Due Nov 14th
+//* link:assts/project.html[Final Game Project Proposal]: Due Nov 15th
 //* Lab: Quiz Practice, link:studyguide5.html[Study Guide 5]
 
 //-----------------------------
@@ -141,7 +141,7 @@
 |*Advanced Topics* 
 
 * Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Mobile/Web/Desktop development
-//* link:assts/asst12.html[Assignment 12]: Due Dec 5
+//* link:assts/asst12.html[Assignment 12]: Due Dec 6
 //* Lab Dec 5, Final Practice, link:studyguide-final.html[Final Study Guide]
 
 //-----------------------------
