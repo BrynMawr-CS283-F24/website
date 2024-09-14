@@ -15,8 +15,8 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Next assignment is Due Sept 13th. link:assts/asst02.html[Assignment 02: C# Game]
-* Lab: link:labs/lab-week02-2D.html[Game loop, coordinate systems and simple drawing]
+* Next assignment is Due Sept 20th. link:assts/asst03.html[Assignment 03: Create a virtual world]
+* Lab: Creating a simple scene (Details are in slack) 
 
 == Course Info
 

@@ -1,17 +1,113 @@
 include::header.adoc[]
 
-:title: Assignment 2: Create your virtual world
+:title: Assignment 2: Create a virtual world
 :Author Initials: ASN
 :Date:    2021-01-29
 :Revision: 0.1
-:ASST: A02
+:ASST: HelloUnity
 
 = {title}
 
-**Due Thursday, September 12, before midnight**
+**Due Thursday, September 20, before midnight**
 
 The goals for this assignment are:
 
-* Work with Unity's scene editor to create an environment
+* Work with Unity's scene editor to create a level
 
 :sectnums:
+
+= Getting Started
+
+It is not necessary to fetch from the upstream repository this week. Instead, 
+
+* Create a new scene, called `A03_LevelDesign`, and save it to your `HelloUnity/Assets/Scenes` folder.
+
+= Assignment Goal
+
+The goal of this assignment is to create a level that will be the basis for the game we build 
+over the next several weeks. We will be creating a game that is similar to adventure RPG games such as 
+the Legend of Zelda or Diablo. However, even though our games will fulfill the same core requirements, 
+the style and details of the game will be up to you. 
+
+This week, you will create a starter level for your game. This level needs to minimally have
+
+* a home area where the player will start
+* a quest area that will contain enemies that allow the player to reach level 2
+* a low polygon count to ensure good game performance
+* a skybox that is different from the Unity default. See [the manual for how to customize the sky box].
+* good organization of assets in folders. For example, your models should be in a `Models` directory
+
+You are also encouraged to add animations, particles, lights, sound, materials, etc. to your level to 
+add detail and aesthetic appeal. How much you add is up to you. Focus on getting the above 
+requirements done first. You will have time to add detail later since we will be re-using this 
+level in your next assignments.  
+
+= Resources and Tips
+
+There are many online resources for game assets. Many of them will also have some models that ae free.
+Below are a few to get you started.
+
+* link:https://www.turbosquid.com/[Turbo Squid]
+* link:https://davidoreilly.itch.io/[Everything Library by David]
+* link:https://itch.io/game-assets[Game assets from itch.io]
+* link:https://www.dropbox.com/s/esceeu6slgn61lj/StandardAssets.unitypackage?dl=0[Unity Standard Assets] 
+* link:https://www.poliigon.com/[Poliigon]
+* link:https://assetstore.unity.com/[Unity Asset Store]
+* link:https://freesound.org/[Freesound]
+
+Some considerations when you are looking for models:
+
+* Keep your project organized. Put all your models into a `Models` directory
+* Not all models are optimized for games and may contain excessive polygon counts. Try to find models with low polygon counts that add detail using textures.
+* Unity has terrain making features that you can also use
+
+You can also create, edit, and customize 3D assets using Blender. Below is my favorite tutorial for getting started. 
+For creating game meshes, the mesh editing tutorial is particularly useful.
+
+* link:https://www.youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z[Blender Donut tutorial]
+
+As mentioned in class, you can create, edit, and customize 2D assets (such as textures), using 
+link:https://www.gimp.org[Gimp] and link:https://www.inkscape.org[Inkscape]. 
+
+= What to hand in
+
+* Your level
+* Updated README
+** Screenshots showing the features of your level
+** A video or GIF showing any animated elements 
+** Credits/links for any assets that you did not make yourself
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
+run the following command inside your `{ASST}` directory.
+
+[source, subs="attributes"]
+----
+$ cd {ASST}
+$ git add .
+$ git commit -m "Finished {ASST}"
+$ git push
+----
+
+Run `git status` to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly. 
+
+*Assignment rubrics*
+
+Grades are out of 4 points.
+
+* Level Scene (3 points)
+* Readme (1 point)
+
+*Submission rubrics*
+
+For full credit, your submission must 
+
+* Include a level with both a home and quest area
+* Include a skybox that is different from the default
+* Stay under the polygon count
+* Be organized in terms of Models, Materials, Textures, etc folders
+* Show effort and imagination -- minimally fulfilling requirements will earn you a B (3.0)
+
+* Some credit lost for missing features or bugs, depending on severity of error
+* -100% for failure to checkin work to Github
+* -100% for failure to build and run on the lab Windows machines

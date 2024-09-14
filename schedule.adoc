@@ -27,22 +27,22 @@
 //-----------------------------
 |3
 |Sept 17, 19 anchor:week03[]
-|*Transformations* 
+|*Math for Games. Cameras* 
 
-* Topics: Transformations, Scene hierarchy
-* Read: Madhav Chapter 4 
+* Read: Madhav Chapter 3, 8
 
+* Topics: Dot and cross product, Rotations, Slerp, Types of cameras, Mouse and Keyboard Input
 //* Lab Sept 12: Quiz 01 practice, link:studyguide1.html[Study Guide: Quiz 01]
-//* Lab Sept 19: **Quiz 01** 
-//* link:assts/asst03.html[Assignment 03]: Due September 19
+* link:assts/asst03.html[Assignment 03]: Due September 20
 
 //-----------------------------
 |4
 |Sept 24, 26 anchor:week04[]
-|*Cameras, Input*
+|*Transforms, Characters*
 
-* Topics: Projections, Types of cameras in games, Event-based input systems
-* Read: Madhav Chapter 5, Chapter 8
+* Read: Madhav Chapter 4
+* Topics: Transformations, Scene hierarchy, Skeletal animation and meshes
+* Read: Madhav 
 * **Quiz 1**
 
 //* Sept 26 Lab: Quiz 02 Practice, link:studyguide2.html[Study Guide: Quiz 02]
@@ -51,9 +51,9 @@
 //-----------------------------
 |5
 |Oct 1,3 anchor:week05[]
-|*Characters, Animation* 
+|*Motion graphs, Animation* 
 
-* Topics: Skeletons and meshes, Animation curves, Motion graphs, Keyframing, Procedural animation
+* Topics: Animation curves, Motion graphs, Keyframing, Procedural animation
 
 //* link:assts/asst05.html[Assignment 05]: Due Oct 3
 //* Lab Oct 3:  **Quiz 02**

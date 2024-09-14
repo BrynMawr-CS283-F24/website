@@ -48,7 +48,7 @@ NOTE: This assignment does not use Unity!
 
 = Getting Started
 
-First sync your fork with the class respository. This can be done from Github
+First sync your fork with the class repository. This can be done from Github
 
 image::SyncFork.png[width=512]
 
@@ -235,6 +235,8 @@ Grades are out of 4 points.
 * Game code (3 points)
 * Readme (1 point)
 
+NOTE: Please submit your code from link:../labs/lab-week02-2D.html[Lab as part of your assignment]
+
 *Submission rubrics*
 
 For full credit, your program must 
@@ -245,7 +247,7 @@ For full credit, your program must
 * show effort and imagination -- minimally fullfilling requirements will earn you a B (3.0)
 
 * Some credit lost for missing features or bugs, depending on severity of error
-* -12.5% for style errors. See the link:../codingstandard.html[class coding style] here.
+* -12.5% for style errors. See the link:https://google.github.io/styleguide/csharp-style.html[class coding style] here.
 * -100% for failure to checkin work to Github
 * -100% for failure to build and run on the lab Windows machines
 
