@@ -30,9 +30,7 @@
 |*Math for Games. Cameras* 
 
 * Read: Madhav Chapter 3, 8
-
 * Topics: Dot and cross product, Rotations, Slerp, Types of cameras, Mouse and Keyboard Input
-//* Lab Sept 12: Quiz 01 practice, link:studyguide1.html[Study Guide: Quiz 01]
 * link:assts/asst03.html[Assignment 03]: Due September 20
 
 //-----------------------------
@@ -42,11 +40,7 @@
 
 * Read: Madhav Chapter 4
 * Topics: Transformations, Scene hierarchy, Skeletal animation and meshes
-* Read: Madhav 
-* **Quiz 1**
-
-//* Sept 26 Lab: Quiz 02 Practice, link:studyguide2.html[Study Guide: Quiz 02]
-//* link:assts/asst04.html[Assignment 04]: Due September 27
+* **Quiz 1** link:studyguide1.html[Study Guide: Quiz 01]
 
 //-----------------------------
 |5

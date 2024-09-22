@@ -15,7 +15,6 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_study_guide_1">Study Guide 1</a></li>
-<li><a href="#_practice_questions">Practice questions</a></li>
 </ul>
 </div>
 </div>
@@ -24,7 +23,7 @@
 <h2 id="_study_guide_1">Study Guide 1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Code Jams are open book. 40 minutes in lab.</p>
+<p>Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is allowed.</p>
 </div>
 <div class="paragraph">
 <p>Topics:</p>
@@ -32,186 +31,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Programming in C</p>
+<p>Game Loop, Update pattern</p>
 </li>
 <li>
-<p>Data types and sizes</p>
+<p>Programming in C#</p>
 </li>
 <li>
-<p>UNIX commands</p>
+<p>Graphics concepts</p>
 </li>
 <li>
-<p>Function stacks</p>
+<p>Coordinate systems, Vectors, Points</p>
 </li>
 <li>
-<p>Basic arrays</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Write C programs to check your answers. Or you can ask a TA or instructor
-to give feedback on your responses.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_practice_questions">Practice questions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>1) What is the minimum size of the following structures?</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>struct Snack {
-  char name[32];
-  int quantity;
-  float cost;
-};</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Hint: To check your answers, use the <code>sizeof()</code> function.</p>
-</div>
-<div class="paragraph">
-<p>2) Consider navigating directories from the command prompt in UNIX. Suppose you are in your home directory.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>How would you create a subdirectory with name <code>foo</code>?</p>
-</li>
-<li>
-<p>How would you see the contents of your <code>.bashrc</code> file?</p>
-</li>
-<li>
-<p>How would you list the contents of <code>foo</code>?</p>
-</li>
-<li>
-<p>How can you create a file in the directory <code>foo</code> called <code>test.c</code>?</p>
-</li>
-<li>
-<p>How can you compile a c program?</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>3) When Willow runs her program from the command line, she gets the following error? What is happening and how can she fix it?</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ ls
-Makefile  fortune  fortune.c  hello  hello.c
-$ hello
-Command 'hello' not found</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>4) Implement and test a power function (for positive integer exponents only).
-A call to your function should compute \(base^{exp}\) and might look like:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>result = power(base, exp);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>5) Implement a function <code>void removeLetter(char* str, char letter)</code> that removes all occurrences of <code>letter</code>
-from <code>str</code>. Your function should modify the contents of str. Test your function from <code>main</code>.</p>
-</div>
-<div class="paragraph">
-<p>6) Implement a function <code>isPalindrome</code> that returns 1 if a given string is a palindrome and 0 otherwise.
-Your function can be iterative or recursive. Test your function from <code>main</code>.</p>
-</div>
-<div class="paragraph">
-<p>7) The following program crashes. What is the problem and how can we fix it?</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>#include &lt;stdio.h&gt;
-
-int main() {
-  int* value = NULL;
-  int a = 4;
-
-  printf("value is %d\n", *value);
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>8) The following program crashes. What is the problem and how can we fix it?</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-
-void initialize(char text[]) {
-  strcpy(text, "pina collada");
-}
-
-int main() {
-  char str1[5];
-  initialize(str1);
-  printf("%s\n", str1);
-  return 0;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>9) What is the output of this program?</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>#include &lt;stdio.h&gt;
-
-int arg_modifier(int x, int *y);
-
-int main() {
-    int val1, val2, ret;
-
-    printf("Enter a value: ");
-    scanf("%d", &amp;val1);
-    printf("Enter another value: ");
-    scanf("%d", &amp;val2);
-
-    // pass val1 by value and val2 by pointer:
-    printf("before call: val1 = %d val2 = %d\n", val1, val2);
-    ret = arg_modifier(val1, &amp;val2);
-    printf("after call:  val1 = %d val2 = %d ret = %d\n", val1, val2, ret);
-
-    return 0;
-}
-
-int arg_modifier(int x, int *y) {
-    printf("  in arg_modifier:      x = %d *y = %d\n", x, *y);
-    *y = *y + x;
-    x = x + 5;
-    printf("  leaving arg_modifier: x = %d *y = %d\n", x, *y);
-
-    // Draw function stack here
-    return x;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>10) Draw the state of the function stack and heap for the program above in <code>arg_modifier</code>. Assume the
-user entered the values 6 and 1.  Draw the stack at the point in the execution
-right before the return from the arg_modifier function, and consider the
-following questions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Where are variables val1 and val2 located on the stack?</p>
-</li>
-<li>
-<p>Where are the parameter values located?</p>
-</li>
-<li>
-<p>What value does each parameter get?</p>
-</li>
-<li>
-<p>What variables are in scope of <code>arg_modifier</code>?</p>
+<p>Matrices, Rotations</p>
 </li>
 </ul>
 </div>
@@ -220,7 +52,7 @@ following questions:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-28 15:05:47 -0400
+Last updated 2024-09-22 15:43:50 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

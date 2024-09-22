@@ -15,8 +15,8 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Next assignment is Due Sept 20th. link:assts/asst03.html[Assignment 03: Create a virtual world]
-* Lab: Creating a simple scene (Details are in slack) 
+* Next assignment is Due Sept 27th. link:assts/asst04.html[Assignment 04: Flythrough Tour]
+* Lab: Quiz 01. Study Guide is link:studyguide1.html[here].
 
 == Course Info
 

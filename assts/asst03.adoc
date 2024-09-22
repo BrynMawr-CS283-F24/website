@@ -1,6 +1,6 @@
 include::header.adoc[]
 
-:title: Assignment 2: Create a virtual world
+:title: Assignment 3: Create a virtual world
 :Author Initials: ASN
 :Date:    2021-01-29
 :Revision: 0.1
