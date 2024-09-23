@@ -32,44 +32,15 @@ Your demo should support two features:
 * a set of point-of-interest waypoints that the user can switch between using the N key
 * a flythrough camera, controlled with the mouse and keyboard
 
-video::A04_Tour.mp4[width=640]
+video::A04-Tour.mp4[width=640]
 
 The secondary goal is to find a model that can serve as the player.
 
-== Requirements and Tips
+== Scene and Player Setup
 
 Create a prefab of your level from assignment 3. When you create the scene for this assignment, 
 you can use your prefab. Any changes you make to the prefab will propagate to other scenes automatically. 
 If you do not use prefabs, you must re-do any changes manually across scenes.
-
-NOTE: Create a Prefabs directory to hold your game Prefabs
-
-You will need to write two Unity scripts for this assignment. 
-
-* FlyCamera.cs
-* Tour.cs
-
-NOTE: Create a Scripts directory to hold your game scripts
-
-Your Flythrough Camera should support the following features
-
-* Mouse move should rotate the camera up/down and left/right
-* The keyboard keys WASD should move the camera forward/back/left/right relative to the camera 
-* Use GetAxis to get the mouse movement each frame 
-
-Your tour script should support the following features
-
-* The 'N' key travels to the next point-of-interest (POI)
-* Use an array of Transforms to store the list of of POIs
-* You can set up POIs in your scene using empty GameObjects. See the class demo for details.
-* Use Lerp and Slerp to transition from the current camera location and orientation to the next POI.
-* Your Tour script must include a speed parameter that controls the camera speed as it moves between POIs. 
-* Your tour script must compute the durations of each transition using the speed parameter. 
-* Do not use Coroutines for the transition. Instead use the Update() method with instance variables to handle state. 
-
-The following video shows how the tour should work in your scene
-
-video::A04_POIs.mp4[width=640]
 
 Your player model needs to contain the following
 
@@ -83,10 +54,35 @@ Below are a few to get you started.
 * link:https://itch.io/game-assets[Game assets from itch.io]
 * link:https://assetstore.unity.com/[Unity Asset Store]
 
-NOTE: You are welcome to use the cat asset that I have been using for demos
+NOTE: You are welcome to use the cat asset that I have been using for demos: link:https://assetstore.unity.com/packages/3d/characters/animals/lowpoly-toon-cat-lite-66083[Lowpoly Toon Cat by Omabuarts Studio]
+NOTE: Create a Scripts directory to hold your game scripts
+NOTE: Create a Prefabs directory to hold your game Prefabs
 
-* link:https://assetstore.unity.com/packages/3d/characters/animals/lowpoly-toon-cat-lite-66083[Lowpoly Toon Cat by Omabuarts Studio]
+== Flythrough Camera
 
+Write a script, `Scripts/FlyCamera.cs`, that is a component for a camera object. 
+Your Flythrough Camera should support the following features
+
+* Mouse move should rotate the camera up/down and left/right
+* The keyboard keys WASD should move the camera forward/back/left/right relative to the camera 
+* Use GetAxis to get the mouse movement each frame 
+
+== Tour
+
+Write a script, `Scripts/Tour.cs`, that is a component for an empty GameObject.
+Your tour script should support the following features
+
+* The 'N' key travels to the next point-of-interest (POI)
+* Use an array of Transforms to store the list of of POIs
+* You can set up POIs in your scene using empty GameObjects. See the class demo for details.
+* Use Lerp and Slerp to transition from the current camera location and orientation to the next POI.
+* Your Tour script must include a speed parameter that controls the camera speed as it moves between POIs. 
+* Your tour script must compute the durations of each transition using the speed parameter. 
+* Do not use Coroutines for the transition. Instead use the Update() method with instance variables to handle state. 
+
+The following video shows how the tour should work in your scene
+
+video::A04_POIs.mp4[width=640]
 
 = What to hand in
 

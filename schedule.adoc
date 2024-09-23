@@ -41,6 +41,7 @@
 * Read: Madhav Chapter 4
 * Topics: Transformations, Scene hierarchy, Skeletal animation and meshes
 * **Quiz 1** link:studyguide1.html[Study Guide: Quiz 01]
+* link:assts/asst04.html[Assignment 04]: Due September 27
 
 //-----------------------------
 |5
