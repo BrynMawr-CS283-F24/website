@@ -17,3 +17,43 @@ Topics:
 * Graphics concepts
 * Coordinate systems, Vectors, Points
 * Matrices, Rotations
+
+Terms To Know:
+
+* Framerate
+* Game Loop, Update object pattern 
+* Camera, Orthographic projection, Perspective projection, Aspect ratio, View frustrum, Field of view, Near/far planes
+* Euler Angles, Quaternion, Angle/Axis representation of rotations, Normalizations, Unit vectors
+* Lights, Materials, SkyBox, Mesh (polygon and triangle), Skinned Mesh, Skeleton, Textures
+* RGB color space, Alpha and transparency
+* Lerp, Slerp
+
+Sample Short Questions:
+
+* In Unity, what does a GameObject represent?
+* What is the advantages and disadvantages of a fixed framerate?
+* What is the advantages and disadvantages of a variable framerate?
+* What is the difference between an orthographic and perspective projection?
+* What role does the camera play in rendering objects?
+* Suppose your friend is having a problem in Unity. When they press play, their view is empty but they have detailed level geometry in the scene view. Give a plausible reason that might cause their problem.
+* What roles do lights and materials play in rendering objects?
+* What is the difference between a polygonal mesh and a triangle mesh? 
+* What rotation does the (45, 30, 15) degree XYZ Euler angle represent? 
+* Suppose your best friend's game runs at 30 frames per second, how many milliseconds does it take to render a single frame?
+* Suppose we represent a unit quad (1x1 in the XY plane) using a triangle mesh. Draw and label the vertices of the mesh.
+* What is HTML string format (e.g in hexadecimal format, such as #ff00ff) for the color (255, 32, 32)?
+* What is the RGB representation using [0,255] color values for the hexadecimal string #0f0f0f?  
+* What does alpha represent in a RGBA color?
+* Suppose our render window has width and height equal to 640 and 480 respectively. What is the aspect ratio of our window?
+* What is the difference between a skinned mesh and a static mesh?
+* Compute the quaternion that corresponds to a 30 degree rotation around the (1,1,0) axis.
+* What subset of quaternion correspond to rotations?
+* What is an orthonormal matrix?
+* How can we compute the distance between two points?
+* Is the cross product commutative?
+* What is an inverse matrix?
+* How can we use the dot product to check if two vectors are perpendicular?
+* Suppose we compute the cross product from (4,5,0) and (-1,5,0). In a left-handed coordinate system, what direction will the resulting vector be?
+* What values should we use to resize and object so its height is half as tall?
+
+Sample Long questions can be found in our class notes and lab exercises.
