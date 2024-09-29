@@ -15,8 +15,9 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Next assignment is Due Sept 27th. link:assts/asst04.html[Assignment 04: Flythrough Tour]
-* Lab: Quiz 01. Study Guide is link:studyguide1.html[here].
+* Next assignment is Due October 4th. link:assts/asst05.html[Assignment 05: Spring into action]
+* Lab: Transform practice. Player character setup.
+//* Lab: Quiz 01. Study Guide is link:studyguide1.html[here].
 
 == Course Info
 

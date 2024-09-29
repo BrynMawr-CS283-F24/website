@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>Assignment 5: Spring into action</title>
+<link rel="stylesheet" href="../style/cs21.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_assignment_5_spring_into_action">Assignment 5: Spring into action</a></li>
+<li><a href="#_getting_started">1. Getting Started</a></li>
+<li><a href="#_assignment_goals">2. Assignment Goals</a>
+<ul class="sectlevel2">
+<li><a href="#_player_controls">2.1. Player controls</a></li>
+<li><a href="#_third_person_camera">2.2. Third person camera</a></li>
+</ul>
+</li>
+<li><a href="#_what_to_hand_in">3. What to hand in</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_assignment_5_spring_into_action">Assignment 5: Spring into action</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Friday, October 4, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p>The goals for this assignment are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement simple player controls</p>
+</li>
+<li>
+<p>Implement a spring follow camera that follows the player</p>
+</li>
+<li>
+<p>Use transparency to prevent objects from obscuring the camera</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started">1. Getting Started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is not necessary to fetch from the upstream repository this week. Instead,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a new scene, called <code>A05_Player</code>, and save it to your <code>HelloUnity/Assets/Scenes</code> folder.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Scene and Player Setup</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize your scene with the prefab containing your level from assignments 3 and 4</p>
+</li>
+<li>
+<p>Add your character from assignment 4. After completing this assignment, we recommend you create a prefab for your character and camera.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_assignment_goals">2. Assignment Goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The primary goal of this assignment is to implement a character that represents
+your player. We will implement a third-person character with a spring follow
+camera. You should also implement a feature that makes objects that block the character transparent.
+Next week, we will add animation to your character. Thus, the features needed for this week are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WASD keys for controlling the movement of the character forward, left, down, and right respectively</p>
+</li>
+<li>
+<p>Mouse movement should control the preferred heading and pitch of the camera. Pressing the spacebar should reset the camera behind the character.</p>
+</li>
+</ul>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="img/A05-Player.mp4" width="640" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_player_controls">2.1. Player controls</h3>
+<div class="paragraph">
+<p>Write a script, <code>Scripts/PlayerControls.cs</code>, that is a component for the root of the player character.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The keyboard keys WASD should move the camera forward/back/left/right relative to the camera</p>
+</li>
+<li>
+<p>Left/right mouse movement should rotate the player around Y. Hint: Use GetAxis("Mouse Y").</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_third_person_camera">2.2. Third person camera</h3>
+<div class="paragraph">
+<p>We will complete this feature in two steps. First, we will implement a rigid
+camera, however, <em>using a script</em> and <strong>not</strong> be parenting the camera under the player object.</p>
+</div>
+<div class="sect3">
+<h4 id="_rigid_follow_camera">2.2.1. Rigid follow camera</h4>
+<div class="paragraph">
+<p>Write a script, <code>Scripts/RigidFollowCamera.cs</code>, that is a component for a camera object.
+Below are requirements and hints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pressing the spacebar should reset the camera behind the player</p>
+</li>
+<li>
+<p>Give RigidFollowCamera.cs a <code>public Transform target</code> parameter that is set to the player</p>
+</li>
+<li>
+<p>Give RigidFollowCamera.cs parameters to represent the horizontal and vertical distances from the center of the player character</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The algorithm for a basic follow camera is as follows (Madhav Chapter 8).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// tPos, tUp, tForward = Position, up, and forward vector of target
+// hDist = horizontal follow distance
+// vDist = vertical follow distance
+
+// Camera position is offset from the target position
+Vector3 eye = tPos – tForward * hDist + tUp * vDist
+
+// The direction the camera should point is from the target to the camera position
+Vector3 cameraForward = tPos - eye
+
+// Set the camera's position and rotation with the new values
+// This code assumes that this code runs in a script attached to the camera
+transform.position = eye;
+transform.rotation = Quaternion.LookRotation(cameraForward);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_spring_follow_camera">2.2.2. Spring follow camera</h4>
+<div class="paragraph">
+<p>Write a script, <code>Scripts/SpringFollowCamera.cs</code>, that is a component for a camera object.
+Your Spring Follow Camera will support the same controls as the rigid camera; however, instead
+of rigidly following the player character, we will gently and smoothly follow the player using
+spring dynamics. The requirements and hints are be the same as before.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pressing the spacebar should reset the camera behind the player</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// tPos, tUp, tForward = Position, up, and forward vector of target
+// hDist = horizontal follow distance
+// vDist = vertical follow distance
+
+// Camera position is offset from the target position
+Vector3 idealEye = tPos – tForward * hDist + tUp * vDist
+
+// The direction the camera should point is from the target to the camera position
+Vector3 idealForward = tPos - eye
+
+// Compute the acceleration of the spring, and then integrate
+Vector3 displacement = tPos – idealPosition
+Vector3 springAccel = (-springConstant * displacement) – (dampConstant * velocity)
+
+// Update the camera's velocity based on the spring acceleration
+velocity += springAccel * deltaTime
+actualPosition += velocity * deltaTime
+
+// Set the camera's position and rotation with the new values
+// This code assumes that this code runs in a script attached to the camera
+transform.position = actualPosition;
+transform.rotation = Quaternion.LookRotation(idealForward);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_handling_obstacles_in_the_view">2.2.3. Handling obstacles in the view</h4>
+<div class="paragraph">
+<p>We never want the player&#8217;s view of the game world to become blocked by geometry in the scene.
+Implement a feature to make blocking geometry transparent. The algorithm for doing so looks like</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Perform a segment raycast between the camera and the player
+If the raycast intercepts an object, change the object's material so it is transparent
+If an object is not blocking the view but was before, revert its material to its previous transparency</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the Unity function <a href="https://docs.unity3d.com/ScriptReference/Physics.RaycastAll.html">Raycast.RaycastAll</a>
+to find intercepting objects. See the raycast page for sample code that changes transparency.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>float rayLength = 100.0F; // careful: use the distance between character and the camera
+RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
+// etc.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">3. What to hand in</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Your scene with your level and player in it</p>
+</li>
+<li>
+<p>Updated README</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A video or GIF showing the rigid camera and spring follow camera</p>
+</li>
+<li>
+<p>A video or GIF showing the transparency effect for objects that would otherwise block the camera</p>
+</li>
+<li>
+<p>Credits/links for any assets that you did not make yourself&#8201;&#8212;&#8201;if you add assets this week.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t forget to commit your changes and then push them to Github. Using Git Bash,
+run the following command inside your <code>HelloUnity</code> directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ cd HelloUnity
+$ git add .
+$ git commit -m "Finished HelloUnity"
+$ git push</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run <code>git status</code> to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Assignment rubrics</strong></p>
+</div>
+<div class="paragraph">
+<p>Grades are out of 4 points.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Character controls (1 points)</p>
+</li>
+<li>
+<p>Rigid follow camera and Spring follow camera (1 points)</p>
+</li>
+<li>
+<p>Dynamic transparency for obscuring objects (1 points)</p>
+</li>
+<li>
+<p>Readme (1 point)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Submission rubrics</strong></p>
+</div>
+<div class="paragraph">
+<p>For full credit, your submission must</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In your README, include videos or gifs showing your working scripts</p>
+</li>
+<li>
+<p>Some credit lost for missing features or bugs, depending on severity of error</p>
+</li>
+<li>
+<p>-100% for failure to commit work to Github</p>
+</li>
+<li>
+<p>-100% for failure to build and run on the lab Windows machines</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-09-29 16:53:37 -0400
+</div>
+</div>
+</body>
+</html>

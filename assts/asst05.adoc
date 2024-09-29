@@ -1,0 +1,182 @@
+include::header.adoc[]
+
+:title: Assignment 5: Spring into action
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+
+= {title}
+
+**Due Friday, October 4, before midnight**
+
+The goals for this assignment are:
+
+* Implement simple player controls 
+* Implement a spring follow camera that follows the player
+* Use transparency to prevent objects from obscuring the camera
+
+:sectnums:
+
+= Getting Started
+
+It is not necessary to fetch from the upstream repository this week. Instead, 
+
+* Create a new scene, called `A05_Player`, and save it to your `HelloUnity/Assets/Scenes` folder.
+
+**Scene and Player Setup**
+
+* Initialize your scene with the prefab containing your level from assignments 3 and 4
+* Add your character from assignment 4. After completing this assignment, we recommend you create a prefab for your character and camera. 
+
+= Assignment Goals
+
+The primary goal of this assignment is to implement a character that represents
+your player. We will implement a third-person character with a spring follow
+camera. You should also implement a feature that makes objects that block the character transparent. 
+Next week, we will add animation to your character. Thus, the features needed for this week are:
+
+* WASD keys for controlling the movement of the character forward, left, down, and right respectively 
+* Mouse movement should control the preferred heading and pitch of the camera. Pressing the spacebar should reset the camera behind the character.
+
+video::A05-Player.mp4[width=640]
+
+== Player controls
+
+Write a script, `Scripts/PlayerControls.cs`, that is a component for the root of the player character.
+
+* The keyboard keys WASD should move the camera forward/back/left/right relative to the camera 
+* Left/right mouse movement should rotate the player around Y. Hint: Use GetAxis("Mouse Y").
+
+== Third person camera
+
+We will complete this feature in two steps. First, we will implement a rigid
+camera, however, _using a script_ and *not* be parenting the camera under the player object.
+
+=== Rigid follow camera
+
+Write a script, `Scripts/RigidFollowCamera.cs`, that is a component for a camera object. 
+Below are requirements and hints: 
+
+* Pressing the spacebar should reset the camera behind the player 
+* Give RigidFollowCamera.cs a `public Transform target` parameter that is set to the player 
+* Give RigidFollowCamera.cs parameters to represent the horizontal and vertical distances from the center of the player character 
+
+The algorithm for a basic follow camera is as follows (Madhav Chapter 8).
+
+[source]
+----
+// tPos, tUp, tForward = Position, up, and forward vector of target
+// hDist = horizontal follow distance
+// vDist = vertical follow distance
+
+// Camera position is offset from the target position
+Vector3 eye = tPos – tForward * hDist + tUp * vDist
+
+// The direction the camera should point is from the target to the camera position
+Vector3 cameraForward = tPos - eye
+
+// Set the camera's position and rotation with the new values
+// This code assumes that this code runs in a script attached to the camera
+transform.position = eye;
+transform.rotation = Quaternion.LookRotation(cameraForward);
+----
+
+=== Spring follow camera
+
+Write a script, `Scripts/SpringFollowCamera.cs`, that is a component for a camera object. 
+Your Spring Follow Camera will support the same controls as the rigid camera; however, instead 
+of rigidly following the player character, we will gently and smoothly follow the player using 
+spring dynamics. The requirements and hints are be the same as before. 
+
+* Pressing the spacebar should reset the camera behind the player 
+
+The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8).
+
+[source]
+----
+// tPos, tUp, tForward = Position, up, and forward vector of target
+// hDist = horizontal follow distance
+// vDist = vertical follow distance
+
+// Camera position is offset from the target position
+Vector3 idealEye = tPos – tForward * hDist + tUp * vDist
+
+// The direction the camera should point is from the target to the camera position
+Vector3 idealForward = tPos - eye
+
+// Compute the acceleration of the spring, and then integrate
+Vector3 displacement = tPos – idealPosition
+Vector3 springAccel = (-springConstant * displacement) – (dampConstant * velocity)
+
+// Update the camera's velocity based on the spring acceleration
+velocity += springAccel * deltaTime
+actualPosition += velocity * deltaTime
+
+// Set the camera's position and rotation with the new values
+// This code assumes that this code runs in a script attached to the camera
+transform.position = actualPosition;
+transform.rotation = Quaternion.LookRotation(idealForward);
+----
+
+=== Handling obstacles in the view
+
+We never want the player's view of the game world to become blocked by geometry in the scene. 
+Implement a feature to make blocking geometry transparent. The algorithm for doing so looks like 
+
+[source]
+----
+Perform a segment raycast between the camera and the player
+If the raycast intercepts an object, change the object's material so it is transparent
+If an object is not blocking the view but was before, revert its material to its previous transparency
+----
+
+Use the Unity function link:https://docs.unity3d.com/ScriptReference/Physics.RaycastAll.html[Raycast.RaycastAll] 
+to find intercepting objects. See the raycast page for sample code that changes transparency.
+
+[source]
+----
+float rayLength = 100.0F; // careful: use the distance between character and the camera
+RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
+// etc.
+----
+
+= What to hand in
+
+* Your scene with your level and player in it
+* Updated README
+** A video or GIF showing the rigid camera and spring follow camera
+** A video or GIF showing the transparency effect for objects that would otherwise block the camera
+** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
+run the following command inside your `{ASST}` directory.
+
+[source, subs="attributes"]
+----
+$ cd {ASST}
+$ git add .
+$ git commit -m "Finished {ASST}"
+$ git push
+----
+
+Run `git status` to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly. 
+
+*Assignment rubrics*
+
+Grades are out of 4 points.
+
+* Character controls (1 points)
+* Rigid follow camera and Spring follow camera (1 points)
+* Dynamic transparency for obscuring objects (1 points)
+* Readme (1 point)
+
+*Submission rubrics*
+
+For full credit, your submission must 
+
+* In your README, include videos or gifs showing your working scripts
+* Some credit lost for missing features or bugs, depending on severity of error
+* -100% for failure to commit work to Github
+* -100% for failure to build and run on the lab Windows machines
