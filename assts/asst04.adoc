@@ -55,6 +55,7 @@ Below are a few to get you started.
 * link:https://assetstore.unity.com/[Unity Asset Store]
 
 NOTE: You are welcome to use the cat asset that I have been using for demos: link:https://assetstore.unity.com/packages/3d/characters/animals/lowpoly-toon-cat-lite-66083[Lowpoly Toon Cat by Omabuarts Studio]
+NOTE: You are also welcome to use the third person controller in Unity's standard assets. However, you will need to customize it using your own scripts. 
 NOTE: Create a Scripts directory to hold your game scripts
 NOTE: Create a Prefabs directory to hold your game Prefabs
 

@@ -39,14 +39,36 @@ Next week, we will add animation to your character. Thus, the features needed fo
 * WASD keys for controlling the movement of the character forward, left, down, and right respectively 
 * Mouse movement should control the preferred heading and pitch of the camera. Pressing the spacebar should reset the camera behind the character.
 
-video::A05-Player.mp4[width=640]
-
 == Player controls
 
 Write a script, `Scripts/PlayerControls.cs`, that is a component for the root of the player character.
 
-* The keyboard keys WASD should move the camera forward/back/left/right relative to the camera 
-* Left/right mouse movement should rotate the player around Y. Hint: Use GetAxis("Mouse Y").
+* The keyboard keys WASD should move the player forward/back/left/right relative to its current position
+* Left/right mouse movement should rotate the player around Y. 
+* Add two parameters to your script to control the linear speed and turning speed of the character
+
+The algorithm should look something like this in Update()
+[source]
+----
+if the player pressed the W key
+   Move forward
+else if the player pressed the S key
+   Move backward
+else if the player presses the A key
+   Turn left
+else if the player presses the D key
+   Turn right
+----
+
+Some questions to think about when you implement this feature:
+
+* How can we get the forward and up directions of a GameObject in Unity?
+* How can we set parameters in a script so that we can give them values in the Unity IDE?
+* How can we use tie to ensure the player moves smoothly?
+* In Unity, how can you specify a rotation around the Y axis?
+* When we translate the player we add a displacement. How do we "add", or concatenate, a rotation to the player?
+
+image::A05-PlayerControls.gif[width=640]
 
 == Third person camera
 
@@ -58,11 +80,13 @@ camera, however, _using a script_ and *not* be parenting the camera under the pl
 Write a script, `Scripts/RigidFollowCamera.cs`, that is a component for a camera object. 
 Below are requirements and hints: 
 
-* Pressing the spacebar should reset the camera behind the player 
 * Give RigidFollowCamera.cs a `public Transform target` parameter that is set to the player 
-* Give RigidFollowCamera.cs parameters to represent the horizontal and vertical distances from the center of the player character 
+* Give RigidFollowCamera.cs parameters to represent the desired horizontal and vertical distances from the center of the player character 
 
-The algorithm for a basic follow camera is as follows (Madhav Chapter 8).
+image::A05-RigidFollowCamera.png[width=200]
+
+The algorithm for a basic follow camera is as follows (Madhav Chapter 8). Implement the following 
+in LateUpdate() for a smoother result.
 
 [source]
 ----
@@ -71,7 +95,7 @@ The algorithm for a basic follow camera is as follows (Madhav Chapter 8).
 // vDist = vertical follow distance
 
 // Camera position is offset from the target position
-Vector3 eye = tPos – tForward * hDist + tUp * vDist
+Vector3 eye = tPos - tForward * hDist + tUp * vDist
 
 // The direction the camera should point is from the target to the camera position
 Vector3 cameraForward = tPos - eye
@@ -82,6 +106,13 @@ transform.position = eye;
 transform.rotation = Quaternion.LookRotation(cameraForward);
 ----
 
+Some questions to think about when you implement this feature:
+
+* How can we get the forward and up directions of a GameObject in Unity?
+* How can we set parameters in a script so that we can give them values in the Unity IDE?
+
+image::A05-RigidCamera.gif[width=640]
+
 === Spring follow camera
 
 Write a script, `Scripts/SpringFollowCamera.cs`, that is a component for a camera object. 
@@ -89,9 +120,15 @@ Your Spring Follow Camera will support the same controls as the rigid camera; ho
 of rigidly following the player character, we will gently and smoothly follow the player using 
 spring dynamics. The requirements and hints are be the same as before. 
 
-* Pressing the spacebar should reset the camera behind the player 
+* Give SpringFollowCamera.cs a `public Transform target` parameter that is set to the player 
+* Give SpringFollowCamera.cs parameters to represent the 
+** desired horizontal distance
+** desired vertical distance
+** the dampening factor, `dampConstant`
+** the spring constant, `springConstant` 
 
-The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8).
+The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8). Implement this 
+in LateUpdate() for smoother animation.
 
 [source]
 ----
@@ -100,14 +137,14 @@ The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8).
 // vDist = vertical follow distance
 
 // Camera position is offset from the target position
-Vector3 idealEye = tPos – tForward * hDist + tUp * vDist
+Vector3 idealEye = tPos - tForward * hDist + tUp * vDist
 
 // The direction the camera should point is from the target to the camera position
-Vector3 idealForward = tPos - eye
+Vector3 cameraForward = tPos - actualPosition
 
 // Compute the acceleration of the spring, and then integrate
-Vector3 displacement = tPos – idealPosition
-Vector3 springAccel = (-springConstant * displacement) – (dampConstant * velocity)
+Vector3 displacement = actualPosition - idealEye
+Vector3 springAccel = (-springConstant * displacement) - (dampConstant * velocity)
 
 // Update the camera's velocity based on the spring acceleration
 velocity += springAccel * deltaTime
@@ -116,37 +153,38 @@ actualPosition += velocity * deltaTime
 // Set the camera's position and rotation with the new values
 // This code assumes that this code runs in a script attached to the camera
 transform.position = actualPosition;
-transform.rotation = Quaternion.LookRotation(idealForward);
+transform.rotation = Quaternion.LookRotation(cameraForward);
 ----
 
-=== Handling obstacles in the view
+image::A05-SpringCamera.gif[width=640]
 
-We never want the player's view of the game world to become blocked by geometry in the scene. 
-Implement a feature to make blocking geometry transparent. The algorithm for doing so looks like 
-
-[source]
-----
-Perform a segment raycast between the camera and the player
-If the raycast intercepts an object, change the object's material so it is transparent
-If an object is not blocking the view but was before, revert its material to its previous transparency
-----
-
-Use the Unity function link:https://docs.unity3d.com/ScriptReference/Physics.RaycastAll.html[Raycast.RaycastAll] 
-to find intercepting objects. See the raycast page for sample code that changes transparency.
-
-[source]
-----
-float rayLength = 100.0F; // careful: use the distance between character and the camera
-RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
-// etc.
-----
+//=== Handling obstacles in the view
+//
+//We never want the player's view of the game world to become blocked by geometry in the scene. 
+//Implement a feature to make blocking geometry transparent. The algorithm for doing so looks like 
+//
+//[source]
+//----
+//Perform a segment raycast between the camera and the player
+//If the raycast intercepts an object, change the object's material so it is transparent
+//If an object is not blocking the view but was before, revert its material to its previous transparency
+//----
+//
+//Use the Unity function link:https://docs.unity3d.com/ScriptReference/Physics.RaycastAll.html[Raycast.RaycastAll] 
+//to find intercepting objects. See the raycast page for sample code that changes transparency.
+//
+//[source]
+//----
+//float rayLength = 100.0F; // careful: use the distance between character and the camera
+//RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
+//----
 
 = What to hand in
 
 * Your scene with your level and player in it
+* Your scripts, `PlayerControls.cs`, `RigidFollowCamera.cs`, and `SpringFollowCamera.cs`
 * Updated README
 ** A video or GIF showing the rigid camera and spring follow camera
-** A video or GIF showing the transparency effect for objects that would otherwise block the camera
 ** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
 
 Don't forget to commit your changes and then push them to Github. Using Git Bash, 
@@ -167,9 +205,11 @@ Check the Github website to make sure that your program uploaded correctly.
 
 Grades are out of 4 points.
 
-* Character controls (1 points)
-* Rigid follow camera and Spring follow camera (1 points)
-* Dynamic transparency for obscuring objects (1 points)
+* Your scripts, `PlayerControls.cs`, `RigidFollowCamera.cs`, and `SpringFollowCamera.cs` (3 points)
+** Player controls should have parameters: turn speed, move speed
+** Player controls should use WASD input
+** RigidFollowCamera should have parameters: target, vDist, and hDist
+** SpringFollowCamera should have parameters: target, vDist, hDist, springConstant, dmpConstant
 * Readme (1 point)
 
 *Submission rubrics*

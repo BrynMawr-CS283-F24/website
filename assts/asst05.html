@@ -98,13 +98,6 @@ Next week, we will add animation to your character. Thus, the features needed fo
 </li>
 </ul>
 </div>
-<div class="videoblock">
-<div class="content">
-<video src="img/A05-Player.mp4" width="640" controls>
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
 <div class="sect2">
 <h3 id="_player_controls">2.1. Player controls</h3>
 <div class="paragraph">
@@ -113,12 +106,57 @@ Your browser does not support the video tag.
 <div class="ulist">
 <ul>
 <li>
-<p>The keyboard keys WASD should move the camera forward/back/left/right relative to the camera</p>
+<p>The keyboard keys WASD should move the player forward/back/left/right relative to its current position</p>
 </li>
 <li>
-<p>Left/right mouse movement should rotate the player around Y. Hint: Use GetAxis("Mouse Y").</p>
+<p>Left/right mouse movement should rotate the player around Y.</p>
+</li>
+<li>
+<p>Add two parameters to your script to control the linear speed and turning speed of the character</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The algorithm should look something like this in Update()</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>if the player pressed the W key
+   Move forward
+else if the player pressed the S key
+   Move backward
+else if the player presses the A key
+   Turn left
+else if the player presses the D key
+   Turn right</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Some questions to think about when you implement this feature:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How can we get the forward and up directions of a GameObject in Unity?</p>
+</li>
+<li>
+<p>How can we set parameters in a script so that we can give them values in the Unity IDE?</p>
+</li>
+<li>
+<p>How can we use tie to ensure the player moves smoothly?</p>
+</li>
+<li>
+<p>In Unity, how can you specify a rotation around the Y axis?</p>
+</li>
+<li>
+<p>When we translate the player we add a displacement. How do we "add", or concatenate, a rotation to the player?</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A05-PlayerControls.gif" alt="A05 PlayerControls" width="640">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -136,18 +174,21 @@ Below are requirements and hints:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pressing the spacebar should reset the camera behind the player</p>
-</li>
-<li>
 <p>Give RigidFollowCamera.cs a <code>public Transform target</code> parameter that is set to the player</p>
 </li>
 <li>
-<p>Give RigidFollowCamera.cs parameters to represent the horizontal and vertical distances from the center of the player character</p>
+<p>Give RigidFollowCamera.cs parameters to represent the desired horizontal and vertical distances from the center of the player character</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A05-RigidFollowCamera.png" alt="A05 RigidFollowCamera" width="200">
+</div>
+</div>
 <div class="paragraph">
-<p>The algorithm for a basic follow camera is as follows (Madhav Chapter 8).</p>
+<p>The algorithm for a basic follow camera is as follows (Madhav Chapter 8). Implement the following
+in LateUpdate() for a smoother result.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -156,7 +197,7 @@ Below are requirements and hints:</p>
 // vDist = vertical follow distance
 
 // Camera position is offset from the target position
-Vector3 eye = tPos – tForward * hDist + tUp * vDist
+Vector3 eye = tPos - tForward * hDist + tUp * vDist
 
 // The direction the camera should point is from the target to the camera position
 Vector3 cameraForward = tPos - eye
@@ -165,6 +206,24 @@ Vector3 cameraForward = tPos - eye
 // This code assumes that this code runs in a script attached to the camera
 transform.position = eye;
 transform.rotation = Quaternion.LookRotation(cameraForward);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Some questions to think about when you implement this feature:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How can we get the forward and up directions of a GameObject in Unity?</p>
+</li>
+<li>
+<p>How can we set parameters in a script so that we can give them values in the Unity IDE?</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A05-RigidCamera.gif" alt="A05 RigidCamera" width="640">
 </div>
 </div>
 </div>
@@ -179,12 +238,32 @@ spring dynamics. The requirements and hints are be the same as before.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pressing the spacebar should reset the camera behind the player</p>
+<p>Give SpringFollowCamera.cs a <code>public Transform target</code> parameter that is set to the player</p>
+</li>
+<li>
+<p>Give SpringFollowCamera.cs parameters to represent the</p>
+<div class="ulist">
+<ul>
+<li>
+<p>desired horizontal distance</p>
+</li>
+<li>
+<p>desired vertical distance</p>
+</li>
+<li>
+<p>the dampening factor, <code>dampConstant</code></p>
+</li>
+<li>
+<p>the spring constant, <code>springConstant</code></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8).</p>
+<p>The algorithm for a basic spring follow camera is as follows (Madhav Chapter 8). Implement this
+in LateUpdate() for smoother animation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -193,14 +272,14 @@ spring dynamics. The requirements and hints are be the same as before.</p>
 // vDist = vertical follow distance
 
 // Camera position is offset from the target position
-Vector3 idealEye = tPos – tForward * hDist + tUp * vDist
+Vector3 idealEye = tPos - tForward * hDist + tUp * vDist
 
 // The direction the camera should point is from the target to the camera position
-Vector3 idealForward = tPos - eye
+Vector3 cameraForward = tPos - actualPosition
 
 // Compute the acceleration of the spring, and then integrate
-Vector3 displacement = tPos – idealPosition
-Vector3 springAccel = (-springConstant * displacement) – (dampConstant * velocity)
+Vector3 displacement = actualPosition - idealEye
+Vector3 springAccel = (-springConstant * displacement) - (dampConstant * velocity)
 
 // Update the camera's velocity based on the spring acceleration
 velocity += springAccel * deltaTime
@@ -209,32 +288,12 @@ actualPosition += velocity * deltaTime
 // Set the camera's position and rotation with the new values
 // This code assumes that this code runs in a script attached to the camera
 transform.position = actualPosition;
-transform.rotation = Quaternion.LookRotation(idealForward);</code></pre>
+transform.rotation = Quaternion.LookRotation(cameraForward);</code></pre>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_handling_obstacles_in_the_view">2.2.3. Handling obstacles in the view</h4>
-<div class="paragraph">
-<p>We never want the player&#8217;s view of the game world to become blocked by geometry in the scene.
-Implement a feature to make blocking geometry transparent. The algorithm for doing so looks like</p>
-</div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlight"><code>Perform a segment raycast between the camera and the player
-If the raycast intercepts an object, change the object's material so it is transparent
-If an object is not blocking the view but was before, revert its material to its previous transparency</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Use the Unity function <a href="https://docs.unity3d.com/ScriptReference/Physics.RaycastAll.html">Raycast.RaycastAll</a>
-to find intercepting objects. See the raycast page for sample code that changes transparency.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>float rayLength = 100.0F; // careful: use the distance between character and the camera
-RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, rayLength);
-// etc.</code></pre>
+<img src="img/A05-SpringCamera.gif" alt="A05 SpringCamera" width="640">
 </div>
 </div>
 </div>
@@ -250,14 +309,14 @@ RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, ra
 <p>Your scene with your level and player in it</p>
 </li>
 <li>
+<p>Your scripts, <code>PlayerControls.cs</code>, <code>RigidFollowCamera.cs</code>, and <code>SpringFollowCamera.cs</code></p>
+</li>
+<li>
 <p>Updated README</p>
 <div class="ulist">
 <ul>
 <li>
 <p>A video or GIF showing the rigid camera and spring follow camera</p>
-</li>
-<li>
-<p>A video or GIF showing the transparency effect for objects that would otherwise block the camera</p>
 </li>
 <li>
 <p>Credits/links for any assets that you did not make yourself&#8201;&#8212;&#8201;if you add assets this week.</p>
@@ -292,13 +351,23 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Character controls (1 points)</p>
+<p>Your scripts, <code>PlayerControls.cs</code>, <code>RigidFollowCamera.cs</code>, and <code>SpringFollowCamera.cs</code> (3 points)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Player controls should have parameters: turn speed, move speed</p>
 </li>
 <li>
-<p>Rigid follow camera and Spring follow camera (1 points)</p>
+<p>Player controls should use WASD input</p>
 </li>
 <li>
-<p>Dynamic transparency for obscuring objects (1 points)</p>
+<p>RigidFollowCamera should have parameters: target, vDist, and hDist</p>
+</li>
+<li>
+<p>SpringFollowCamera should have parameters: target, vDist, hDist, springConstant, dmpConstant</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Readme (1 point)</p>
@@ -332,7 +401,7 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-29 16:53:37 -0400
+Last updated 2024-09-29 21:19:22 -0400
 </div>
 </div>
 </body>
