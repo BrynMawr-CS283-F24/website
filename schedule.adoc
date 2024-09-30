@@ -36,7 +36,7 @@
 //-----------------------------
 |4
 |Sept 24, 26 anchor:week04[]
-|*Transforms, Characters*
+|*Transforms*
 
 * Read: Madhav Chapter 4
 * Topics: Transformations, Scene hierarchy 
@@ -46,7 +46,7 @@
 //-----------------------------
 |5
 |Oct 1,3 anchor:week05[]
-|*Motion graphs, Animation* 
+|*Characters and Animation* 
 
 * Topics: Skeletal animation and meshes, Animation curves, Motion graphs, Keyframing
 * link:assts/asst05.html[Assignment 05]: Due Oct 4
