@@ -44,7 +44,6 @@ Next week, we will add animation to your character. Thus, the features needed fo
 Write a script, `Scripts/PlayerControls.cs`, that is a component for the root of the player character.
 
 * The keyboard keys WASD should move the player forward/back/left/right relative to its current position
-* Left/right mouse movement should rotate the player around Y. 
 * Add two parameters to your script to control the linear speed and turning speed of the character
 
 The algorithm should look something like this in Update()

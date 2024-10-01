@@ -50,7 +50,7 @@
 
 * Topics: Skeletal animation and meshes, Animation curves, Motion graphs, Keyframing
 * link:assts/asst05.html[Assignment 05]: Due Oct 4
-* link:labs/lab-week05-Transform.html[Lab Oct 3]
+* link:labs/lab-week05-Transforms.html[Lab Oct 3]
 
 //-----------------------------
 |6

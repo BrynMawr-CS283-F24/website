@@ -20,7 +20,7 @@ Names:
 
 Suppose we have placed a cube and a sphere in our scene hierarchy as follows
 
-image::lab-week05-Transforms.png[]
+image::Lab-Week05-Transforms.png[]
 
 Suppose the cube has the following values on its transform component
 
@@ -62,7 +62,7 @@ Compute the *global* coordinates of the sphere's position, up, and right axes.
 [discrete]
 = Character Controls 
 
-Before leaving lab today, implement the simple player controls from link:..\assts\asst05.html[Assignment 02] and 
+Before leaving lab today, implement the simple player controls from link:..\assts\asst05.html[Assignment 05] and 
 answer the following questions.
 
 Draw a picture that shows the coordinate axes of the root of your character and the coordinate axes of the camera. 
