@@ -1,0 +1,114 @@
+include::header.adoc[]
+
+:title: Lab 05: Transforms
+:Author Initials: ASN
+:Date:    2020-08-15
+:Revision: 0.1
+
+[discrete]
+= {title}
+
+Complete the following worksheet in pairs.
+
+Names:
+{nbsp} +
+{nbsp} +
+
+
+[discrete]
+= Transforms in Unity
+
+Suppose we have placed a cube and a sphere in our scene hierarchy as follows
+
+image::lab-week05-Transforms.png[]
+
+Suppose the cube has the following values on its transform component
+
+* translation: (2,0,0)
+* rotation: (0, 0, 45)
+* scale: (1,1,1)
+
+Suppose the sphere has the following values on its transform component
+
+* translation: (-2, 1, 0)
+* rotation: (0,0,0)
+* scale: (1,1,1)
+
+What are the *local* coordinates of the sphere's position, up axis, and right axis?
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+Give the 4x4 matrix transform that corresponds to the transform component on the cube.
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+Give the 4x4 matrix transform that corresponds to the transform component on the sphere.
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+Compute the *global* coordinates of the sphere's position, up, and right axes. 
+
+
+++++
+<div class="pagebreak"> </div>
+++++
+
+[discrete]
+= Character Controls 
+
+Before leaving lab today, implement the simple player controls from link:..\assts\asst05.html[Assignment 02] and 
+answer the following questions.
+
+Draw a picture that shows the coordinate axes of the root of your character and the coordinate axes of the camera. 
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+
+On you picture, draw the following quantities.
+
+* Draw the vector (characterPos - cameraPos)
+* Draw the point p = 5 * characterUpVector + -3 characterRightVector 
+* Draw the vector (p - cameraPos)
+
+Answer the following questions from the assignment writeup
+
+* How can we get the forward and up directions of a GameObject in Unity?
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+* How can we set parameters in a script so that we can give them values in the Unity IDE?
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+* How can we use tie to ensure the player moves smoothly?
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+* In Unity, how can you specify a rotation around the Y axis?
+{nbsp} +
+{nbsp} +
+{nbsp} +
+
+* When we translate the player we add a displacement. How do we "add", or concatenate, a rotation to the player?
+{nbsp} +
+{nbsp} +
+{nbsp} +
