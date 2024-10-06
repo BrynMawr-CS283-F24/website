@@ -46,7 +46,7 @@ Sample Short Questions:
 * What does alpha represent in a RGBA color?
 * Suppose our render window has width and height equal to 640 and 480 respectively. What is the aspect ratio of our window?
 * What is the difference between a skinned mesh and a static mesh?
-* Compute the quaternion that corresponds to a 30 degree rotation around the (1,1,0) axis.
+* Compute the quaternion (x,y,z,w) that corresponds to a 30 degree rotation around the (1,1,0) axis.
 * What subset of quaternion correspond to rotations?
 * What is an orthonormal matrix?
 * How can we compute the distance between two points?

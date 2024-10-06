@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>Study Guide 1</title>
+<link rel="stylesheet" href="style/cs21.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_study_guide_1">Study Guide 1</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_study_guide_1">Study Guide 1</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is allowed.</p>
+</div>
+<div class="paragraph">
+<p>Topics:</p>
+</div>
+<div class="paragraph">
+<p>Everything from <a href="studyguide1.html">study guide 1</a> as well as</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Transformations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Terms To Know:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Frames of reference, coordinate systems</p>
+</li>
+<li>
+<p>Homogeneous coordinates</p>
+</li>
+<li>
+<p>Transformations: Scale, Rotate, and Translation</p>
+</li>
+<li>
+<p>Skeletons, joints, bones, degrees of freedom, skinning, skin weights</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Short Questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Write the transformation that corresponds to a (0.5, 1, 0.5) scale</p>
+<div class="ulist">
+<ul>
+<li>
+<p>As a 2x2 block matrix</p>
+</li>
+<li>
+<p>As a 4x4 matrix</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Write the transformation that corresponds to a (0.5, 1, 0.5) scale</p>
+<div class="ulist">
+<ul>
+<li>
+<p>As a 2x2 block matrix</p>
+</li>
+<li>
+<p>As a 4x4 matrix</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Write the transformation that corresponds to a (45, 30, 15) degree XYZ Euler angle rotation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>As a 2x2 block matrix</p>
+</li>
+<li>
+<p>As a 4x4 matrix</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>What is the (x,y,z) coordinate that corresponds to the homogeneous point (1,2,3,4)?</p>
+</li>
+<li>
+<p>What is the homogeneous coordinate for the vector (0,-1,0)?</p>
+</li>
+<li>
+<p>What is the homogeneous coordinate for the point (0,-1,0)?</p>
+</li>
+<li>
+<p>Suppose we rotate the vector (0,-1,0) by 30 degrees. What is its new direction?</p>
+</li>
+<li>
+<p>Suppose we scale the vector (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new length?</p>
+</li>
+<li>
+<p>Suppose we translate the vector (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new direction?</p>
+</li>
+<li>
+<p>Suppose we rotate the point (0,-1,0) by 30 degrees. What is its new direction?</p>
+</li>
+<li>
+<p>Suppose we scale the point (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new length?</p>
+</li>
+<li>
+<p>Suppose we translate the point (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new position?</p>
+</li>
+<li>
+<p>Give the rotation matrix that corresponds to the rotation given by the quaternion (x,y,z,w) = (sin(30), 0, 0, cos(30))</p>
+</li>
+<li>
+<p>Suppose we want to rotate an object 30 degrees around the Y axis. Give this rotation as a</p>
+<div class="ulist">
+<ul>
+<li>
+<p>(x,y,z,w) quaternion</p>
+</li>
+<li>
+<p>(x,y,z) euler angles (ZYX order)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Imagine a cylinder that extends from -1 to 1 along the Y axis and has origin (0,0,0) and radius 0.5 when unrotated, unscaled, and untranslated.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Draw the cylinder</p>
+</li>
+<li>
+<p>What are the global coordinates of the top of the cylinder if we scale by 0.5, rotate 30 degrees, and translate by (-1,-1,-1)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Give the transform that corresponds to this sequence of transformations</p>
+</li>
+<li>
+<p>Multiply (0,1,0) by this transform.</p>
+</li>
+<li>
+<p>Show that the transform that translates by (1,1,0), rotates by -30 degrees, and scales by 2 is the inverse of the above matrix.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Suppose we have a transform that translates by (1,0,0) and rotates by 45 degrees. Give the transformation and inverse transformation corresponding to this sequence of transformations.</p>
+</li>
+<li>
+<p>How can we use the cross product to check if a point is to the left or right of us?</p>
+</li>
+<li>
+<p>Suppose we compute the cross product from (4,5,0) and (-1,5,0). In a left-handed coordinate system, what direction will the resulting vector be?</p>
+</li>
+<li>
+<p>Consider the scene hierarchy in Unity. Suppose we have the following hierarchy: root &#8594; hips &#8594; knee &#8594; foot.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>How can we compute from local foot coordinates to global coordinates?</p>
+</li>
+<li>
+<p>What is the origin of the foot in local coordinates?</p>
+</li>
+<li>
+<p>What is the up vector of the foot in local coordinates?</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Long questions can be found in our class notes and lab exercises.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-10-06 19:16:47 -0400
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

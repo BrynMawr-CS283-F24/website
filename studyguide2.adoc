@@ -1,0 +1,64 @@
+include::header.adoc[]
+
+:title: Study Guide 1
+:Author Initials: ASN
+:Date:    2020-08-15
+:Revision: 0.1
+:stem: latexmath
+
+= {title}
+
+Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is allowed.
+
+Topics:
+
+Everything from link:studyguide1.html[study guide 1] as well as
+
+* Transformations
+
+Terms To Know:
+
+* Frames of reference, coordinate systems
+* Homogeneous coordinates
+* Transformations: Scale, Rotate, and Translation
+* Skeletons, joints, bones, degrees of freedom, skinning, skin weights
+
+Sample Short Questions:
+
+* Write the transformation that corresponds to a (0.5, 1, 0.5) scale
+** As a 2x2 block matrix
+** As a 4x4 matrix
+* Write the transformation that corresponds to a (0.5, 1, 0.5) scale
+** As a 2x2 block matrix
+** As a 4x4 matrix
+* Write the transformation that corresponds to a (45, 30, 15) degree XYZ Euler angle rotation
+** As a 2x2 block matrix
+** As a 4x4 matrix
+* What is the (x,y,z) coordinate that corresponds to the homogeneous point (1,2,3,4)?
+* What is the homogeneous coordinate for the vector (0,-1,0)?
+* What is the homogeneous coordinate for the point (0,-1,0)?
+* Suppose we rotate the vector (0,-1,0) by 30 degrees. What is its new direction?
+* Suppose we scale the vector (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new length?
+* Suppose we translate the vector (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new direction?
+* Suppose we rotate the point (0,-1,0) by 30 degrees. What is its new direction?
+* Suppose we scale the point (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new length?
+* Suppose we translate the point (0,-1,0) by (0.5, 0.5, 0.5) units. What is its new position?
+* Give the rotation matrix that corresponds to the rotation given by the quaternion (x,y,z,w) = (sin(30), 0, 0, cos(30))
+* Suppose we want to rotate an object 30 degrees around the Y axis. Give this rotation as a 
+** (x,y,z,w) quaternion
+** (x,y,z) euler angles (ZYX order)
+* Imagine a cylinder that extends from -1 to 1 along the Y axis and has origin (0,0,0) and radius 0.5 when unrotated, unscaled, and untranslated. 
+** Draw the cylinder
+** What are the global coordinates of the top of the cylinder if we scale by 0.5, rotate 30 degrees, and translate by (-1,-1,-1)
+*** Give the transform that corresponds to this sequence of transformations
+*** Multiply (0,1,0) by this transform. 
+*** Show that the transform that translates by (1,1,0), rotates by -30 degrees, and scales by 2 is the inverse of the above matrix. 
+* Suppose we have a transform that translates by (1,0,0) and rotates by 45 degrees. Give the transformation and inverse transformation corresponding to this sequence of transformations.
+* How can we use the cross product to check if a point is to the left or right of us?
+* Suppose we compute the cross product from (4,5,0) and (-1,5,0). In a left-handed coordinate system, what direction will the resulting vector be?
+* Consider the scene hierarchy in Unity. Suppose we have the following hierarchy: root -> hips -> knee -> foot.
+** How can we compute from local foot coordinates to global coordinates?
+** What is the origin of the foot in local coordinates?
+** What is the up vector of the foot in local coordinates?
+
+Sample Long questions can be found in our class notes and lab exercises.
