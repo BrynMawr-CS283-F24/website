@@ -14,7 +14,7 @@ The goals for this assignment are:
 
 * Implement simple player controls 
 * Implement a spring follow camera that follows the player
-* Use transparency to prevent objects from obscuring the camera
+* (Optional) Use transparency to prevent objects from obscuring the camera
 
 :sectnums:
 
@@ -63,7 +63,7 @@ Some questions to think about when you implement this feature:
 
 * How can we get the forward and up directions of a GameObject in Unity?
 * How can we set parameters in a script so that we can give them values in the Unity IDE?
-* How can we use tie to ensure the player moves smoothly?
+* How can we use time to ensure the player moves smoothly?
 * In Unity, how can you specify a rotation around the Y axis?
 * When we translate the player we add a displacement. How do we "add", or concatenate, a rotation to the player?
 
