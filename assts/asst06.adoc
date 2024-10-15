@@ -133,15 +133,33 @@ If you are computing b1 for the first segment, use the following formula
 
 [stem]
 ++++
-b_1 = b0 + (1/6) * (b1 - b0) \quad \text{if first segment} 
+b_1 = b0 + (1/6) * (b3 - b0) \quad \text{if first segment} 
 ++++
 
 If you are computing b2 for the last segment, use the following formula
 
 [stem]
 ++++
-b2 = b3 + (1/6) * (b3 - b0) \quad \text{if last segment} 
+b2 = b3 - (1/6) * (b3 - b0) \quad \text{if last segment} 
 ++++
+
+You might find it useful to visualize the Bezier curve. To do this, you can sample the points along the curve  and then draw it 
+as a Unity Gizmo.
+
+[code]
+----
+void OnDrawGizmos()
+{
+    Gizmos.color = Color.blue;
+    Gizmos.DrawLineStrip(curve, false);
+
+    foreach (Vector3 p in ctrlpts)
+    {
+        Gizmos.DrawSphere(p, 0.2f);
+    }
+
+}
+----
 
 == IK Controllers
 
@@ -157,18 +175,27 @@ the head. Recall that the angle of rotation is as follows.
 
 [stem]
 ++++
-phi = \text{atan2}(r \times e, r \cdot r + r \cdot e)
+phi = \text{atan2}(||r \times e||, r \cdot r + r \cdot e)
 ++++
 
 And the axis of rotation is stem:[(r \times e)/||r \times e||]
 
+Requirements
+
 * Write a script, `Scripts/GazeController.cs`, that is a component for the root of your player character.
 * Your script should take a Transform parameter to serve as your target
-* Your script should take a Transform parameter that indicates the head joint of your character
+* Your script should take a Transform parameter that indicates the joint of your character that should point towards the target. In the example below, the *nose* joint points towards the target from the head.
 * In Update(), implement the calculation that points the head to the target
 * Use Debug.DrawLine to visualize the line between the head joint and the target 
 
 image::A06-Gaze.gif[width=640]
+
+Tips for computing the rotation
+
+* Use _global coordinates_ to compute the rotation axis and angle. Use Quaternion.AngleAxis to compute the final rotation.
+* The computed rotation should be set on the _parent_ joint. For example, if I want to point the nose towards the target, I must set the rotation on the head (which is the parent joint of the nose)
+* The computed rotation is a _relative rotation_, so you should multiply it to the current rotation, e.g., `lookJoint.parent.rotation = computedRot * lookJoint.parent.rotation` 
+
 
 === Two-Link Controller
 
