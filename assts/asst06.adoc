@@ -14,7 +14,7 @@ include::header.adoc[]
 The goals for this assignment are:
 
 * Implement path following based on a Bezier curve
-* Implement a gaze controller for your character
+* Implement gaze and limb controllers for your character
 
 :sectnums:
 
@@ -42,7 +42,7 @@ implement that allows you to pose your character using IK.
 
 == Path Following
 
-You will write two scripts for this demo. Both scripts will need a list if locations that specify the 
+You will write two scripts for this demo. Both scripts will need a list of locations that specify the 
 path. I recommend that you re-use the method for storing POIs from assignment 4.  
 
 === Spline with degree-1 polynomial
