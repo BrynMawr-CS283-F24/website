@@ -15,9 +15,9 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Next assignment is Due October 20th. link:assts/asst06.html[Assignment 06: Bezier Faster Stronger]
+* Next assignment is Due October 25th. link:assts/asst07.html[Assignment 07: Motion and Collision]
 //* link:labs/lab-week05-Transform.html[Lab Oct 3] Transform practice. Player character setup.
-* Lab: Quiz 02. Study Guide is link:studyguide2.html[here].
+* Lab: Player character animation setup. Transformation practice.
 
 == Course Info
 

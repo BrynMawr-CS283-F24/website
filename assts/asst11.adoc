@@ -1,0 +1,74 @@
+include::header.adoc[]
+
+:title: Assignment 8: Path Planning
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+:stem:
+
+= {title}
+
+**Due Friday, November 22, before midnight**
+
+The goals for this assignment are:
+
+* Polish your level: add sounds, particle effects, intro animation, story elements, etc 
+* Create a short (< 15 minute) playable game experience
+* Build an executable of your game
+
+:sectnums:
+
+= Getting Started
+
+It is not necessary to fetch from the upstream repository this week. Instead, 
+
+* Create a new scene, called `A11_Complete`, and save it to your `HelloUnity/Assets/Scenes` folder.
+
+**Scene and Player Setup**
+
+In both your scenes:
+
+* Initialize your scene with the prefab containing your level from assignments 7.
+* Add your character from assignment 4. 
+* Add your NPCs from assignment 10. 
+
+= Assignment Goals
+
+= What to hand in
+
+* Your scene with a self-contained playable experience
+* Updated README
+** Video or GIFs listing and showing the new features you added for this week. 
+** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
+run the following command inside your `{ASST}` directory.
+
+[source, subs="attributes"]
+----
+$ cd {ASST}
+$ git add .
+$ git commit -m "Finished {ASST}"
+$ git push
+----
+
+Run `git status` to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly. 
+
+*Assignment rubrics*
+
+Grades are out of 4 points.
+
+* New game elements (2 point)
+* Windows executable (1 point)
+* Readme (1 point)
+
+*Submission rubrics*
+
+For full credit, your submission must 
+
+* In your README, include videos or gifs showing your working scripts
+* Some credit lost for missing features or bugs, depending on severity of error
+* -100% for failure to commit work to Github
+* -100% for failure to build and run on the lab Windows machines

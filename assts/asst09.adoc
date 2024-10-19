@@ -1,0 +1,89 @@
+include::header.adoc[]
+
+:title: Assignment 8: Path Planning
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+:stem:
+
+= {title}
+
+**Due Friday, November 8, before midnight**
+
+The goals for this assignment are:
+
+* Implement A* path planning
+* Implement a wander behavior
+
+:sectnums:
+
+= Getting Started
+
+It is not necessary to fetch from the upstream repository this week. Instead, 
+
+* Create a new scene, called `A09_Path`, and save it to your `HelloUnity/Assets/Scenes` folder.
+
+**Scene and Player Setup**
+
+In both your scenes:
+
+* Initialize your scene with the prefab containing your level from assignment 7. 
+* Add your character from assignment 4. 
+
+= Assignment Goals
+
+This assignment has one part. You will implement A* path planning and use it to 
+implement a simple wander behavior for non-player characters. In our demo, we use 
+the same character with different textures to distinguish between the player 
+and other characters, but you can choose your own approach.
+
+== A* Path Planning
+
+* Write a script, `Scripts/PathPlanner.cs`, that is a component for the root of a character.
+
+image::A08-PathPlanning.gif[width=640]
+
+You can re-use the path following script from assignment 6.
+
+== Wander behavior
+
+* Write a script, `Scripts/Wander.cs`, that is a component for the root of a character.
+
+= What to hand in
+
+* Your scenes with your level and player in it
+* Your scripts, ``
+* Updated README
+** A video or GIF showing the motion controller, intersections with the world, and collection mechanic
+** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
+run the following command inside your `{ASST}` directory.
+
+[source, subs="attributes"]
+----
+$ cd {ASST}
+$ git add .
+$ git commit -m "Finished {ASST}"
+$ git push
+----
+
+Run `git status` to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly. 
+
+*Assignment rubrics*
+
+Grades are out of 4 points.
+
+* Your scripts need to be feature complete (3.5 points)
+* Readme (0.5 point)
+
+*Submission rubrics*
+
+For full credit, your submission must 
+
+* In your README, include videos or gifs showing your working scripts
+* Some credit lost for missing features or bugs, depending on severity of error
+* -100% for failure to commit work to Github
+* -100% for failure to build and run on the lab Windows machines

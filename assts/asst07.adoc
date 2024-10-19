@@ -1,0 +1,175 @@
+include::header.adoc[]
+
+:title: Assignment 7: Motion and Collision
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+:stem:
+
+= {title}
+
+**Due Friday, October 25, before midnight**
+
+The goals for this assignment are:
+
+* Implement a simple motion controller for your character 
+* Support collisions and gravity for your character
+
+:sectnums:
+
+= Getting Started
+
+It is not necessary to fetch from the upstream repository this week. Instead, 
+
+* Create a new scene, called `A07_Motion`, and save it to your `HelloUnity/Assets/Scenes` folder.
+
+**Scene and Player Setup**
+
+In both your scenes:
+
+* Initialize your scene with the prefab containing your level from assignments 3 and 4
+* Add your character from assignment 4. 
+
+IMPORTANT: Be sure to remove any animation components from your character. In this assignment, you should create your own. 
+
+= Assignment Goals
+
+This assignment has two parts. In the first part, you will setup a motion controller with parameters for your 
+character. If your character already has one setup, you should remove it and create a simple controller for this 
+assignment. In the second part, you will setup colliders so that the player does not intersect objects and can 
+collect objects in the scene. 
+
+== Motion controller
+
+We will now implement features to animate our player character using Unity's Mechanim system to 
+create a state machine for transitioning between different animation clips. This feature requires 
+your player asset to contain animation clips. If you are unsure whether your character has animation 
+clips, we can help you. The demo below shows the goal of this feature. 
+
+image::A07-Motion.gif[width=640]
+
+This feature has two parts. First, you must configure your player character with an Animator and 
+AnimatorComponent. Second, you must write a script, `Scripts/PlayerMotionController.cs`, that is 
+a component for the root of your player character and that triggers animation transitions.
+
+For the first part, you must configure your player character to have animations. The configuration 
+for our cat character is below. For resources on setting up your character, see the advice below.
+
+image::A07_AnnotatedMotionController.png[width=640px]
+
+For the second part, use your script, `Scripts/PlayerControls.cs`, from
+assignment 5 as a starting point and add code to change the animation based on
+the velocity of the player. When the player is moving, show a walk or run
+animation. When the player is stationary, show and idle animation. See the advice below 
+for Unity API documentation for implementing this feature.
+
+Requirements:
+
+* Create a motion controller that has at least two states for idling and moving. 
+* Create parameters on your motion controller.
+* Do not use a prefab your motion controller. You must make your own.
+
+Animator Setup Advice:
+
+Use the Unity documentation to learn how to setup a motion controller for your
+character.  First, you should look at your character in the asset window and see
+what link:https://docs.unity3d.com/Manual/AnimationClips.html[animation clips]
+it has on it. You can also configure a
+link:https://docs.unity3d.com/Manual/AvatarCreationandSetup.html[humanoid
+avatar] if it is appropriate. Otherwise, choose "create from this model" for the
+avatar type (under rig). Second, you should add an 
+link:https://docs.unity3d.com/Manual/class-Animator.html[Animator component] and
+add a new link:https://docs.unity3d.com/Manual/class-AnimatorController.html[Animator Controller]. 
+With the animator controller, you can
+add animations and setup transitions between them that use parameters. Last, you
+should add a script that switches between animations. 
+
+* Read the link:https://docs.unity3d.com/Manual/AnimationOverview.html[Mechanim documentation]
+* Add an link:https://docs.unity3d.com/Manual/class-Animator.html[Animator]
+* Setup the link:https://docs.unity3d.com/Manual/class-AnimatorController.html[Animator Controller]
+
+Resources for implementing `PlayerMotionController.cs`:
+
+* Write a script that connects the animator controller to user input.
+** link:https://docs.unity3d.com/ScriptReference/Animator.html[Animator API] 
+** link:https://docs.unity3d.com/ScriptReference/Animator.SetFloat.html[Example: Setting parameters using the Animator API] 
+
+== Physics
+
+We now have an animated player character. But the character has no physics
+behaviors: it can passthrough solid objects and doesn't respond to gravity. 
+
+image::A07-Passthrough.gif[width=640px]
+
+We will use Unity's link:https://docs.unity3d.com/Manual/class-CharacterController.html[CharacterController] 
+component to implement these features. 
+
+image::A07-Colliders.gif[width=640px]
+
+Above, we put a CharacterController component on our player and extended our script,
+`PlayerMotionController.cs` to call `Move` with the velocity instead of setting the position directly. 
+
+image::A07_Capsule.png[width=640px]
+
+[code]
+----
+//transform.position = transform.position + Time.deltaTime * velocity;
+CharacterController controller = GetComponent<CharacterController>();
+controller.Move(velocity * Time.deltaTime);
+----
+
+Requirements:
+
+* Put a character controller on your character
+* Create Colliders on solid objects of your scene (if they do not have colliders on them already)
+* Update `PlayerMotionController.cs` to move using the character controller, rather than moving the character directly. To start, change the code in `PlayerControls` where you set `transform.position` to call `Move` on your CharacterController component instead.
+* Save you configured player character as a prefab
+* (Optional) implement a character jump
+
+Advice:
+
+* link:https://docs.unity3d.com/Manual/collision-section.html[Add colliders in Unity]
+* link:https://docs.unity3d.com/Manual/class-CharacterController.html[Setting up a character Controller]
+* link:https://docs.unity3d.com/ScriptReference/CharacterController.html[Character Controller API]
+* link:https://docs.unity3d.com/ScriptReference/CharacterController.Move.html[How to use CharacterController.Move function]
+
+= What to hand in
+
+* Your scenes with your level and player in it
+* Your script, `PlayerMotionController.cs`
+* Updated README
+** A video or GIF showing your animated character, intersections with the world, and jumping if you implemented it
+** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
+run the following command inside your `{ASST}` directory.
+
+[source, subs="attributes"]
+----
+$ cd {ASST}
+$ git add .
+$ git commit -m "Finished {ASST}"
+$ git push
+----
+
+Run `git status` to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly. 
+
+*Assignment rubrics*
+
+Grades are out of 4 points.
+
+* Player character with Animator, AnimatorController, and CharacterController components (1.5 points)
+* Working `PlayerMotionController.cs` script (1 point)
+* Scene setup with colliders (1 point)
+* Readme (0.5 point)
+
+*Submission rubrics*
+
+For full credit, your submission must 
+
+* In your README, include videos or gifs showing your working scripts
+* Some credit lost for missing features or bugs, depending on severity of error
+* -100% for failure to commit work to Github
+* -100% for failure to build and run on the lab Windows machines

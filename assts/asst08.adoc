@@ -1,0 +1,92 @@
+include::header.adoc[]
+
+:title: Assignment 7: Motion and Collision
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+:stem:
+
+= {title}
+
+**Due Friday, November 1, before midnight**
+
+The goals for this assignment are:
+
+* Implement a spawner
+* Implement a simple collection mechanic with user interface
+
+:sectnums:
+
+= Getting Started
+
+It is not necessary to fetch from the upstream repository this week. Instead, 
+
+* Create a new scene, called `A08_Collection`, and save it to your `HelloUnity/Assets/Scenes` folder.
+
+**Scene and Player Setup**
+
+In both your scenes:
+
+* Initialize your scene with the prefab containing your level from assignment 7.
+* Add your character from assignment 4. 
+
+IMPORTANT: Be sure to remove any animation components from your character. In this assignment, you should create your own. 
+
+= Assignment Goals
+
+This assignment has two parts. In the first part, you will setup a motion controller with parameters for your 
+character. If your character already has one setup, you should remove it and create a simple controller for this 
+assignment. In the second part, you will setup colliders so that the player does not intersect objects and can 
+collect objects in the scene. 
+
+== Motion controller
+
+* Write a script, `Scripts/PlayerMotionController.cs`, that is a component for the root of your player character.
+
+image::A07-Motion.gif[width=640]
+
+In class, we talked about how to setup a motion controller for a character. Your character will need animations associated with it. Reach out to us if your character 
+does not have animations, or you are unsure, so we can help you. 
+
+== Collision volumes
+
+== Collection mechanic
+
+= What to hand in
+
+* Your scenes with your level and player in it
+* Your scripts, ``
+* Updated README
+** A video or GIF showing the motion controller, intersections with the world, and collection mechanic
+** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
+
+Don't forget to commit your changes and then push them to Github. Using Git Bash, 
+run the following command inside your `{ASST}` directory.
+
+[source, subs="attributes"]
+----
+$ cd {ASST}
+$ git add .
+$ git commit -m "Finished {ASST}"
+$ git push
+----
+
+Run `git status` to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly. 
+
+*Assignment rubrics*
+
+Grades are out of 4 points.
+
+* Your scripts need to be feature complete (3.5 points)
+* Readme (0.5 point)
+
+*Submission rubrics*
+
+For full credit, your submission must 
+
+* In your README, include videos or gifs showing your working scripts
+* Some credit lost for missing features or bugs, depending on severity of error
+* -100% for failure to commit work to Github
+* -100% for failure to build and run on the lab Windows machines

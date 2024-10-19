@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>Assignment 7: Motion and Collision</title>
+<link rel="stylesheet" href="../style/cs21.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_assignment_7_motion_and_collision">Assignment 7: Motion and Collision</a></li>
+<li><a href="#_getting_started">1. Getting Started</a></li>
+<li><a href="#_assignment_goals">2. Assignment Goals</a>
+<ul class="sectlevel2">
+<li><a href="#_motion_controller">2.1. Motion controller</a></li>
+<li><a href="#_physics">2.2. Physics</a></li>
+</ul>
+</li>
+<li><a href="#_what_to_hand_in">3. What to hand in</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_assignment_7_motion_and_collision">Assignment 7: Motion and Collision</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Due Friday, October 25, before midnight</strong></p>
+</div>
+<div class="paragraph">
+<p>The goals for this assignment are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement a simple motion controller for your character</p>
+</li>
+<li>
+<p>Support collisions and gravity for your character</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started">1. Getting Started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is not necessary to fetch from the upstream repository this week. Instead,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a new scene, called <code>A07_Motion</code>, and save it to your <code>HelloUnity/Assets/Scenes</code> folder.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Scene and Player Setup</strong></p>
+</div>
+<div class="paragraph">
+<p>In both your scenes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize your scene with the prefab containing your level from assignments 3 and 4</p>
+</li>
+<li>
+<p>Add your character from assignment 4.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Be sure to remove any animation components from your character. In this assignment, you should create your own.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_assignment_goals">2. Assignment Goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This assignment has two parts. In the first part, you will setup a motion controller with parameters for your
+character. If your character already has one setup, you should remove it and create a simple controller for this
+assignment. In the second part, you will setup colliders so that the player does not intersect objects and can
+collect objects in the scene.</p>
+</div>
+<div class="sect2">
+<h3 id="_motion_controller">2.1. Motion controller</h3>
+<div class="paragraph">
+<p>We will now implement features to animate our player character using Unity&#8217;s Mechanim system to
+create a state machine for transitioning between different animation clips. This feature requires
+your player asset to contain animation clips. If you are unsure whether your character has animation
+clips, we can help you. The demo below shows the goal of this feature.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A07-Motion.gif" alt="A07 Motion" width="640">
+</div>
+</div>
+<div class="paragraph">
+<p>This feature has two parts. First, you must configure your player character with an Animator and
+AnimatorComponent. Second, you must write a script, <code>Scripts/PlayerMotionController.cs</code>, that is
+a component for the root of your player character and that triggers animation transitions.</p>
+</div>
+<div class="paragraph">
+<p>For the first part, you must configure your player character to have animations. The configuration
+for our cat character is below. For resources on setting up your character, see the advice below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A07_AnnotatedMotionController.png" alt="A07 AnnotatedMotionController" width="640px">
+</div>
+</div>
+<div class="paragraph">
+<p>For the second part, use your script, <code>Scripts/PlayerControls.cs</code>, from
+assignment 5 as a starting point and add code to change the animation based on
+the velocity of the player. When the player is moving, show a walk or run
+animation. When the player is stationary, show and idle animation. See the advice below
+for Unity API documentation for implementing this feature.</p>
+</div>
+<div class="paragraph">
+<p>Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a motion controller that has at least two states for idling and moving.</p>
+</li>
+<li>
+<p>Create parameters on your motion controller.</p>
+</li>
+<li>
+<p>Do not use a prefab your motion controller. You must make your own.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Animator Setup Advice:</p>
+</div>
+<div class="paragraph">
+<p>Use the Unity documentation to learn how to setup a motion controller for your
+character.  First, you should look at your character in the asset window and see
+what <a href="https://docs.unity3d.com/Manual/AnimationClips.html">animation clips</a>
+it has on it. You can also configure a
+<a href="https://docs.unity3d.com/Manual/AvatarCreationandSetup.html">humanoid
+avatar</a> if it is appropriate. Otherwise, choose "create from this model" for the
+avatar type (under rig). Second, you should add an
+<a href="https://docs.unity3d.com/Manual/class-Animator.html">Animator component</a> and
+add a new <a href="https://docs.unity3d.com/Manual/class-AnimatorController.html">Animator Controller</a>.
+With the animator controller, you can
+add animations and setup transitions between them that use parameters. Last, you
+should add a script that switches between animations.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read the <a href="https://docs.unity3d.com/Manual/AnimationOverview.html">Mechanim documentation</a></p>
+</li>
+<li>
+<p>Add an <a href="https://docs.unity3d.com/Manual/class-Animator.html">Animator</a></p>
+</li>
+<li>
+<p>Setup the <a href="https://docs.unity3d.com/Manual/class-AnimatorController.html">Animator Controller</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Resources for implementing <code>PlayerMotionController.cs</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Write a script that connects the animator controller to user input.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/Animator.html">Animator API</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/Animator.SetFloat.html">Example: Setting parameters using the Animator API</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_physics">2.2. Physics</h3>
+<div class="paragraph">
+<p>We now have an animated player character. But the character has no physics
+behaviors: it can passthrough solid objects and doesn&#8217;t respond to gravity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A07-Passthrough.gif" alt="A07 Passthrough" width="640px">
+</div>
+</div>
+<div class="paragraph">
+<p>We will use Unity&#8217;s <a href="https://docs.unity3d.com/Manual/class-CharacterController.html">CharacterController</a>
+component to implement these features.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A07-Colliders.gif" alt="A07 Colliders" width="640px">
+</div>
+</div>
+<div class="paragraph">
+<p>Above, we put a CharacterController component on our player and extended our script,
+<code>PlayerMotionController.cs</code> to call <code>Move</code> with the velocity instead of setting the position directly.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A07_Capsule.png" alt="A07 Capsule" width="640px">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>//transform.position = transform.position + Time.deltaTime * velocity;
+CharacterController controller = GetComponent&lt;CharacterController&gt;();
+controller.Move(velocity * Time.deltaTime);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Put a character controller on your character</p>
+</li>
+<li>
+<p>Create Colliders on solid objects of your scene (if they do not have colliders on them already)</p>
+</li>
+<li>
+<p>Update <code>PlayerMotionController.cs</code> to move using the character controller, rather than moving the character directly. To start, change the code in <code>PlayerControls</code> where you set <code>transform.position</code> to call <code>Move</code> on your CharacterController component instead.</p>
+</li>
+<li>
+<p>Save you configured player character as a prefab</p>
+</li>
+<li>
+<p>(Optional) implement a character jump</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Advice:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.unity3d.com/Manual/collision-section.html">Add colliders in Unity</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/Manual/class-CharacterController.html">Setting up a character Controller</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/CharacterController.html">Character Controller API</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/CharacterController.Move.html">How to use CharacterController.Move function</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_hand_in">3. What to hand in</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Your scenes with your level and player in it</p>
+</li>
+<li>
+<p>Your script, <code>PlayerMotionController.cs</code></p>
+</li>
+<li>
+<p>Updated README</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A video or GIF showing your animated character, intersections with the world, and jumping if you implemented it</p>
+</li>
+<li>
+<p>Credits/links for any assets that you did not make yourself&#8201;&#8212;&#8201;if you add assets this week.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t forget to commit your changes and then push them to Github. Using Git Bash,
+run the following command inside your <code>HelloUnity</code> directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ cd HelloUnity
+$ git add .
+$ git commit -m "Finished HelloUnity"
+$ git push</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run <code>git status</code> to check the result of the previous git command.
+Check the Github website to make sure that your program uploaded correctly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Assignment rubrics</strong></p>
+</div>
+<div class="paragraph">
+<p>Grades are out of 4 points.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Player character with Animator, AnimatorController, and CharacterController components (1.5 points)</p>
+</li>
+<li>
+<p>Working <code>PlayerMotionController.cs</code> script (1 point)</p>
+</li>
+<li>
+<p>Scene setup with colliders (1 point)</p>
+</li>
+<li>
+<p>Readme (0.5 point)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Submission rubrics</strong></p>
+</div>
+<div class="paragraph">
+<p>For full credit, your submission must</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In your README, include videos or gifs showing your working scripts</p>
+</li>
+<li>
+<p>Some credit lost for missing features or bugs, depending on severity of error</p>
+</li>
+<li>
+<p>-100% for failure to commit work to Github</p>
+</li>
+<li>
+<p>-100% for failure to build and run on the lab Windows machines</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-10-19 16:28:54 -0400
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>
