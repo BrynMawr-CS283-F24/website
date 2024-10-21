@@ -101,7 +101,7 @@
 //-----------------------------
 |11
 |Nov 12, 14 anchor:week11[]
-|Flair and sound
+|*Flair and sound*
 
 * **Quiz 4**
 * Particle systems, sound, cloth. Building with Unity
@@ -114,18 +114,21 @@
 //-----------------------------
 |12
 |Nov 19,21 anchor:week12[]
-|*Shaders*
+|*Advanced Topics*
 
+* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
 * Nov 21, NO CLASS
-* link:assts/asst11.html[Assignment 11]: Due Nov 22
-* Final Game Project Proposal Due
+//* link:assts/asst11.html[Assignment 11]: Due Nov 22
+* Game Project Proposal Due Nov 19
+* Lab: Homework Demo Day and Party
 
 //-----------------------------
 |13
 |Nov 26 anchor:week13[]
-|*TBD* 
+|*Advanced Topics* 
 
-* Topics: 
+* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
+* Lab Nov 26, Game Milestone 1
 * Nov 28: Thanksgiving, NO CLASS
 
 //-----------------------------
@@ -133,16 +136,18 @@
 |Dec 3,5 anchor:week14[]
 |*Advanced Topics* 
 
-* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Mobile/Web/Desktop development
+* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
 //* link:assts/asst12.html[Assignment 12]: Due Dec 6
-//* Lab Dec 5, Final Practice, link:studyguide-final.html[Final Study Guide]
+* Lab Dec 3, Game Milestone 2
 
 //-----------------------------
 |15
 |Dec 10,12 anchor:week15[]
-|*Demos, Advanced Topics* 
+|*Advanced Topics* 
 
-* Dec 10: Final Game Demos!
+* Topics: TBD
+* Lab Dec 10, Final Game Demo Day and Party
+* Game Project Github Due, Dec 13th, at midnight
 
 |===
 
