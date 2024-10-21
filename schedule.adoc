@@ -20,7 +20,7 @@
 | *Common game concepts, Component-based architectures, Math for Games* 
 
 * Topics: Common game concepts, Component-based architecture, Math Fundamentals
-* Read: Madhav Chapter 3
+* Read: Madhav Chapter 2, 3
 * Lab: link:labs/lab-week02-2D.html[Game loop, coordinate systems and simple drawing]
 * link:assts/asst02.html[Assignment 02]: Sept 13
 
@@ -74,8 +74,9 @@
 |*Collisions and Physics, User Interfaces* 
 
 * Read: Madhav Chapter 7
-//* link:assts/asst07.html[Assignment 07]: Due Oct 25
-//* Lab Oct 24: **Quiz 03**
+* Topics: collision volumes, rigid bodies, forces, torques. UIs, Fonts, layouts, sprites
+* link:assts/asst07.html[Assignment 07]: Due Oct 25
+* Lab: Review and animator controller setup
 
 //-----------------------------
 |9
@@ -83,9 +84,9 @@
 |*Steering and path finding* 
 
 * Read: Madhav Chapter 9 ("Game" AI, Pathfinding)
-* Topics: battle systems, quest systems, inventory systems
+* Topics: Navigation, path planning, steering
+* link:assts/asst08.html[Assignment 08]: Due Oct 31 
 * **Quiz 3**
-//* link:assts/asst08.html[Assignment 08]: Due Oct 31 
 //* Lab: Practice Quiz 04 link:studyguide4.html[Study Guide: Quiz 04]
 
 //-----------------------------
@@ -95,15 +96,17 @@
 
 * Nov 5: NO CLASS. ELECTION Day
 * Read: Chapter 9 (State-based behaviors, Strategy and planning)
-//* link:assts/TODO.html[Assignment 09]: Due Nov 8
-//* Lab:  **Quiz 04**
+* link:assts/asst09.html[Assignment 09]: Due Nov 8
 
 //-----------------------------
 |11
 |Nov 12, 14 anchor:week11[]
-|
+|Flair and sound
 
 * **Quiz 4**
+* Particle systems, sound, cloth. Building with Unity
+* Read: Madhav Chapter 6, Chapter 10
+* link:assts/asst10.html[Assignment 10]: Due Nov 15
 // TODO: Copy graphics project stuff
 //* link:assts/project.html[Final Game Project Proposal]: Due Nov 15th
 //* Lab: Quiz Practice, link:studyguide5.html[Study Guide 5]
@@ -111,20 +114,18 @@
 //-----------------------------
 |12
 |Nov 19,21 anchor:week12[]
-|*2D Games*
+|*Shaders*
 
-* Read: Madhav Chapter 2
 * Nov 21, NO CLASS
-//* Lab: **Quiz 05**
+* link:assts/asst11.html[Assignment 11]: Due Nov 22
+* Final Game Project Proposal Due
 
 //-----------------------------
 |13
 |Nov 26 anchor:week13[]
-|*Flair, Sound* 
+|*TBD* 
 
-* Read: Chapter 6, Chapter 10
-* Topics: Layouts, UI widgets, transition animations, Procedural animation, particle systems, sound 
-* **Quiz 5**
+* Topics: 
 * Nov 28: Thanksgiving, NO CLASS
 
 //-----------------------------
@@ -142,7 +143,6 @@
 |*Demos, Advanced Topics* 
 
 * Dec 10: Final Game Demos!
-* From 3D to 2D Games
 
 |===
 
