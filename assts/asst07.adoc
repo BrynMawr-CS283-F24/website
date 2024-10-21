@@ -26,7 +26,7 @@ It is not necessary to fetch from the upstream repository this week. Instead,
 
 **Scene and Player Setup**
 
-In both your scenes:
+In your scene:
 
 * Initialize your scene with the prefab containing your level from assignments 3 and 4
 * Add your character from assignment 4. 
@@ -95,7 +95,7 @@ Resources for implementing `PlayerMotionController.cs`:
 ** link:https://docs.unity3d.com/ScriptReference/Animator.html[Animator API] 
 ** link:https://docs.unity3d.com/ScriptReference/Animator.SetFloat.html[Example: Setting parameters using the Animator API] 
 
-== Physics
+== Collision Physics
 
 We now have an animated player character. But the character has no physics
 behaviors: it can passthrough solid objects and doesn't respond to gravity. 
@@ -124,7 +124,8 @@ Requirements:
 * Put a character controller on your character
 * Create Colliders on solid objects of your scene (if they do not have colliders on them already)
 * Update `PlayerMotionController.cs` to move using the character controller, rather than moving the character directly. To start, change the code in `PlayerControls` where you set `transform.position` to call `Move` on your CharacterController component instead.
-* Save you configured player character as a prefab
+* Save your new configured player character as a prefab
+* Save your new configured level as a prefab
 * (Optional) implement a character jump
 
 Advice:

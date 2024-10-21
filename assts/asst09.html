@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Assignment 8: Path Planning</title>
+<title>Assignment 9: Wander</title>
 <link rel="stylesheet" href="../style/cs21.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,12 +14,12 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_8_path_planning">Assignment 8: Path Planning</a></li>
+<li><a href="#_assignment_9_wander">Assignment 9: Wander</a></li>
 <li><a href="#_getting_started">1. Getting Started</a></li>
 <li><a href="#_assignment_goals">2. Assignment Goals</a>
 <ul class="sectlevel2">
-<li><a href="#_a_path_planning">2.1. A* Path Planning</a></li>
-<li><a href="#_wander_behavior">2.2. Wander behavior</a></li>
+<li><a href="#_npc">2.1. NPC</a></li>
+<li><a href="#_wander">2.2. Wander</a></li>
 </ul>
 </li>
 <li><a href="#_what_to_hand_in">3. What to hand in</a></li>
@@ -28,7 +28,7 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_8_path_planning">Assignment 8: Path Planning</h2>
+<h2 id="_assignment_9_wander">Assignment 9: Wander</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Due Friday, November 8, before midnight</strong></p>
@@ -39,10 +39,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Implement A* path planning</p>
+<p>Configure an NPC character</p>
 </li>
 <li>
-<p>Implement a wander behavior</p>
+<p>Implement a wander behavior using a navigation mesh</p>
 </li>
 </ul>
 </div>
@@ -65,7 +65,7 @@
 <p><strong>Scene and Player Setup</strong></p>
 </div>
 <div class="paragraph">
-<p>In both your scenes:</p>
+<p>In your scene:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -73,9 +73,12 @@
 <p>Initialize your scene with the prefab containing your level from assignment 7.</p>
 </li>
 <li>
-<p>Add your character from assignment 4.</p>
+<p>Add your character prefab from assignment 7.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Feel free to reuse your scene from assignment 8.</p>
 </div>
 </div>
 </div>
@@ -83,35 +86,83 @@
 <h2 id="_assignment_goals">2. Assignment Goals</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This assignment has one part. You will implement A* path planning and use it to
-implement a simple wander behavior for non-player characters. In our demo, we use
-the same character with different textures to distinguish between the player
-and other characters, but you can choose your own approach.</p>
+<p>This assignment has two parts. In the first part, you will configure a non-player character.
+In the second part, you will implement a simple AI character
+that wanders the level choosing randomly selected destinations.</p>
 </div>
 <div class="sect2">
-<h3 id="_a_path_planning">2.1. A* Path Planning</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Write a script, <code>Scripts/PathPlanner.cs</code>, that is a component for the root of a character.</p>
-</li>
-</ul>
+<h3 id="_npc">2.1. NPC</h3>
+<div class="paragraph">
+<p>An NPC (Non-player character) is a character controlled by the game, rather than the player.
+In this demo, I use the same asset as our player, but configure it with a different material
+and animation so it looks like a ghost.</p>
+</div>
+<div class="paragraph">
+<p>You can also re-use the player asset (but distinguish its appearance), or use a different asset
+to represent NPCs.</p>
+</div>
+<div class="paragraph">
+<p>Add a NavMeshAgent component to your NPC so it can move on its own around the level.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/A08-PathPlanning.gif" alt="A08 PathPlanning" width="640">
+<img src="img/A09_NPC.png" alt="A09 NPC" width="640px">
 </div>
 </div>
-<div class="paragraph">
-<p>You can re-use the path following script from assignment 6.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/A09_NPC.gif" alt="A09 NPC" width="640px">
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_wander_behavior">2.2. Wander behavior</h3>
+<h3 id="_wander">2.2. Wander</h3>
+<div class="paragraph">
+<p>Write a script, <code>Scripts/Wander.cs</code>, that is a component for the root of a character.
+Wander should use Unity&#8217;s built-in navigation features to choose a random position on the
+map and then steer the NPC to that target.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A09-Wander.gif" alt="A09 Wander" width="640">
+</div>
+</div>
+<div class="paragraph">
+<p>To get started, you will need to build the navigation mesh. To build the mesh, you will need</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Write a script, <code>Scripts/Wander.cs</code>, that is a component for the root of a character.</p>
+<p>to provide a radius for your agent (e.g. the capsule radius on your CharacterController) and</p>
+</li>
+<li>
+<p>to specify navigable terrain as static geometry. <a href="https://docs.unity3d.com/2023.1/Documentation/Manual/nav-BuildingNavMesh.html">See the documentation here for details</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Then you choose <code>bake</code> to compute and save the navigation mesh. Our navigation mesh looks as follows.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/A09_NavMesh.png" alt="A09 NavMesh" width="640px">
+</div>
+</div>
+<div class="paragraph">
+<p>Your wander script will need to query the navigation mesh for a random point and then call NavMeshAgent.SetDestination.
+In Update(), you can use NavMeshAgent.remainingDistance to check whether the agent has reached the target
+yet. If the agent is close to the destination, they should choose another random point.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/AI.NavMesh.html">NavMesh API</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">NavMeshAgent API</a></p>
+</li>
+<li>
+<p><a href="https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html">NavMesh.SamplePosition</a></p>
 </li>
 </ul>
 </div>
@@ -124,10 +175,10 @@ and other characters, but you can choose your own approach.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Your scenes with your level and player in it</p>
+<p>Your scenes with your level, player, and NPC in it</p>
 </li>
 <li>
-<p>Your scripts, ``</p>
+<p>Your script, <code>Scripts/Wander.cs</code></p>
 </li>
 <li>
 <p>Updated README</p>
@@ -203,7 +254,7 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-19 12:10:07 -0400
+Last updated 2024-10-20 21:44:58 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

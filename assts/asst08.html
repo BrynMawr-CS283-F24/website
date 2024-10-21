@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Assignment 7: Motion and Collision</title>
+<title>Assignment 8: Collection Game</title>
 <link rel="stylesheet" href="../style/cs21.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,13 +14,12 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_7_motion_and_collision">Assignment 7: Motion and Collision</a></li>
+<li><a href="#_assignment_8_collection_game">Assignment 8: Collection Game</a></li>
 <li><a href="#_getting_started">1. Getting Started</a></li>
 <li><a href="#_assignment_goals">2. Assignment Goals</a>
 <ul class="sectlevel2">
-<li><a href="#_motion_controller">2.1. Motion controller</a></li>
-<li><a href="#_collision_volumes">2.2. Collision volumes</a></li>
-<li><a href="#_collection_mechanic">2.3. Collection mechanic</a></li>
+<li><a href="#_collection_game">2.1. Collection Game</a></li>
+<li><a href="#_object_spawner">2.2. Object Spawner</a></li>
 </ul>
 </li>
 <li><a href="#_what_to_hand_in">3. What to hand in</a></li>
@@ -29,7 +28,7 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_7_motion_and_collision">Assignment 7: Motion and Collision</h2>
+<h2 id="_assignment_8_collection_game">Assignment 8: Collection Game</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Due Friday, November 1, before midnight</strong></p>
@@ -40,10 +39,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Implement a spawner</p>
+<p>Implement a simple collection mechanic</p>
 </li>
 <li>
-<p>Implement a simple collection mechanic with user interface</p>
+<p>Implement a user interface</p>
+</li>
+<li>
+<p>Implement a spawner</p>
 </li>
 </ul>
 </div>
@@ -66,7 +68,7 @@
 <p><strong>Scene and Player Setup</strong></p>
 </div>
 <div class="paragraph">
-<p>In both your scenes:</p>
+<p>In your scene:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -74,21 +76,9 @@
 <p>Initialize your scene with the prefab containing your level from assignment 7.</p>
 </li>
 <li>
-<p>Add your character from assignment 4.</p>
+<p>Add your character prefab from assignment 7.</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Be sure to remove any animation components from your character. In this assignment, you should create your own.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -96,37 +86,120 @@ Be sure to remove any animation components from your character. In this assignme
 <h2 id="_assignment_goals">2. Assignment Goals</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This assignment has two parts. In the first part, you will setup a motion controller with parameters for your
-character. If your character already has one setup, you should remove it and create a simple controller for this
-assignment. In the second part, you will setup colliders so that the player does not intersect objects and can
-collect objects in the scene.</p>
-</div>
-<div class="sect2">
-<h3 id="_motion_controller">2.1. Motion controller</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Write a script, <code>Scripts/PlayerMotionController.cs</code>, that is a component for the root of your player character.</p>
-</li>
-</ul>
+<p>In this assignment, you will implement a simple collection game mechanic using colliders.
+From assignment 7, you have already configured your player character and level with
+colliders. In this assignment, you will write a script that detects collisions between
+the player and special objects. When the player runs into a collectable object, the object
+should disappear, and the number of collected objects should increase on the game&#8217;s
+user interface.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/A07-Motion.gif" alt="A07 Motion" width="640">
+<img src="img/A08-Collection.gif" alt="A08 Collection" width="640">
 </div>
+</div>
+<div class="sect2">
+<h3 id="_collection_game">2.1. Collection Game</h3>
+<div class="paragraph">
+<p>Write a script, <code>Scripts/CollectionGame.cs</code>, that will implement the mechanics for your mini-game.
+Place your script on the player character. At minimum, your script should take the UI text
+as a parameter.</p>
 </div>
 <div class="paragraph">
-<p>In class, we talked about how to setup a motion controller for a character. Your character will need animations associated with it. Reach out to us if your character
-does not have animations, or you are unsure, so we can help you.</p>
+<p>Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a user interface</p>
+</li>
+<li>
+<p>Detect collisions between the player and your collectable object. Use OnTriggerEnter to detect collisions with the player.</p>
+</li>
+<li>
+<p>Use tags or a naming convention to distinguish your collectable object from other types of objects</p>
+</li>
+<li>
+<p>Update the count on the user interface when the player picks up an object</p>
+</li>
+<li>
+<p>Make the collectable object disappear when the player picks it up. You can use <code>GameObject.SetActive</code> to hide the object.</p>
+</li>
+<li>
+<p>Implement an effect, such as an animation, that shows that the object has been picked up. This should be implemented as an animation or script on the collectable object so it can be triggered from different scripts.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://unity.com/resources/user-interface-design-and-implementation-in-unity">Unity Interface Guide</a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_collision_volumes">2.2. Collision volumes</h3>
-
+<h3 id="_object_spawner">2.2. Object Spawner</h3>
+<div class="paragraph">
+<p>A spawner is a type of game object that generates other game objects. Spawners are used in particle
+systems and for generating enemies. In this assignment, we will use a spawner to generate collectable
+objects.</p>
 </div>
-<div class="sect2">
-<h3 id="_collection_mechanic">2.3. Collection mechanic</h3>
-
+<div class="paragraph">
+<p>Write a script, <code>Scripts/Spawner.cs</code>, to implements a spawner. This script should be a component on
+an empty GameObject that can serve as a landmark for where objects will be spawned. For example,
+we place the Spawner script on a sphere object so we can visualize the size of the spawning radius.
+We can hide the sphere by unchecking its <code>MeshRenderer</code>.  You spawner should minimally support parameters to
+specify the</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>template object (use a prefab for this),</p>
+</li>
+<li>
+<p>range from the spawner center to create objects, and</p>
+</li>
+<li>
+<p>max number of spawned objects.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <a href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html"><code>GameObject.Instantiate</code></a> to create duplicates of a prefab that corresponds to your collectable object</p>
+</li>
+<li>
+<p>Support the spawn parameters: template, range, and max number of spawns</p>
+</li>
+<li>
+<p>Use the flag in GameObject, called <code>activeInHierarchy</code>, to determine whether a spawned object has been picked up. If it has been picked up, spawn the collectable elsewhere.</p>
+</li>
+<li>
+<p>Generate random positions for spawned objects that are within the given radius of the spawner. You can use <code>Random.RandRange</code> to generate random numbers for spawning.</p>
+</li>
+<li>
+<p>Your collectable object has a collider on it so it can be picked up. Use the bounding box on this collider (see <a href="https://docs.unity3d.com/ScriptReference/Collider-bounds.html">Collider.Bounds</a>) to position the collectable to it sits on top of the terrain.</p>
+</li>
+<li>
+<p>(Optional - See assignment 9) Use a navigation mesh to ensure that the spawned objects spawn in areas that are accessible to the player</p>
+</li>
+</ul>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="img/A08_Spawner.mp4" width="640" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -215,7 +288,7 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-19 12:09:43 -0400
+Last updated 2024-10-20 21:46:45 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

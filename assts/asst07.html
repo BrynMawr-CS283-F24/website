@@ -19,7 +19,7 @@
 <li><a href="#_assignment_goals">2. Assignment Goals</a>
 <ul class="sectlevel2">
 <li><a href="#_motion_controller">2.1. Motion controller</a></li>
-<li><a href="#_physics">2.2. Physics</a></li>
+<li><a href="#_collision_physics">2.2. Collision Physics</a></li>
 </ul>
 </li>
 <li><a href="#_what_to_hand_in">3. What to hand in</a></li>
@@ -65,7 +65,7 @@
 <p><strong>Scene and Player Setup</strong></p>
 </div>
 <div class="paragraph">
-<p>In both your scenes:</p>
+<p>In your scene:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -202,7 +202,7 @@ should add a script that switches between animations.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_physics">2.2. Physics</h3>
+<h3 id="_collision_physics">2.2. Collision Physics</h3>
 <div class="paragraph">
 <p>We now have an animated player character. But the character has no physics
 behaviors: it can passthrough solid objects and doesn&#8217;t respond to gravity.</p>
@@ -252,7 +252,10 @@ controller.Move(velocity * Time.deltaTime);</pre>
 <p>Update <code>PlayerMotionController.cs</code> to move using the character controller, rather than moving the character directly. To start, change the code in <code>PlayerControls</code> where you set <code>transform.position</code> to call <code>Move</code> on your CharacterController component instead.</p>
 </li>
 <li>
-<p>Save you configured player character as a prefab</p>
+<p>Save your new configured player character as a prefab</p>
+</li>
+<li>
+<p>Save your new configured level as a prefab</p>
 </li>
 <li>
 <p>(Optional) implement a character jump</p>
@@ -372,7 +375,7 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-19 16:28:54 -0400
+Last updated 2024-10-19 16:45:20 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

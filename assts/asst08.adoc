@@ -1,6 +1,6 @@
 include::header.adoc[]
 
-:title: Assignment 7: Motion and Collision
+:title: Assignment 8: Collection Game
 :Author Initials: ASN
 :Date:    2021-01-29
 :Revision: 0.1
@@ -13,8 +13,9 @@ include::header.adoc[]
 
 The goals for this assignment are:
 
+* Implement a simple collection mechanic 
+* Implement a user interface 
 * Implement a spawner
-* Implement a simple collection mechanic with user interface
 
 :sectnums:
 
@@ -26,32 +27,68 @@ It is not necessary to fetch from the upstream repository this week. Instead,
 
 **Scene and Player Setup**
 
-In both your scenes:
+In your scene:
 
 * Initialize your scene with the prefab containing your level from assignment 7.
-* Add your character from assignment 4. 
-
-IMPORTANT: Be sure to remove any animation components from your character. In this assignment, you should create your own. 
+* Add your character prefab from assignment 7. 
 
 = Assignment Goals
 
-This assignment has two parts. In the first part, you will setup a motion controller with parameters for your 
-character. If your character already has one setup, you should remove it and create a simple controller for this 
-assignment. In the second part, you will setup colliders so that the player does not intersect objects and can 
-collect objects in the scene. 
+In this assignment, you will implement a simple collection game mechanic using colliders. 
+From assignment 7, you have already configured your player character and level with 
+colliders. In this assignment, you will write a script that detects collisions between 
+the player and special objects. When the player runs into a collectable object, the object 
+should disappear, and the number of collected objects should increase on the game's 
+user interface.
 
-== Motion controller
+image::A08-Collection.gif[width=640]
 
-* Write a script, `Scripts/PlayerMotionController.cs`, that is a component for the root of your player character.
+== Collection Game
 
-image::A07-Motion.gif[width=640]
+Write a script, `Scripts/CollectionGame.cs`, that will implement the mechanics for your mini-game.
+Place your script on the player character. At minimum, your script should take the UI text
+as a parameter. 
 
-In class, we talked about how to setup a motion controller for a character. Your character will need animations associated with it. Reach out to us if your character 
-does not have animations, or you are unsure, so we can help you. 
+Requirements:
 
-== Collision volumes
+* Add a user interface
+* Detect collisions between the player and your collectable object. Use OnTriggerEnter to detect collisions with the player.
+* Use tags or a naming convention to distinguish your collectable object from other types of objects
+* Update the count on the user interface when the player picks up an object
+* Make the collectable object disappear when the player picks it up. You can use `GameObject.SetActive` to hide the object.
+* Implement an effect, such as an animation, that shows that the object has been picked up. This should be implemented as an animation or script on the collectable object so it can be triggered from different scripts.
 
-== Collection mechanic
+Resources:
+
+* link:https://unity.com/resources/user-interface-design-and-implementation-in-unity[Unity Interface Guide]
+
+== Object Spawner
+
+A spawner is a type of game object that generates other game objects. Spawners are used in particle 
+systems and for generating enemies. In this assignment, we will use a spawner to generate collectable 
+objects. 
+
+Write a script, `Scripts/Spawner.cs`, to implements a spawner. This script should be a component on 
+an empty GameObject that can serve as a landmark for where objects will be spawned. For example, 
+we place the Spawner script on a sphere object so we can visualize the size of the spawning radius. 
+We can hide the sphere by unchecking its `MeshRenderer`.  You spawner should minimally support parameters to 
+specify the 
+
+* template object (use a prefab for this), 
+* range from the spawner center to create objects, and
+* max number of spawned objects.
+
+Requirements:
+
+* Use link:https://docs.unity3d.com/ScriptReference/Object.Instantiate.html[`GameObject.Instantiate`] to create duplicates of a prefab that corresponds to your collectable object
+* Support the spawn parameters: template, range, and max number of spawns
+* Use the flag in GameObject, called `activeInHierarchy`, to determine whether a spawned object has been picked up. If it has been picked up, spawn the collectable elsewhere.
+* Generate random positions for spawned objects that are within the given radius of the spawner. You can use `Random.RandRange` to generate random numbers for spawning.
+* Your collectable object has a collider on it so it can be picked up. Use the bounding box on this collider (see link:https://docs.unity3d.com/ScriptReference/Collider-bounds.html[Collider.Bounds]) to position the collectable to it sits on top of the terrain.
+* (Optional - See assignment 9) Use a navigation mesh to ensure that the spawned objects spawn in areas that are accessible to the player
+
+
+video::A08_Spawner.mp4[width=640]
 
 = What to hand in
 

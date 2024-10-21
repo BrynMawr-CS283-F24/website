@@ -1,6 +1,6 @@
 include::header.adoc[]
 
-:title: Assignment 8: Path Planning
+:title: Assignment 10: Behave!
 :Author Initials: ASN
 :Date:    2021-01-29
 :Revision: 0.1
@@ -24,6 +24,7 @@ It is not necessary to fetch from the upstream repository this week. Instead,
 
 * Create a new scene, called `A10_Behavior`, and save it to your `HelloUnity/Assets/Scenes` folder.
 
+
 **Scene and Player Setup**
 
 In both your scenes:
@@ -38,17 +39,21 @@ implement a simple wander behavior for non-player characters. In our demo, we us
 the same character with different textures to distinguish between the player 
 and other characters, but you can choose your own approach.
 
-== A* Path Planning
+== Behaviors
 
-* Write a script, `Scripts/PathPlanner.cs`, that is a component for the root of a character.
+Write two scripts, `Scripts/BehaviorMinion.cs` and `Scripts/BehaviorBoss.cs`, 
+that can be components for the root of a character. Both these scripts will use a behavior tree 
+to control the character.
 
-image::A08-PathPlanning.gif[width=640]
+Behaviors to implement:
 
-You can re-use the path following script from assignment 6.
-
-== Wander behavior
-
-* Write a script, `Scripts/Wander.cs`, that is a component for the root of a character.
+* MoveTo <Target>
+* CanSee <Target>
+* PlayAnimation
+* TurnTowards <Target>
+* Wander
+* Attack
+* RunAway
 
 = What to hand in
 

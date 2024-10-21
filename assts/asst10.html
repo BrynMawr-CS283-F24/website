@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Assignment 8: Path Planning</title>
+<title>Assignment 10: Behave!</title>
 <link rel="stylesheet" href="../style/cs21.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,12 +14,11 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_assignment_8_path_planning">Assignment 8: Path Planning</a></li>
+<li><a href="#_assignment_10_behave">Assignment 10: Behave!</a></li>
 <li><a href="#_getting_started">1. Getting Started</a></li>
 <li><a href="#_assignment_goals">2. Assignment Goals</a>
 <ul class="sectlevel2">
-<li><a href="#_a_path_planning">2.1. A* Path Planning</a></li>
-<li><a href="#_wander_behavior">2.2. Wander behavior</a></li>
+<li><a href="#_behaviors">2.1. Behaviors</a></li>
 </ul>
 </li>
 <li><a href="#_what_to_hand_in">3. What to hand in</a></li>
@@ -28,7 +27,7 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_assignment_8_path_planning">Assignment 8: Path Planning</h2>
+<h2 id="_assignment_10_behave">Assignment 10: Behave!</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Due Friday, November 15, before midnight</strong></p>
@@ -89,29 +88,37 @@ the same character with different textures to distinguish between the player
 and other characters, but you can choose your own approach.</p>
 </div>
 <div class="sect2">
-<h3 id="_a_path_planning">2.1. A* Path Planning</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Write a script, <code>Scripts/PathPlanner.cs</code>, that is a component for the root of a character.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="img/A08-PathPlanning.gif" alt="A08 PathPlanning" width="640">
-</div>
+<h3 id="_behaviors">2.1. Behaviors</h3>
+<div class="paragraph">
+<p>Write two scripts, <code>Scripts/BehaviorMinion.cs</code> and <code>Scripts/BehaviorBoss.cs</code>,
+that can be components for the root of a character. Both these scripts will use a behavior tree
+to control the character.</p>
 </div>
 <div class="paragraph">
-<p>You can re-use the path following script from assignment 6.</p>
+<p>Behaviors to implement:</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_wander_behavior">2.2. Wander behavior</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Write a script, <code>Scripts/Wander.cs</code>, that is a component for the root of a character.</p>
+<p>MoveTo &lt;Target&gt;</p>
+</li>
+<li>
+<p>CanSee &lt;Target&gt;</p>
+</li>
+<li>
+<p>PlayAnimation</p>
+</li>
+<li>
+<p>TurnTowards &lt;Target&gt;</p>
+</li>
+<li>
+<p>Wander</p>
+</li>
+<li>
+<p>Attack</p>
+</li>
+<li>
+<p>RunAway</p>
 </li>
 </ul>
 </div>
@@ -203,7 +210,7 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-19 12:09:35 -0400
+Last updated 2024-10-20 21:12:50 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
