@@ -85,7 +85,7 @@
 
 * Read: Madhav Chapter 9 ("Game" AI, Pathfinding)
 * Topics: Navigation, path planning, steering
-* link:assts/asst08.html[Assignment 08]: Due Oct 31 
+* link:assts/asst08.html[Assignment 08]: Due Nov 1 
 * **Quiz 3**
 //* Lab: Practice Quiz 04 link:studyguide4.html[Study Guide: Quiz 04]
 
@@ -94,7 +94,7 @@
 |Nov 5, 7 anchor:week10[]
 |*Behaviors* 
 
-* Nov 5: NO CLASS. ELECTION Day
+* Nov 5: NO CLASS. NO LAB. ELECTION Day
 * Read: Chapter 9 (State-based behaviors, Strategy and planning)
 * link:assts/asst09.html[Assignment 09]: Due Nov 8
 
@@ -103,7 +103,7 @@
 |Nov 12, 14 anchor:week11[]
 |*Flair and sound*
 
-* **Quiz 4**
+* Lab: Physics Simulation
 * Particle systems, sound, cloth. Building with Unity
 * Read: Madhav Chapter 6, Chapter 10
 * link:assts/asst10.html[Assignment 10]: Due Nov 15
@@ -128,7 +128,7 @@
 |*Advanced Topics* 
 
 * Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
-* Lab Nov 26, Game Milestone 1
+* Lab: **Quiz 4**
 * Nov 28: Thanksgiving, NO CLASS
 
 //-----------------------------
@@ -137,8 +137,8 @@
 |*Advanced Topics* 
 
 * Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
+* Lab Dec 3, Game Milestone 1
 //* link:assts/asst12.html[Assignment 12]: Due Dec 6
-* Lab Dec 3, Game Milestone 2
 
 //-----------------------------
 |15
