@@ -15,10 +15,10 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Next assignment is Due Nov 1st. link:assts/asst08.html[Assignment 08: Collection Game]
+* Next assignment is Due Nov 8st. link:assts/asst09.html[Assignment 09: Wander]
 //* link:labs/lab-week05-Transform.html[Lab Oct 3] Transform practice. Player character setup.
-* Oct 29, Quiz 03: Points, Vectors, Transforms
-* Lab: Player character animation setup. Transformation practice.
+//* Oct 29, Quiz 03: Points, Vectors, Transforms
+* NO LAB THIS WEEK (Nov 5) 
 
 == Course Info
 
