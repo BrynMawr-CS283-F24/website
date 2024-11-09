@@ -14,7 +14,7 @@ include::header.adoc[]
 The goals for this assignment are:
 
 * Use a behavior tree API to implement NPC behaviors
-* Create at least two types of characters 
+* Create at least two distinct behaviors for two types of NPCs 
 
 :sectnums:
 
@@ -23,7 +23,6 @@ The goals for this assignment are:
 It is not necessary to fetch from the upstream repository this week. Instead, 
 
 * Create a new scene, called `A10_Behavior`, and save it to your `HelloUnity/Assets/Scenes` folder.
-
 
 **Scene and Player Setup**
 
@@ -34,33 +33,47 @@ In both your scenes:
 
 = Assignment Goals
 
-This assignment has one part. You will implement A* path planning and use it to 
-implement a simple wander behavior for non-player characters. In our demo, we use 
-the same character with different textures to distinguish between the player 
-and other characters, but you can choose your own approach.
+In this assignment, you will implement two behaviors using an existing behavior tree 
+implementation. The first behavior should implement a traditional RPG attack and flee behavior. 
+The second behavior can be anything you wish. It is not necessary to implement 
+game mechanics for the player, although you are free to do so! 
+
+IMPORTANT: Your homework should use link:BTScript.cs[this class] to implement
+your behavior tree. Copy this file into your repository into the `Scripts`
+directory.
 
 == Behaviors
 
-Write two scripts, `Scripts/BehaviorMinion.cs` and `Scripts/BehaviorBoss.cs`, 
-that can be components for the root of a character. Both these scripts will use a behavior tree 
-to control the character.
+Write two scripts, `Scripts/BehaviorMinion.cs` and `Scripts/BehaviorUnique.cs`. 
+Both these scripts must use a behavior tree.
 
-Behaviors to implement:
+=== Minion
 
-* MoveTo <Target>
-* CanSee <Target>
-* PlayAnimation
-* TurnTowards <Target>
-* Wander
-* Attack
-* RunAway
+In the script, `Scripts/BehaviorMinion.cs`, implement a traditional RPG attack/flee 
+behavior. In this behavior, 
+
+* Your minion should attack the player if the player comes within range of it.
+* Your minion should retreat if the the player returns to their home area.
+* Your minion should follow the player if the player runs away.
+
+=== Unique
+
+In the script, `Scripts/BehaviorUnique.cs`, implement a behavior of your choice. 
+Below are some ideas:
+
+* A companion who helps the player
+* An NPC quest giver, story character, or merchant
+* A different type of minion enemy
+* A boss enemy
+
+Choose something that supports your game design!
 
 = What to hand in
 
 * Your scenes with your level and player in it
-* Your scripts, ``
+* Your scripts, `BehaviorMinion.cs` and `BehaviorUnique.cs`
 * Updated README
-** A video or GIF showing the motion controller, intersections with the world, and collection mechanic
+** A video or GIF showing your two behaviors.
 ** Credits/links for any assets that you did not make yourself -- if you add assets this week. 
 
 Don't forget to commit your changes and then push them to Github. Using Git Bash, 

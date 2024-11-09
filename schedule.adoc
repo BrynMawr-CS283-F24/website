@@ -84,10 +84,10 @@
 |*Steering and path finding* 
 
 * Read: Madhav Chapter 9 ("Game" AI, Pathfinding)
+* Read: AI for Games, Sections 4.1-4.4
 * Topics: Navigation, path planning, steering
 * link:assts/asst08.html[Assignment 08]: Due Nov 1 
-* **Quiz 3**
-//* Lab: Practice Quiz 04 link:studyguide4.html[Study Guide: Quiz 04]
+* **Quiz 3**: link:studyguide2.html[Study Guide]
 
 //-----------------------------
 |10
@@ -95,32 +95,30 @@
 |*Behaviors* 
 
 * Nov 5: NO CLASS. NO LAB. ELECTION Day
-* Read: Chapter 9 (State-based behaviors, Strategy and planning)
+* Read: Madhav Chapter 9 (State-based behaviors, Strategy and planning)
+* Read: AI for Games, Sections 5.1-5.4
 * link:assts/asst09.html[Assignment 09]: Due Nov 8
 
 //-----------------------------
 |11
 |Nov 12, 14 anchor:week11[]
-|*Flair and sound*
+|*Other Game AI Techniques*
 
 * Lab: Physics Simulation
-* Particle systems, sound, cloth. Building with Unity
-* Read: Madhav Chapter 6, Chapter 10
 * link:assts/asst10.html[Assignment 10]: Due Nov 15
-// TODO: Copy graphics project stuff
-//* link:assts/project.html[Final Game Project Proposal]: Due Nov 15th
-//* Lab: Quiz Practice, link:studyguide5.html[Study Guide 5]
+* Read: Madhav Chapter 9 (State-based behaviors, Strategy and planning)
+* Read: AI for Games, Sections 5.5-5.9
 
 //-----------------------------
 |12
 |Nov 19,21 anchor:week12[]
-|*Advanced Topics*
+|*Sound*
 
-* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
-* Nov 21, NO CLASS
-//* link:assts/asst11.html[Assignment 11]: Due Nov 22
-* Game Project Proposal Due Nov 19
-* Lab: Homework Demo Day and Party
+* Sound. Building with Unity
+* Read: Madhav Chapter 6
+* Nov 21, NO CLASS!
+* link:asst/project.html[Game Project Proposal] Due Nov 22
+* Lab Nov 19: Homework Demo Day and Party
 
 //-----------------------------
 |13

@@ -41,7 +41,7 @@
 <p>Use a behavior tree API to implement NPC behaviors</p>
 </li>
 <li>
-<p>Create at least two types of characters</p>
+<p>Create at least two distinct behaviors for two types of NPCs</p>
 </li>
 </ul>
 </div>
@@ -82,45 +82,76 @@
 <h2 id="_assignment_goals">2. Assignment Goals</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This assignment has one part. You will implement A* path planning and use it to
-implement a simple wander behavior for non-player characters. In our demo, we use
-the same character with different textures to distinguish between the player
-and other characters, but you can choose your own approach.</p>
+<p>In this assignment, you will implement two behaviors using an existing behavior tree
+implementation. The first behavior should implement a traditional RPG attack and flee behavior.
+The second behavior can be anything you wish. It is not necessary to implement
+game mechanics for the player, although you are free to do so!</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Your homework should use <a href="BTScript.cs">this class</a> to implement
+your behavior tree. Copy this file into your repository into the <code>Scripts</code>
+directory.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_behaviors">2.1. Behaviors</h3>
 <div class="paragraph">
-<p>Write two scripts, <code>Scripts/BehaviorMinion.cs</code> and <code>Scripts/BehaviorBoss.cs</code>,
-that can be components for the root of a character. Both these scripts will use a behavior tree
-to control the character.</p>
+<p>Write two scripts, <code>Scripts/BehaviorMinion.cs</code> and <code>Scripts/BehaviorUnique.cs</code>.
+Both these scripts must use a behavior tree.</p>
 </div>
+<div class="sect3">
+<h4 id="_minion">2.1.1. Minion</h4>
 <div class="paragraph">
-<p>Behaviors to implement:</p>
+<p>In the script, <code>Scripts/BehaviorMinion.cs</code>, implement a traditional RPG attack/flee
+behavior. In this behavior,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>MoveTo &lt;Target&gt;</p>
+<p>Your minion should attack the player if the player comes within range of it.</p>
 </li>
 <li>
-<p>CanSee &lt;Target&gt;</p>
+<p>Your minion should retreat if the the player returns to their home area.</p>
 </li>
 <li>
-<p>PlayAnimation</p>
-</li>
-<li>
-<p>TurnTowards &lt;Target&gt;</p>
-</li>
-<li>
-<p>Wander</p>
-</li>
-<li>
-<p>Attack</p>
-</li>
-<li>
-<p>RunAway</p>
+<p>Your minion should follow the player if the player runs away.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_unique">2.1.2. Unique</h4>
+<div class="paragraph">
+<p>In the script, <code>Scripts/BehaviorUnique.cs</code>, implement a behavior of your choice.
+Below are some ideas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A companion who helps the player</p>
+</li>
+<li>
+<p>An NPC quest giver, story character, or merchant</p>
+</li>
+<li>
+<p>A different type of minion enemy</p>
+</li>
+<li>
+<p>A boss enemy</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Choose something that supports your game design!</p>
+</div>
 </div>
 </div>
 </div>
@@ -134,14 +165,14 @@ to control the character.</p>
 <p>Your scenes with your level and player in it</p>
 </li>
 <li>
-<p>Your scripts, ``</p>
+<p>Your scripts, <code>BehaviorMinion.cs</code> and <code>BehaviorUnique.cs</code></p>
 </li>
 <li>
 <p>Updated README</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A video or GIF showing the motion controller, intersections with the world, and collection mechanic</p>
+<p>A video or GIF showing your two behaviors.</p>
 </li>
 <li>
 <p>Credits/links for any assets that you did not make yourself&#8201;&#8212;&#8201;if you add assets this week.</p>
@@ -210,7 +241,7 @@ Check the Github website to make sure that your program uploaded correctly.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-20 21:12:50 -0400
+Last updated 2024-11-09 16:23:20 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">

@@ -1,0 +1,72 @@
+include::header.adoc[]
+
+:title: Game Project
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+:stem:
+
+= {title}
+
+**Idea: Due Friday, Nov 22**
+**Project: Due Friday, Dec 13**
+
+The goals for this project are:
+
+* Explore topics that are interesting to you
+* Create a playable experience that you can share with others
+* Expand on skills and knowledge learned during the semester
+* Create a portfolio project 
+
+:sectnums:
+
+= Requirements
+
+* Your project should create a piece of software, such as a demo, tool, or game
+* Your project should be unique and represent your own creativity. It is ok to use assets made by other people so long as you attribute their work.
+
+Your final grade will be based on
+
+* Git repository - Your project should build and run in Unity, without modifications
+* Your README should summarize your work from the semester using text, videos, gifs, and images
+* Demonstrate effort and creativity. To earn an A, the final result must show quality, effort and ingenuity.
+
+= Milestones
+
+* Project idea: *Due Nov 22nd* (Informally, email or slack your idea to the instructor.)
+* Playable project demo: Due Dec 10th.
+* Final project submission: Due Dec 13th
+
+= Project Idea
+
+*Due Nov 22nd*
+
+Email or slack your idea and title to anormoyle@brynmawr.edu.
+
+Your project idea should include:
+
+* Project title/idea
+* How will this project be unique from existing demos? 
+* Identify the features you plan to implement and a timeline for completing them
+
+You will only have a three weeks to finish your project so try to scope the work appropriately. 
+Below are some ideas:
+
+* Extend your HelloUnity homework to include features to make it a polished, playable experience. For example, you might implement battle mechanics, story elements, a win condition, enhanced UI, and cut scenes.  
+* Implement a whole new game concept (Watch out that it is not too complex!)
+* Implement a technical demo
+** Implement your own A* and character steering algorithm
+** Implement crowds or flocking
+** Implement a town of agents with daily life activities
+** Implement cloth simulation
+** Implement a procedural city or level generator
+** Implement a physically-based character or vehicle
+
+== Demo Day
+
+*Due Dec 10th*
+
+You will need to have videos and a playable experience ready on Dec 10th. 
+In class and lab, we view all videos and have a Q&A for each game, followed by an 
+open play session where we will take turns trying each others' games.
