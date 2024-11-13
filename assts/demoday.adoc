@@ -1,0 +1,28 @@
+include::header.adoc[]
+
+:title: Demo Day
+:Author Initials: ASN
+:Date:    2021-01-29
+:Revision: 0.1
+:ASST: HelloUnity
+:stem:
+
+= {title}
+
+**Due in lab, Nov 19**
+
+The goals for the demo:
+
+* Create a complete experience that is playable by someone elements
+* Get feedback on your work
+* Demonstrate improvements to your original assignment submissions
+
+= Demo
+
+Your demo should have the following working features, combined in a single scene:
+
+* Controllable player character with animations (that you've setup yourself)
+* Collection mechanic with UI and animated pickup effect
+* Two NPCs with unique behaviors
+
+Demo Day counts as a bonus assignment that will improve one's homework score.

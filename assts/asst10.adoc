@@ -56,6 +56,8 @@ behavior. In this behavior,
 * Your minion should retreat if the the player returns to their home area.
 * Your minion should follow the player if the player runs away.
 
+image::A10-BehaviorMinion.gif[width=600px]
+
 === Unique
 
 In the script, `Scripts/BehaviorUnique.cs`, implement a behavior of your choice. 
@@ -67,6 +69,8 @@ Below are some ideas:
 * A boss enemy
 
 Choose something that supports your game design!
+
+image::A10-BehaviorBoss.gif[width=600px]
 
 = What to hand in
 
