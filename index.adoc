@@ -17,7 +17,7 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 * link:assts/demoday.html[Assignment Demo Day]: Nov 19. We will play each other's games during lab (with snacks)
 * link:assts/project.html[Game Project Proposal]: Due Nov 22
-* link:assts/studyguide4.html[Quiz 04]: Nov 26 (In lab)
+* link:studyguide4.html[Study Guide 04]: Quiz 04, Nov 26 (In lab)
 * NO CLASS THURSDAY (Nov 21) 
 
 == Course Info
