@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>Study Guide 4</title>
+<link rel="stylesheet" href="style/cs21.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_study_guide_4">Study Guide 4</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_study_guide_4">Study Guide 4</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is allowed.
+This quiz expands on the topics from <a href="studyguide2.html">Study Guide 2</a> and
+<a href="studyguide1.html">Study Guide 1</a>.</p>
+</div>
+<div class="paragraph">
+<p>Topics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Character animation</p>
+</li>
+<li>
+<p>Splines and bezier curves</p>
+</li>
+<li>
+<p>Collisions</p>
+</li>
+<li>
+<p>Navigation and steering</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Terms To Know:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Forward and inverse kinematics</p>
+</li>
+<li>
+<p>Skeleton, joints, pose, degrees of freedom, end effector</p>
+</li>
+<li>
+<p>Unity Colliders (trigger versus physics), CharacterController</p>
+</li>
+<li>
+<p>Navigation mesh, Dijkstra&#8217;s Algorithm</p>
+</li>
+<li>
+<p>Behavior Trees and Finite State Machines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Questions (Character Animation):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In character animation, what is a skeleton?</p>
+</li>
+<li>
+<p>In character animation, what is the root joint?</p>
+</li>
+<li>
+<p>In character animation, how many degrees of freedom does the root of the skeleton have?</p>
+</li>
+<li>
+<p>Suppose we have an octopus character, what end effectors would such a character have?</p>
+</li>
+<li>
+<p>What does degree of freedom (DOF) mean for character animation?</p>
+</li>
+<li>
+<p>In character animation, what is a joint?</p>
+</li>
+<li>
+<p>Suppose we have a joint that can translate along Z and rotate around the X and Y axes. How many degrees of freedom does it have?</p>
+</li>
+<li>
+<p>What is a pose?</p>
+</li>
+<li>
+<p>What is forward kinematics?</p>
+</li>
+<li>
+<p>What is inverse kinematics?</p>
+</li>
+<li>
+<p>Suppose we have a two-link chain that represents an arm. Suppose we have limbs lengths for the arms of l1 = 6 and l2 = 8. If the desired target for the hand is at (10, 0, 0). What angle should the elbow? Hint: Use the cosine rule.</p>
+</li>
+<li>
+<p>Suppose we have two vectors a and b. How can we find an axis that is perpendicular to both a and b?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Questions (Animation and Bezier Curves):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Given a Unity script, can you re-write it to use a Coroutine without changing its behavior? What abut vice versa?</p>
+</li>
+<li>
+<p>What is interpolation?</p>
+</li>
+<li>
+<p>What are keyframes?</p>
+</li>
+<li>
+<p>What is a spline?</p>
+</li>
+<li>
+<p>Given the general formula for a Bezier curve, can you compute the polynomial given N?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For example: Compute the polynomial of the Bezier curve when n = 1</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Given a cubic polynomial p(t), time t, and its control points, can you compute its value?</p>
+</li>
+<li>
+<p>When interpolating, the interpolant t must be in the range [0,1]. How can we support arbitrary time points for keys?</p>
+</li>
+<li>
+<p>Given a set of control points for a cubic bezier curve, can you estimate the shape of the curve (without computing it)?</p>
+</li>
+<li>
+<p>What is a state machine? How are state machines used in Unity for animating characters?</p>
+</li>
+<li>
+<p>What is a motion clip?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Questions (Colliders and bounding volumes):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is a collider? What are two ways that colliders are used in Unity?</p>
+</li>
+<li>
+<p>What is a bounding sphere? An axis-aligned bounding box (AABB)? How can these be computed from a mesh?</p>
+</li>
+<li>
+<p>How can you test whether two spheres collide?</p>
+</li>
+<li>
+<p>How can you test whether two boxes collide?</p>
+</li>
+<li>
+<p>Collision detection is slow. Describe two techniques that can make collision detection more efficient. (Bounding volume hierarchy, layers, testing bounding volumes using increasingly detailed bounding volumes)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Questions (Navigation):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How do grid-based terrain representations work? Given a terrain with obstacles, how can it be represented with a grid?</p>
+</li>
+<li>
+<p>What is a waypoint terrain representation?</p>
+</li>
+<li>
+<p>What is a navigation mesh? What are the pros of this approach over other approaches?</p>
+</li>
+<li>
+<p>Given a navigation mesh, can you represent it as a graph?</p>
+</li>
+<li>
+<p>Given a graph, can you apply Dijkstra&#8217;s shortest path algorithm?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sample Questions (Finite State Machines and Behavior Trees)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is a finite state machine?</p>
+</li>
+<li>
+<p>What is a behavior tree? What is the difference between a finite state machine and a behavior tree?</p>
+</li>
+<li>
+<p>What does a selector node do in a behavior tree? A sequence node?</p>
+</li>
+<li>
+<p>How are conditionals handled in a behavior tree?</p>
+</li>
+<li>
+<p>Given a desired set of behaviors, can you design a behavior tree?</p>
+</li>
+<li>
+<p>Given a desired set of behaviors, can you design a finite state machine?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-11-18 14:41:29 -0500
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>

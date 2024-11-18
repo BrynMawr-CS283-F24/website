@@ -1,6 +1,6 @@
 include::header.adoc[]
 
-:title: Study Guide 1
+:title: Study Guide 2 and 3
 :Author Initials: ASN
 :Date:    2020-08-15
 :Revision: 0.1

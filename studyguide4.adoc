@@ -1,0 +1,93 @@
+include::header.adoc[]
+
+:title: Study Guide 4
+:Author Initials: ASN
+:Date:    2020-08-15
+:Revision: 0.1
+:stem: latexmath
+
+= {title}
+
+Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is allowed.
+This quiz expands on the topics from link:studyguide2.html[Study Guide 2] and 
+link:studyguide1.html[Study Guide 1].
+
+Topics:
+
+* Character animation
+* Splines and bezier curves 
+* Collisions
+* Navigation and steering 
+
+Terms To Know:
+
+* Forward and inverse kinematics
+* Skeleton, joints, pose, degrees of freedom, end effector
+* Unity Colliders (trigger versus physics), CharacterController
+//*Physics Simulation: RigidBody, Force, Torque, Mass, Inertia, Velocity, Acceleration, Numerical integration  
+* Navigation mesh, Dijkstra's Algorithm
+* Behavior Trees and Finite State Machines 
+
+Sample Questions (Character Animation):
+
+* In character animation, what is a skeleton?
+* In character animation, what is the root joint?
+* In character animation, how many degrees of freedom does the root of the skeleton have? 
+* Suppose we have an octopus character, what end effectors would such a character have?
+* What does degree of freedom (DOF) mean for character animation?
+* In character animation, what is a joint?
+* Suppose we have a joint that can translate along Z and rotate around the X and Y axes. How many degrees of freedom does it have?
+* What is a pose?
+* What is forward kinematics?
+* What is inverse kinematics?
+* Suppose we have a two-link chain that represents an arm. Suppose we have limbs lengths for the arms of l1 = 6 and l2 = 8. If the desired target for the hand is at (10, 0, 0). What angle should the elbow? Hint: Use the cosine rule.
+* Suppose we have two vectors a and b. How can we find an axis that is perpendicular to both a and b?
+
+Sample Questions (Animation and Bezier Curves):
+
+* Given a Unity script, can you re-write it to use a Coroutine without changing its behavior? What abut vice versa?
+* What is interpolation?
+* What are keyframes?
+* What is a spline?
+* Given the general formula for a Bezier curve, can you compute the polynomial given N?
+** For example: Compute the polynomial of the Bezier curve when n = 1
+* Given a cubic polynomial p(t), time t, and its control points, can you compute its value?
+* When interpolating, the interpolant t must be in the range [0,1]. How can we support arbitrary time points for keys? 
+* Given a set of control points for a cubic bezier curve, can you estimate the shape of the curve (without computing it)?
+* What is a state machine? How are state machines used in Unity for animating characters?
+* What is a motion clip?
+
+Sample Questions (Colliders and bounding volumes):
+
+* What is a collider? What are two ways that colliders are used in Unity?
+* What is a bounding sphere? An axis-aligned bounding box (AABB)? How can these be computed from a mesh?
+* How can you test whether two spheres collide?
+* How can you test whether two boxes collide?
+* Collision detection is slow. Describe two techniques that can make collision detection more efficient. (Bounding volume hierarchy, layers, testing bounding volumes using increasingly detailed bounding volumes)
+
+//* Suppose an object has velocity (1,2,0) per second. If the object is at position (-1,4,0), where will the object after 0.1 seconds?
+//* Suppose an object has angular velocity (0, 90, 0) per second. If the object has orientation (0,0,0) in XYZ euler angles, how will it be oriented after 0.1 seconds?  
+//* What are examples for external forces?
+//* How can linear velocity be computed from the sum of external forces?
+//* What is torque? How can torque be computed from a force applied at a point?
+//* What is the center of mass?
+//* Can you show that a box pushed with equal forces will move in a straight line?
+//* Can you show that a box pushed with a force applied away from its center of mass will spin?
+
+Sample Questions (Navigation):
+
+* How do grid-based terrain representations work? Given a terrain with obstacles, how can it be represented with a grid?
+* What is a waypoint terrain representation?
+* What is a navigation mesh? What are the pros of this approach over other approaches?
+* Given a navigation mesh, can you represent it as a graph?
+* Given a graph, can you apply Dijkstra's shortest path algorithm?
+
+Sample Questions (Finite State Machines and Behavior Trees)
+
+* What is a finite state machine?
+* What is a behavior tree? What is the difference between a finite state machine and a behavior tree?
+* What does a selector node do in a behavior tree? A sequence node?
+* How are conditionals handled in a behavior tree?
+* Given a desired set of behaviors, can you design a behavior tree?
+* Given a desired set of behaviors, can you design a finite state machine?
+

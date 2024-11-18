@@ -15,13 +15,10 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* Next assignment is Due Nov 15th. link:assts/asst10.html[Assignment 10: Behave!]
 * link:assts/demoday.html[Assignment Demo Day]: Nov 19. We will play each other's games during lab (with snacks)
 * link:assts/project.html[Game Project Proposal]: Due Nov 22
-* link:assts/studyguide4.html[Quiz 04 (Coming soon)]: Nov 26 (In class)
-//* link:labs/lab-week05-Transform.html[Lab Oct 3] Transform practice. Player character setup.
-//* Oct 29, Quiz 03: Points, Vectors, Transforms
-* NO LAB THIS WEEK (Nov 5) 
+* link:assts/studyguide4.html[Quiz 04]: Nov 26 (In lab)
+* NO CLASS THURSDAY (Nov 21) 
 
 == Course Info
 
