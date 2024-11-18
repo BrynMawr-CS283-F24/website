@@ -8,9 +8,10 @@ include::header.adoc[]
 
 = {title}
 
-Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is allowed.
-This quiz expands on the topics from link:studyguide2.html[Study Guide 2] and 
-link:studyguide1.html[Study Guide 1].
+Quizzes are closed book. 30 minutes. In Lab. One written cheat sheet is
+allowed.  This quiz expands on the topics from link:studyguide2.html[Study
+Guide 2] and link:studyguide1.html[Study Guide 1]. The quiz will also ask you
+about your homework implementation. 
 
 Topics:
 
