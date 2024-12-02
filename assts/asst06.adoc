@@ -240,15 +240,15 @@ Check the Github website to make sure that your program uploaded correctly.
 Grades are out of 4 points.
 
 * Your scripts need to be feature complete (3.5 points)
-** FollowPathLinear and FollowPathCubic 
+** FollowPathLinear (0.5 points) and FollowPathCubic (1 point)
 *** must use coroutines
 *** must have the character face the direction of movement 
 *** FollowPathLinear must use linear interpolation 
 *** FollowPathCubic must use cubic interpolation and support the DeCasteljau parameter
-** GazeController should use the relative rotation formula from class
+** GazeController should use the relative rotation formula from class (1 point)
 *** Should support Transform arguments (head and target)
 *** Should include debug lines 
-** TwoLinkController should implement the algorithm from class
+** TwoLinkController should implement the algorithm from class (1 points)
 *** Should support Transform arguments (end effector and target) and bend axis
 *** Should include debug lines and debug text
 * Readme (0.5 point)

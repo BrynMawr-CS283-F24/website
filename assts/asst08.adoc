@@ -116,7 +116,10 @@ Check the Github website to make sure that your program uploaded correctly.
 
 Grades are out of 4 points.
 
-* Your scripts need to be feature complete (3.5 points)
+* (1 point) User interface that counts the number of items picked up 
+* (0.5 points) Collision-based pick up of items. Use of tags to distinguish types of items on trigger.
+* (1 points) Pick-up feedback with animation (and optional sound)
+* (1 point) Spawner mechanic with range for adding pickup items.  
 * Readme (0.5 point)
 
 *Submission rubrics*

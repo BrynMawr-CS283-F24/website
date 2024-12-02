@@ -54,6 +54,12 @@ You will only have a three weeks to finish your project so try to scope the work
 Below are some ideas:
 
 * Extend your HelloUnity homework to include features to make it a polished, playable experience. For example, you might implement battle mechanics, story elements, a win condition, enhanced UI, and cut scenes.  
+** Add an intro screen and/or animation
+** Add story elements and lore
+** Add characters that the player can talk to
+** Add a battle system or other game mechanics
+** Improve the user interface: add a map, feedback text, or menus
+** Add inventory or crafting
 * Implement a whole new game concept (Watch out that it is not too complex!)
 * Implement a technical demo
 ** Implement your own A* and character steering algorithm
@@ -70,3 +76,25 @@ Below are some ideas:
 You will need to have videos and a playable experience ready on Dec 10th. 
 In class and lab, we view all videos and have a Q&A for each game, followed by an 
 open play session where we will take turns trying each others' games.
+
+== Final Submission
+
+*Due Dec 13th*
+
+If you are extending your assignments to create a stand alone game, your submission 
+should do the following:
+
+* implement your game in a scene, called `Project.unity`. 
+* extend the readme to include
+** Directions on how to play
+** Directions on how to build and run in Unity
+** Screenshots and videos of your game
+** A list of the features you implemented for your game, with references to the scripts that implement these features
+
+If you are implementing a new game, you must email the instructor (anormoyle@brynmawr.edu) 
+with a link to the repository with your new project. Your README.md should include 
+
+* Directions on how to play
+* Directions on how to build and run in Unity, particularly what scene to open
+* Screenshots and videos of your game
+* A list of the features you implemented for your game, with references to the scripts that implement these features

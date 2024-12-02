@@ -15,10 +15,8 @@ Instructor: link:https://www.cs.brynmawr.edu/~alinen[Aline Normoyle]
 
 [.anns]
 
-* link:assts/demoday.html[Assignment Demo Day]: Nov 19. We will play each other's games during lab (with snacks)
-* link:assts/project.html[Game Project Proposal]: Due Nov 22
-* link:studyguide4.html[Study Guide 04]: Quiz 04, Nov 26 (In lab)
-* NO CLASS THURSDAY (Nov 21) 
+* link:assts/project.html[Game Project Proof of Concepts]: Due in Lab, December 3
+* link:https://forms.gle/cpFXDG6dgpLDpFXp8[Final Exam Sign-up Form]: If you want to take the final, sign-up here. The final is 1.5 hours, closed book.
 
 == Course Info
 
