@@ -124,28 +124,27 @@
 //-----------------------------
 |13
 |Nov 26 anchor:week13[]
-|*Sound, Building for different platforms (Desktop/Web/Mobile/VR/AR)*
+|*Steering Techniques*
 
-* Sound. Building with Unity
-* Read: Madhav Chapter 6
-* Lab: **Quiz 4**
+* Topics: A simple vehicle model. Steering behaviors.
+* Reading: Game AI by Example by Mat Buckland
+* Lab: **Quiz 4** link:studyguide4.html[Study Guide]
 * Nov 28: Thanksgiving, NO CLASS
 
 //-----------------------------
 |14
 |Dec 3,5 anchor:week14[]
-|*Advanced Topics* 
+|*Networked Multiplayer* 
 
-* Potential Topics: Gameification, Game AI, Game modding, Emulators, VR/AR, Networking
+* Read: Madhav Chapter 12
 * Lab Dec 3, Game Milestone 1
 //* link:assts/asst12.html[Assignment 12]: Due Dec 6
 
 //-----------------------------
 |15
 |Dec 10,12 anchor:week15[]
-|*Advanced Topics* 
+|*Demos, Building for different platforms (Desktop/Web/Mobile/VR/AR)*
 
-* Topics: TBD
 * Lab Dec 10, Final Game Demo Day and Party
 * Game Project Github Due, Dec 13th, at midnight
 
