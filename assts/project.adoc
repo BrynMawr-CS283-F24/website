@@ -94,6 +94,8 @@ should do the following:
 ** Your executable should exit when the player presses the 'Escape' key
 * You must also submit a 800x450 representative image for your game/demo that has the title and your name, institution, and graduation year.
 
+NOTE: You won't be able to commit your executable to your repository without modifying your `.gitignore` file carefully. Instead, you can upload your executable folder to a shared fileserver and email the instructor with the link. 
+
 For example, something like 
 
 image::CursedAcorn-RepresentativeImage.png[width=800px]
